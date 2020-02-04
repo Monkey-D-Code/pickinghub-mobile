@@ -58,6 +58,8 @@ class Profile extends Component{
                            </div>
                        }
                        {
+                           user.all_address
+                           &&
                            user.all_address.length > 0
                            ? <div className="address-list">
                                 <h3>Address</h3>
@@ -86,6 +88,8 @@ class Profile extends Component{
                            </div>
                        }
                        {
+                           user.contacts
+                           &&
                            user.contacts.length > 0
                            ? <div className="contacts">
                                <h3>Contacts</h3>

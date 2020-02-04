@@ -28,6 +28,7 @@ import {
 
 // importing pages
 import Home from './components/generic/home';
+import Contact from './components/generic/contact';
 
 import Login from './components/auth/login';
 import Register from './components/auth/register';
@@ -102,6 +103,9 @@ class App extends Component{
           </Route>
           <Route exact path ='/terms'>
               <Terms />
+          </Route>
+          <Route exact path ='/contact'>
+              <Contact />
           </Route>
           <Route exact path ='/privacy'>
               <Privacy />

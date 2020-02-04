@@ -53,8 +53,7 @@ class Navbar extends Component{
                         <nav>
                             <ul>
                                 <li><NavLink activeClassName='nav-link-active' to='/'><i className="fa fa-home" aria-hidden="true"></i> Home</NavLink></li>
-                                <li><NavLink activeClassName='nav-link-active' to='/'><i className="fa fa-book" aria-hidden="true"></i> About Us</NavLink></li>
-                                <li><NavLink activeClassName='nav-link-active' to='/'><i className="fa fa-phone" aria-hidden="true"></i> Contact Us</NavLink></li>
+                                <li><NavLink activeClassName='nav-link-active' to='/contact'><i className="fa fa-phone" aria-hidden="true"></i> Contact Us</NavLink></li>
                                 
                                 
                             </ul>

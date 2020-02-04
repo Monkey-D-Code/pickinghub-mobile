@@ -1152,3 +1152,85 @@ body {
         font-family: "Bebas Neue", cursive;
         font-size: 0.8em;
         color: #531CB3; }
+
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding-bottom: 6em; }
+  .home-page .hero-image {
+    width: 100%; }
+  .home-page .brand-info .name {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 5em; }
+    .home-page .brand-info .name .logo {
+      width: 100px;
+      margin-right: 0.7em; }
+      @media (max-width: 320px) {
+        .home-page .brand-info .name .logo {
+          width: 80px; } }
+    .home-page .brand-info .name .heading {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 0.3em 0.4em;
+      border-radius: 0.3em;
+      color: #531CB3; }
+      @media (max-width: 320px) {
+        .home-page .brand-info .name .heading {
+          font-size: 0.9em; } }
+      .home-page .brand-info .name .heading p {
+        font-family: "Bebas Neue", cursive;
+        font-size: 0.9em; }
+  .home-page .about {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    margin: 1em auto; }
+    .home-page .about img {
+      width: 150px;
+      min-height: 450px;
+      object-fit: cover; }
+    .home-page .about p {
+      padding: 0.5em;
+      font-family: "Bebas Neue", cursive;
+      font-size: 0.8em;
+      color: #7A306C; }
+
+.contact-page {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  padding-bottom: 6em;
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+  .contact-page h1 {
+    background-image: linear-gradient(to right, #E0CA3C, #531CB3);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin: 0.6em auto; }
+  .contact-page .logo {
+    width: 150px;
+    margin-top: 1em; }
+  .contact-page .contact-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; }
+    .contact-page .contact-info h4 {
+      width: 300px;
+      background-color: #531CB3;
+      padding: 0.4em 0.6em;
+      font-family: "Bebas Neue", cursive;
+      margin: 0.4em 0;
+      color: white;
+      font-size: 1.3em;
+      border-radius: 0.3em; }

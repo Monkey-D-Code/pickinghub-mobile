@@ -1,0 +1,59 @@
+.home-page{
+    width : 100vw;
+    height: 100vh;
+    overflow: auto;
+    position: relative;
+    padding-bottom: 6em;
+    .hero-image{
+        width : 100%;
+    }
+    .brand-info{
+        .name{
+            display: flex;
+            width : 100%;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top : 5em;
+            .logo{
+                width : 100px;
+                @media (max-width:320px){
+                    width : 80px;
+                }
+                margin-right: 0.7em;
+            }
+            .heading{
+                background-color: rgba(white,0.7);
+                @media (max-width:320px){
+                    font-size: 0.9em;
+                }
+                padding : 0.3em 0.4em;
+                border-radius: 0.3em;
+                color: $ocen_blue;
+                p{
+                    font-family: $font_para;
+                    font-size: 0.9em;
+                }
+            }
+        }
+        
+        
+    }
+    .about{
+        display: flex;
+        width : 90%;
+        align-items: center;
+        margin : 1em auto;
+        img{
+            width : 150px;
+            min-height: 450px;
+            object-fit: cover;
+        }
+        p{
+            padding : 0.5em;
+            font-family: $font_para;
+            font-size: 0.8em;
+            color: $midnight;
+        }
+    }
+}

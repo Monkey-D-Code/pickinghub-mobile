@@ -31,12 +31,45 @@ class Home extends Component{
     }
     render=()=>{
         const {from ,to} = this.style;
+        const {brand,error} = this.props;
         return(
             <Spring from={from} to={to} >
                 {
                     spring =>(
                         <div className="home-page" style={spring}>
-                            <h1>Home Page</h1>
+                            {
+                                brand
+                                &&
+                                <div className="brand-hero">
+                                    <img className='hero-image' src={brand.random_hero_image} alt=""/>
+                                    <div className="brand-info">
+                                        <div className="name">
+                                            <img 
+                                                src={brand.logo_url} 
+                                                alt=""
+                                                className='logo'
+                                            />
+                                            <div className='heading'>
+                                                <h1>{brand.full_name}</h1>
+                                                <div className="others">
+                                                    <p className="tag-name">
+                                                        {brand.tag_line}
+                                                    </p>
+                                                    <p className="foundation-date">Since {new Date(brand.foundation_date).toDateString()}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div className="about">
+                                        <img 
+                                            src={brand.random_normal_image} 
+                                            alt={`${brand.full_name}`}
+                                        />
+                                        <p>{brand.about}</p>
+                                    </div>
+                                </div>
+                            }
                         </div>
                     )
                 }
@@ -46,12 +79,13 @@ class Home extends Component{
 }
 const mapState = state=>({
     brand  :selectBrand(state),
-    
+    error : selectBrandError(state),
+
 })
 const mapDispatch = dispatch =>({
     toggle : ()=>dispatch(toggleMenu())
 })
 export default connect(
-    null,
+    mapState,
     mapDispatch,
 )(Home);

@@ -1,0 +1,34 @@
+.contact-page{
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    padding-bottom: 6em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    h1{
+        @include gradient_text($meat_brown,$ocen_blue);
+        margin: 0.6em auto;
+    }
+    .logo{
+        width  :150px;
+        margin-top : 1em;
+    }
+    .contact-info{
+        width :100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        h4{
+            width : 300px;
+            background-color: $ocen_blue;
+            padding : 0.4em 0.6em;
+            font-family: $font_para;
+            margin : 0.4em 0;
+            color: white;
+            font-size: 1.3em;
+            border-radius: 0.3em;
+        }
+    }
+}

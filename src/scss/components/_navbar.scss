@@ -1,0 +1,91 @@
+.navigation-bar{
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    z-index: 10;
+    background-color: $midnight;
+    padding : 1em;
+    background-image: $tortoise_shell;
+    overflow: auto;
+    transition: all 0.4s;
+    transform: translateX(-100%);
+    .brand{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        img{
+            height: 180px;
+            width : 180px;
+            @media (max-width : 420px){
+                height : 8em;
+                width : 8em;
+            }
+            object-fit: cover;
+            
+            -webkit-box-shadow: 4px 7px 13px -1px rgba(0,0,0,0.52);
+            -moz-box-shadow: 4px 7px 13px -1px rgba(0,0,0,0.52);
+            box-shadow: 4px 7px 13px -1px rgba(0,0,0,0.52);
+        }
+        h1{
+            color: white;
+            font-weight: 200;
+        }
+    }
+    nav{
+        
+        ul{
+            list-style-type: none;
+            margin : 0.6em 0;
+            padding : 0.5em;
+            background-color: rgba($ocen_blue , 0.6);
+            border-radius: 0.6em;
+            li{
+                a{
+                    font-family: $font_para;
+                    text-decoration: none;
+                    font-size: 1.3em;
+                    color : white;
+                    transition: all 0.4s;
+                }
+                &:active{
+                    transform: translateY(2px);
+                }
+
+                &:hover{
+                    letter-spacing: 1px;
+                    transform: translateY(-2px);
+                    color: $maastricth_blue;
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    
+}
+.active {
+    transform: translateX(0);
+}
+.nav-toggle{
+    width : 2.5em;
+    height : 2.5em;
+    border-radius: 50%;
+    font-size: 2em;
+    position: fixed;
+    bottom: 0.5em;
+    right : 0.5em;
+    background-color: $maastricth_blue;
+    color:  white;
+    cursor: pointer;
+    outline: none;
+    z-index: 20;
+    @include btn_interaction;
+    transition: all 0.4s;
+    i{
+        transition: all 0.5s;
+    }
+}
+
+

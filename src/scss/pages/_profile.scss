@@ -1,0 +1,114 @@
+.profile{
+    height: 100vh;
+    width : 100vw;
+    overflow: auto;
+    padding-bottom: 6em;
+    .user-info{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin : 0.5em 0;
+        img{
+            height: 300px;
+            width : 300px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        h1{
+            @include gradient_text($midnight,$ocen_blue)
+        }
+        p{
+            font-family: $font_cursive;
+            color: $maastricth_blue;
+            font-size: 1.1em;
+        }
+    }
+    .address-list{
+        h3{
+            font-family: $font_heading;
+            color: $midnight;
+            text-align: center;
+        }
+        .list{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            .single-address{
+                width : 300px;
+                padding : 0.4em;
+                border: 1px solid $ocen_blue;
+                border-radius: 0.3em;
+                margin : 0.5em;
+                h4{
+                    font-family: $font_para;
+                    font-size: 0.9em;
+                    color: $midnight;
+                    margin : 0.3em 0;
+                }
+                .status{
+                    p{
+                        font-family: $font_cursive;
+                        padding : 0.5em;
+                        text-align: center;
+                        color:   white;
+                        border-radius: 0.3em;
+                    }
+                    .true{
+                        background-color: darken($forest_green,10%);
+                    }
+                    .false{
+                        background-color: $crimson;
+                    }
+                }
+            }
+        }
+    }
+    .contacts{
+        h3{
+            font-family: $font_heading;
+            color: $ocen_blue;
+            text-align: center;
+        }
+        .list{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            
+            .single-contact{
+                display: flex;
+                justify-content: space-between;
+                padding : 0.4em;
+                margin : 0.3em;
+                align-items: center;
+                width : 300px;
+                background-color: darken($forest_green,20%);
+                border-radius: 0.3em;
+                h4{
+                    font-family: $font_cursive;
+                    font-size: 1.1em;
+                    color: white;
+                    font-weight: 200;
+                }
+                p{
+                    font-family: $font_para;
+                    font-size: 1em;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.logout-btn{
+    font-size: 1.3em;
+    font-family: $font_heading;
+    background-color: $crimson;
+    padding : 0.4em 0.5em;
+    color: white;
+    @include btn_interaction;
+    border: none;
+    border-radius: 0.3em;
+    margin : 0.5em 0;
+}

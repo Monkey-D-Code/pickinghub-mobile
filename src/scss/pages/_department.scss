@@ -1,0 +1,153 @@
+.department-page{
+    height: 100vh;
+    width : 100vw;
+    overflow: auto;
+    
+    .all-departments{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin-bottom: 6em;
+        h1{
+            @include gradient_text($midnight,$crimson);
+            
+            
+        }
+        .depts{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .single-department{
+                width  : 300px;
+                margin : 0.3em;
+                -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.46);
+                -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.46);
+                box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.46);
+                
+                
+                img{
+                    width: 300px;
+                    height: 200px;
+                    object-fit: cover;
+                    object-position: top;
+                }
+                
+                h3{
+                    font-family: $font_cursive;
+                    padding : 0.2em;
+                    
+                    a {
+                         text-decoration: none;
+                         @include gradient_text($ocen_blue,$forest_green);
+                    }
+                }
+            }
+        }
+    }
+    .department-details{
+        height: 100vh;
+        width : 100vw;
+        overflow: auto;
+        padding-bottom: 6em;
+        .info{
+            width : 100%;
+            position: relative;
+            img {
+                width : 100%;
+                height : 50vh;
+                object-fit: cover;
+                object-position: top;
+            }
+            h1{
+                position: absolute;
+                background-color: rgba(white , 0.8);
+                top : 5em;
+                @media (max-width : 360px){
+                    top : 3em;
+                }
+                left: 50%;
+                padding : 0.4em;
+                transform: translateX(-50%);
+                color: $ocen_blue;
+            }
+            p{
+                width: 100%;
+                padding : 0.4em;
+                font-family: $font_para;
+                color: $maastricth_blue;
+            }
+            .demographics{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: center;
+                .single-demographic{
+                    width : 300px;
+                    padding: 0.5em 0.1em;
+                    padding-top: 0;
+                    background-color: rgba($forest_green,0.15);
+                    margin : 0.4em;
+                    border-radius: 0.3em;
+                    .demo{
+                        display: flex;
+                        align-items: center;
+                        img{
+                        
+                            width: 100px;
+                            object-fit: cover;
+                            height: 200px;
+                            margin-right : 1em;
+                            border : 2px solid $ocen_blue;
+                            
+                        }
+                        .info{
+                            h3{
+                                font-family: $font_cursive;
+                                
+                                a{
+                                    text-decoration: none;
+                                    color: darken($midnight,10%);
+                                }
+                            }
+                            p{
+                                color: $midnight;
+                                font-size: 0.8em;
+                            }
+                        }
+                    }
+                    .categories{
+                       margin : 0.5em;
+                       display: flex;
+                       align-items: center;
+                       flex-wrap: wrap;
+                        .single-category{
+                            width: 280px;
+                            position: relative;
+                            margin : 0.3em 0;
+                            img{
+                                width :280px;
+                                height: 120px;
+                                
+                                object-fit: cover;
+                                margin-right: 0.3em;
+                            }
+                            .info{
+                                h4{
+                                    font-family: $font_heading;
+                                    border-bottom: 1px solid $ocen_blue;
+                                    text-align: center;
+                                    a{
+                                        text-decoration: none;
+                                        @include gradient_text($ocen_blue,darken($forest_green,15%));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+}

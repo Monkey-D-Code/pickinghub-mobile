@@ -1,0 +1,12 @@
+.error{
+    padding : 0.5em;
+    width : 300px;
+    margin : 2em auto;
+    background-color: rgba($crimson , 0.7);
+    h4{
+        font-family: $font_para;
+        width : 280px;
+        color: darken($crimson,10%);
+        padding : 0.4em;
+    }
+}

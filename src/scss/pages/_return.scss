@@ -1,0 +1,35 @@
+.return-policy{
+    height: 100vh;
+    width : 100vw;
+    overflow: auto;
+    padding-bottom: 6em;
+    h1{
+        @include gradient_text($ocen_blue,$midnight);
+        margin : 0.4em auto;
+    }
+    .policy-list{
+        width : 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        .single-policy{
+            width : 300px;
+            margin : 0.5em;
+            border : 1px solid $ocen_blue;
+            border-radius: 0.3em;
+            padding: 0.4em;
+            h4{
+                font-family: $font_cursive;
+                color: $ocen_blue;
+                border-bottom: 1px solid $meat_brown;
+                margin-bottom: 0.3em;
+            }
+            p{
+                font-family: $font_para;
+                font-size: 0.7em;
+                color: darken($meat_brown, 23%);
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.refresh{
+    font-size: 0.7em;
+    padding : 0.1em 0.3em;
+    margin-left : 0.3em;
+    background-color: darken($meat_brown , 20%);
+    @include btn_interaction;
+    border: none;
+    color: white;
+    border-radius: 3px;
+}

@@ -1,0 +1,36 @@
+// importing abstract
+@import './abstract/variables';
+@import './abstract/mixins';
+
+// importing base
+@import './base/typography';
+@import './base/animations';
+@import './base/base';
+
+
+// importing elements
+@import './elements/error';
+@import './elements/warning';
+@import './elements/cart';
+@import './elements/refresh';
+
+// importing components
+@import './components/button';
+@import './components/form';
+@import './components/navbar';
+@import './components/loading_pickinghub';
+@import './components/order_details';
+
+
+// importting pages
+@import './pages/login_page';
+@import './pages/register_page';
+@import './pages/terms';
+@import './pages/privacy';
+@import './pages/department';
+@import './pages/single_category';
+@import './pages//product_details';
+@import './pages/profile';
+@import './pages/orders';
+@import './pages/return';
+@import './pages/search';

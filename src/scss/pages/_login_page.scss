@@ -1,0 +1,29 @@
+.login-page{
+    position: relative;
+    width: 100vw;
+    height : 100vh;
+    
+    .form{
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        transform: translate(-50%,-50%);
+    }
+    .sub-nav{
+        margin : 0.3em 0;
+        width : 300px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h4{
+            color: $ocen_blue;
+            font-family: $font_para;
+        }
+        a{
+            color: $maastricth_blue;
+            font-family: $font_cursive;
+            text-decoration: none;
+
+        }
+    }
+}

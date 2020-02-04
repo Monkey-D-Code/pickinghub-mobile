@@ -1,0 +1,97 @@
+.cart{
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-bottom: 6em;
+    h1{
+        @include gradient_text($midnight,$ocen_blue);
+        margin : 0.5em auto;
+    }
+    .cart-total{
+        position: sticky;
+        top: 0;
+        
+        background-color: $forest_green;
+        font-family: $font_para;
+        font-size: 2.5em;
+        text-align: center;
+        color: white;
+        padding: 0.2em 0.3em;
+        -webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.32);
+        -moz-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.32);
+        box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.32);
+    }
+    .buy-now{
+        width : 250px;
+        font-size: 1.2em;
+        border : none;
+        padding : 0.3em 0.8em;
+        @include btn_interaction;
+        background-image: linear-gradient(
+            to right,
+            $midnight,
+            $maastricth_blue,
+        );
+        font-family: $font_cursive;
+        color: white;
+        height: 80px;
+        margin : 1em auto;
+
+    }
+    .sublets{
+        width : 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin : 3em 0;
+        .cart_sublet{
+            width:  300px;
+            margin : 0.5em;
+            -webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.32);
+            -moz-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.32);
+            box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.32);
+            img{
+                width : 300px;
+                
+                
+                object-fit: cover;
+            }
+            h3{
+                a{
+                    text-decoration: none;
+                    font-family: $font_cursive;
+                    color: $ocen_blue;
+                }
+                button{
+                    background-color: $crimson;
+                    color: white;
+                    padding : 0.3em 0.5em;
+                    border: none;
+                    @include btn_interaction;
+                    
+                    
+                }
+            }
+            .info{
+                display: flex;
+                justify-content: space-between;
+                padding : 0 0.3em;
+                p{
+                    font-family: $font_para;
+                    color: darken($meat_brown,25%);
+                    font-size: 1.3em;
+                    font-weight: bold;
+                }
+            }
+            .total{
+                font-family: $font_heading;
+                color: darken($forest_green,10%);
+                font-size: 1.6em;
+            }
+        }
+    }
+}

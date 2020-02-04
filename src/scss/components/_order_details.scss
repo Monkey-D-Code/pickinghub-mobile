@@ -1,0 +1,117 @@
+.order-details{
+    margin-bottom:  6em;
+    .order-info{
+        h1{
+            color: darken($forest_green , 10%);
+            margin: 0.4em 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .placed-on{
+            display: flex;
+            justify-content: space-evenly;
+            background-color: $ocen_blue;
+            width : 300px;
+            margin : 0.5em auto;
+            border-radius: 0.3em;
+            p{
+                font-family: $font_para;
+                color: $meat_brown;
+                padding: 0.4em 0;
+            }
+        }
+        .status{
+            width : 300px;
+            margin: 0.5em auto;
+            p{
+                margin : 0.2em 0;
+                font-family: $font_cursive;
+                color: white;
+                text-align: center;
+                padding : 0.3em 0;
+                border-radius: 0.3em;
+            }
+            .true{
+                background-color: darken($forest_green , 10%);
+            }
+            .false{
+                background-color: $crimson;
+            }
+        }
+        .estimation{
+            display: flex;
+            justify-content: space-evenly;
+            width: 300px;
+            margin: 0.2em auto;
+            p{
+                font-family: $font_para;
+                font-size: 0.9em;
+                font-weight: bold;
+                color: darken($forest_green , 10%);
+            }
+        }
+        .not-estimated{
+            width: 300px;
+            margin : 0.2em auto;
+            
+            font-family: $font_para;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: $crimson;
+            text-align: center;
+            
+        }
+        .orders{
+            width : 100%;
+            height: fit-content;
+            .single-order{
+                width : 300px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin: 0.5em auto;
+                border : 1px solid $midnight;
+                overflow: hidden;
+                border-radius: 0.3em;
+                img{
+                    width : 80px;
+                    margin-right: 0.3em;
+                }
+                h4{
+                    
+                    margin : 0.3em 0;
+                    a{
+                        font-family: $font_cursive;
+                        font-size: 0.9em;
+                        line-height: 1.2em;
+                        color: $midnight;
+                        text-decoration: none;
+                    }
+                }
+                .total{
+                    min-width: 80px;
+                    color: darken($forest_green ,10%);
+                    text-align: center;
+                    font-family: $font_heading;
+                    font-weight: 300;
+                }
+                .info{
+                    width : 180px;
+                    p{
+                        font-family: $font_para;
+                        font-size: 0.7em;
+                        color: $ocen_blue;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        
+                    }
+                }
+                .total{
+                    width : 60px;
+                }
+            }
+        }
+    }
+}

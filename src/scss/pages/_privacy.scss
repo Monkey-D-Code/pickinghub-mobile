@@ -1,0 +1,37 @@
+.privacy{
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-bottom:  6em;
+    h1{
+        @include gradient_text($midnight,$ocen_blue);
+        margin : 0.5em 0;
+    }
+    .policy-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .single-policy{
+            width : 300px;
+            margin : 0.5em;
+            background-color: rgba($forest_green , 0.2);
+            padding : 0.6em;
+            border-radius: 0.4em;
+            h4{
+                font-family: $font_cursive;
+                color: $ocen_blue;
+                font-size: 1.3em;
+                margin : 0.3em 0;
+            }
+            p{
+                font-family: $font_para;
+                font-size: 0.7em;
+                color: $midnight;
+            }
+        }
+    }
+
+}

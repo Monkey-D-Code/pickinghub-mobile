@@ -1,0 +1,17 @@
+.loading-pickinghub{
+    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 15em;
+    
+    h1{
+        font-family: $font_cursive;
+        color: $ocen_blue;
+        @media (max-width : 420px){
+            font-size: 1.6em;
+        }
+    }
+}

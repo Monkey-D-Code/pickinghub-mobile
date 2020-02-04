@@ -1,0 +1,11 @@
+.warning{
+    background-color: $meat_brown;
+    width: 300px;
+    padding : 0.4em 0.3em;
+    margin : 0.3em auto;
+    h4{
+        font-family: $font_para;
+        color: darken($meat_brown , 40%);
+        font-size: 1.1em;
+    }
+}

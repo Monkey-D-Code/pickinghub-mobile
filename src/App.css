@@ -1,0 +1,1154 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Pacifico&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23d9d9d9' fill-opacity='0.3'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.1'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E"); }
+  body h1 {
+    font-family: "Bowlby One SC", cursive; }
+  body #root {
+    position: relative; }
+
+.error {
+  padding: 0.5em;
+  width: 300px;
+  margin: 2em auto;
+  background-color: rgba(179, 0, 27, 0.7); }
+  .error h4 {
+    font-family: "Bebas Neue", cursive;
+    width: 280px;
+    color: #800013;
+    padding: 0.4em; }
+
+.warning {
+  background-color: #E0CA3C;
+  width: 300px;
+  padding: 0.4em 0.3em;
+  margin: 0.3em auto; }
+  .warning h4 {
+    font-family: "Bebas Neue", cursive;
+    color: #453d0b;
+    font-size: 1.1em; }
+
+.cart {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-bottom: 6em; }
+  .cart h1 {
+    background-image: linear-gradient(to right, #7A306C, #531CB3);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin: 0.5em auto; }
+  .cart .cart-total {
+    position: sticky;
+    top: 0;
+    background-color: #119822;
+    font-family: "Bebas Neue", cursive;
+    font-size: 2.5em;
+    text-align: center;
+    color: white;
+    padding: 0.2em 0.3em;
+    -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.32);
+    box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.32); }
+  .cart .buy-now {
+    width: 250px;
+    font-size: 1.2em;
+    border: none;
+    padding: 0.3em 0.8em;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-image: linear-gradient(to right, #7A306C, #101935);
+    font-family: "Pacifico", cursive;
+    color: white;
+    height: 80px;
+    margin: 1em auto; }
+    .cart .buy-now:hover {
+      transform: translateY(-4px);
+      -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+    .cart .buy-now:active {
+      transform: translateY(4px);
+      webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+  .cart .sublets {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3em 0; }
+    .cart .sublets .cart_sublet {
+      width: 300px;
+      margin: 0.5em;
+      -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.32);
+      -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.32);
+      box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.32); }
+      .cart .sublets .cart_sublet img {
+        width: 300px;
+        object-fit: cover; }
+      .cart .sublets .cart_sublet h3 a {
+        text-decoration: none;
+        font-family: "Pacifico", cursive;
+        color: #531CB3; }
+      .cart .sublets .cart_sublet h3 button {
+        background-color: #B3001B;
+        color: white;
+        padding: 0.3em 0.5em;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s; }
+        .cart .sublets .cart_sublet h3 button:hover {
+          transform: translateY(-4px);
+          -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+          -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+          box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+        .cart .sublets .cart_sublet h3 button:active {
+          transform: translateY(4px);
+          webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+          -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+          box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+      .cart .sublets .cart_sublet .info {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0.3em; }
+        .cart .sublets .cart_sublet .info p {
+          font-family: "Bebas Neue", cursive;
+          color: #877815;
+          font-size: 1.3em;
+          font-weight: bold; }
+      .cart .sublets .cart_sublet .total {
+        font-family: "Bowlby One SC", cursive;
+        color: #0c6a18;
+        font-size: 1.6em; }
+
+.refresh {
+  font-size: 0.7em;
+  padding: 0.1em 0.3em;
+  margin-left: 0.3em;
+  background-color: #9d8b19;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  color: white;
+  border-radius: 3px; }
+  .refresh:hover {
+    transform: translateY(-4px);
+    -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+    -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+    box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+  .refresh:active {
+    transform: translateY(4px);
+    webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+
+.form h1 {
+  background-image: linear-gradient(to right, #531CB3, #101935);
+  width: fit-content;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+  font-size: 4em;
+  margin: 0.5em auto;
+  text-align: center; }
+  @media (max-width: 768px) {
+    .form h1 {
+      font-size: 2.7em; } }
+
+.form .form-group {
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+  .form .form-group h3 {
+    font-family: "Bebas Neue", cursive;
+    color: #101935;
+    font-size: 1.5em; }
+  .form .form-group .input {
+    padding: 0.2em 0.3em;
+    font-family: "Pacifico", cursive;
+    color: #531CB3;
+    font-size: 1.2em;
+    margin: 0.5em;
+    width: 300px;
+    -webkit-box-shadow: 4px 2px 13px 0px rgba(16, 25, 53, 0.52);
+    -moz-box-shadow: 4px 2px 13px 0px rgba(16, 25, 53, 0.52);
+    box-shadow: 4px 2px 13px 0px rgba(16, 25, 53, 0.52);
+    border: none;
+    transition: all 0.4s; }
+  .form .form-group .form-btn {
+    width: 300px;
+    padding: 0.5em 0.4em;
+    font-family: "Bowlby One SC", cursive;
+    background-image: linear-gradient(to right, #531CB3, #101935);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    border: none;
+    outline: none; }
+    .form .form-group .form-btn:hover {
+      transform: translateY(-4px);
+      -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+    .form .form-group .form-btn:active {
+      transform: translateY(4px);
+      webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+  .form .form-group .settings {
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #101935;
+    margin: 0.3em 0;
+    padding: 0.5em 0.3em; }
+    .form .form-group .settings label {
+      cursor: pointer;
+      font-family: "Bebas Neue", cursive;
+      margin-right: 0.5em;
+      color: white; }
+    .form .form-group .settings input {
+      cursor: pointer;
+      width: 20px;
+      height: 20spx; }
+
+.navigation-bar {
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  z-index: 10;
+  background-color: #7A306C;
+  padding: 1em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='373' height='373' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23101935' stroke-width='1.3' stroke-opacity='0.22'%3E%3Crect x='-40' y='40' width='75' height='75'/%3E%3Crect x='-35' y='45' width='65' height='65'/%3E%3Crect x='-30' y='50' width='55' height='55'/%3E%3Crect x='-25' y='55' width='45' height='45'/%3E%3Crect x='-20' y='60' width='35' height='35'/%3E%3Crect x='-15' y='65' width='25' height='25'/%3E%3Crect x='-10' y='70' width='15' height='15'/%3E%3Crect x='-5' y='75' width='5' height='5'/%3E%3Crect width='35' height='35'/%3E%3Crect x='5' y='5' width='25' height='25'/%3E%3Crect x='10' y='10' width='15' height='15'/%3E%3Crect x='15' y='15' width='5' height='5'/%3E%3Crect x='40' width='75' height='75'/%3E%3Crect x='45' y='5' width='65' height='65'/%3E%3Crect x='50' y='10' width='55' height='55'/%3E%3Crect x='55' y='15' width='45' height='45'/%3E%3Crect x='60' y='20' width='35' height='35'/%3E%3Crect x='65' y='25' width='25' height='25'/%3E%3Crect x='70' y='30' width='15' height='15'/%3E%3Crect x='75' y='35' width='5' height='5'/%3E%3Crect x='40' y='80' width='35' height='35'/%3E%3Crect x='45' y='85' width='25' height='25'/%3E%3Crect x='50' y='90' width='15' height='15'/%3E%3Crect x='55' y='95' width='5' height='5'/%3E%3Crect x='120' y='-40' width='75' height='75'/%3E%3Crect x='125' y='-35' width='65' height='65'/%3E%3Crect x='130' y='-30' width='55' height='55'/%3E%3Crect x='135' y='-25' width='45' height='45'/%3E%3Crect x='140' y='-20' width='35' height='35'/%3E%3Crect x='145' y='-15' width='25' height='25'/%3E%3Crect x='150' y='-10' width='15' height='15'/%3E%3Crect x='155' y='-5' width='5' height='5'/%3E%3Crect x='120' y='40' width='35' height='35'/%3E%3Crect x='125' y='45' width='25' height='25'/%3E%3Crect x='130' y='50' width='15' height='15'/%3E%3Crect x='135' y='55' width='5' height='5'/%3E%3Crect y='120' width='75' height='75'/%3E%3Crect x='5' y='125' width='65' height='65'/%3E%3Crect x='10' y='130' width='55' height='55'/%3E%3Crect x='15' y='135' width='45' height='45'/%3E%3Crect x='20' y='140' width='35' height='35'/%3E%3Crect x='25' y='145' width='25' height='25'/%3E%3Crect x='30' y='150' width='15' height='15'/%3E%3Crect x='35' y='155' width='5' height='5'/%3E%3Crect x='200' y='120' width='75' height='75'/%3E%3Crect x='40' y='200' width='75' height='75'/%3E%3Crect x='80' y='80' width='75' height='75'/%3E%3Crect x='85' y='85' width='65' height='65'/%3E%3Crect x='90' y='90' width='55' height='55'/%3E%3Crect x='95' y='95' width='45' height='45'/%3E%3Crect x='100' y='100' width='35' height='35'/%3E%3Crect x='105' y='105' width='25' height='25'/%3E%3Crect x='110' y='110' width='15' height='15'/%3E%3Crect x='115' y='115' width='5' height='5'/%3E%3Crect x='80' y='160' width='35' height='35'/%3E%3Crect x='85' y='165' width='25' height='25'/%3E%3Crect x='90' y='170' width='15' height='15'/%3E%3Crect x='95' y='175' width='5' height='5'/%3E%3Crect x='120' y='160' width='75' height='75'/%3E%3Crect x='125' y='165' width='65' height='65'/%3E%3Crect x='130' y='170' width='55' height='55'/%3E%3Crect x='135' y='175' width='45' height='45'/%3E%3Crect x='140' y='180' width='35' height='35'/%3E%3Crect x='145' y='185' width='25' height='25'/%3E%3Crect x='150' y='190' width='15' height='15'/%3E%3Crect x='155' y='195' width='5' height='5'/%3E%3Crect x='160' y='40' width='75' height='75'/%3E%3Crect x='165' y='45' width='65' height='65'/%3E%3Crect x='170' y='50' width='55' height='55'/%3E%3Crect x='175' y='55' width='45' height='45'/%3E%3Crect x='180' y='60' width='35' height='35'/%3E%3Crect x='185' y='65' width='25' height='25'/%3E%3Crect x='190' y='70' width='15' height='15'/%3E%3Crect x='195' y='75' width='5' height='5'/%3E%3Crect x='160' y='120' width='35' height='35'/%3E%3Crect x='165' y='125' width='25' height='25'/%3E%3Crect x='170' y='130' width='15' height='15'/%3E%3Crect x='175' y='135' width='5' height='5'/%3E%3Crect x='200' y='200' width='35' height='35'/%3E%3Crect x='200' width='35' height='35'/%3E%3Crect y='200' width='35' height='35'/%3E%3C/g%3E%3C/svg%3E");
+  overflow: auto;
+  transition: all 0.4s;
+  transform: translateX(-100%); }
+  .navigation-bar .brand {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+    .navigation-bar .brand img {
+      height: 180px;
+      width: 180px;
+      object-fit: cover;
+      -webkit-box-shadow: 4px 7px 13px -1px rgba(0, 0, 0, 0.52);
+      -moz-box-shadow: 4px 7px 13px -1px rgba(0, 0, 0, 0.52);
+      box-shadow: 4px 7px 13px -1px rgba(0, 0, 0, 0.52); }
+      @media (max-width: 420px) {
+        .navigation-bar .brand img {
+          height: 8em;
+          width: 8em; } }
+    .navigation-bar .brand h1 {
+      color: white;
+      font-weight: 200; }
+  .navigation-bar nav ul {
+    list-style-type: none;
+    margin: 0.6em 0;
+    padding: 0.5em;
+    background-color: rgba(83, 28, 179, 0.6);
+    border-radius: 0.6em; }
+    .navigation-bar nav ul li a {
+      font-family: "Bebas Neue", cursive;
+      text-decoration: none;
+      font-size: 1.3em;
+      color: white;
+      transition: all 0.4s; }
+    .navigation-bar nav ul li:active {
+      transform: translateY(2px); }
+    .navigation-bar nav ul li:hover {
+      letter-spacing: 1px;
+      transform: translateY(-2px);
+      color: #101935; }
+
+.active {
+  transform: translateX(0); }
+
+.nav-toggle {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  font-size: 2em;
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+  background-color: #101935;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  z-index: 20;
+  cursor: pointer;
+  transition: all 0.3s;
+  transition: all 0.4s; }
+  .nav-toggle:hover {
+    transform: translateY(-4px);
+    -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+    -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+    box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+  .nav-toggle:active {
+    transform: translateY(4px);
+    webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+  .nav-toggle i {
+    transition: all 0.5s; }
+
+.loading-pickinghub {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 15em; }
+  .loading-pickinghub h1 {
+    font-family: "Pacifico", cursive;
+    color: #531CB3; }
+    @media (max-width: 420px) {
+      .loading-pickinghub h1 {
+        font-size: 1.6em; } }
+
+.order-details {
+  margin-bottom: 6em; }
+  .order-details .order-info h1 {
+    color: #0c6a18;
+    margin: 0.4em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .order-details .order-info .placed-on {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #531CB3;
+    width: 300px;
+    margin: 0.5em auto;
+    border-radius: 0.3em; }
+    .order-details .order-info .placed-on p {
+      font-family: "Bebas Neue", cursive;
+      color: #E0CA3C;
+      padding: 0.4em 0; }
+  .order-details .order-info .status {
+    width: 300px;
+    margin: 0.5em auto; }
+    .order-details .order-info .status p {
+      margin: 0.2em 0;
+      font-family: "Pacifico", cursive;
+      color: white;
+      text-align: center;
+      padding: 0.3em 0;
+      border-radius: 0.3em; }
+    .order-details .order-info .status .true {
+      background-color: #0c6a18; }
+    .order-details .order-info .status .false {
+      background-color: #B3001B; }
+  .order-details .order-info .estimation {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+    margin: 0.2em auto; }
+    .order-details .order-info .estimation p {
+      font-family: "Bebas Neue", cursive;
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #0c6a18; }
+  .order-details .order-info .not-estimated {
+    width: 300px;
+    margin: 0.2em auto;
+    font-family: "Bebas Neue", cursive;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #B3001B;
+    text-align: center; }
+  .order-details .order-info .orders {
+    width: 100%;
+    height: fit-content; }
+    .order-details .order-info .orders .single-order {
+      width: 300px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 0.5em auto;
+      border: 1px solid #7A306C;
+      overflow: hidden;
+      border-radius: 0.3em; }
+      .order-details .order-info .orders .single-order img {
+        width: 80px;
+        margin-right: 0.3em; }
+      .order-details .order-info .orders .single-order h4 {
+        margin: 0.3em 0; }
+        .order-details .order-info .orders .single-order h4 a {
+          font-family: "Pacifico", cursive;
+          font-size: 0.9em;
+          line-height: 1.2em;
+          color: #7A306C;
+          text-decoration: none; }
+      .order-details .order-info .orders .single-order .total {
+        min-width: 80px;
+        color: #0c6a18;
+        text-align: center;
+        font-family: "Bowlby One SC", cursive;
+        font-weight: 300; }
+      .order-details .order-info .orders .single-order .info {
+        width: 180px; }
+        .order-details .order-info .orders .single-order .info p {
+          font-family: "Bebas Neue", cursive;
+          font-size: 0.7em;
+          color: #531CB3;
+          font-weight: bold;
+          display: flex;
+          align-items: center; }
+      .order-details .order-info .orders .single-order .total {
+        width: 60px; }
+
+.login-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh; }
+  .login-page .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .login-page .sub-nav {
+    margin: 0.3em 0;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .login-page .sub-nav h4 {
+      color: #531CB3;
+      font-family: "Bebas Neue", cursive; }
+    .login-page .sub-nav a {
+      color: #101935;
+      font-family: "Pacifico", cursive;
+      text-decoration: none; }
+
+.register-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto; }
+  .register-page .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 2em;
+    margin-bottom: 6em; }
+
+.terms {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+  .terms h1 {
+    background-image: linear-gradient(to right, #531CB3, #101935);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin-top: 0.5em; }
+    @media (max-width: 420px) {
+      .terms h1 {
+        font-size: 1.6em; } }
+  .terms img {
+    width: 150px;
+    width: 150px; }
+  .terms h3 {
+    font-family: "Bebas Neue", cursive;
+    color: #531CB3; }
+  .terms .terms-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0.5em auto;
+    padding-bottom: 6em; }
+    .terms .terms-list .single-term {
+      width: 300px;
+      margin: 0.5em;
+      padding: 0.5em;
+      background-color: rgba(122, 48, 108, 0.2);
+      border-radius: 5px; }
+      .terms .terms-list .single-term h4 {
+        text-transform: capitalize;
+        font-family: "Pacifico", cursive;
+        color: #101935;
+        font-size: 1.3em;
+        margin: 0.3em 0; }
+      .terms .terms-list .single-term p {
+        font-family: "Bebas Neue", cursive;
+        color: #7A306C;
+        font-size: 0.7em; }
+
+.privacy {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-bottom: 6em; }
+  .privacy h1 {
+    background-image: linear-gradient(to right, #7A306C, #531CB3);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin: 0.5em 0; }
+  .privacy .policy-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .privacy .policy-list .single-policy {
+      width: 300px;
+      margin: 0.5em;
+      background-color: rgba(17, 152, 34, 0.2);
+      padding: 0.6em;
+      border-radius: 0.4em; }
+      .privacy .policy-list .single-policy h4 {
+        font-family: "Pacifico", cursive;
+        color: #531CB3;
+        font-size: 1.3em;
+        margin: 0.3em 0; }
+      .privacy .policy-list .single-policy p {
+        font-family: "Bebas Neue", cursive;
+        font-size: 0.7em;
+        color: #7A306C; }
+
+.department-page {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto; }
+  .department-page .all-departments {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 6em; }
+    .department-page .all-departments h1 {
+      background-image: linear-gradient(to right, #7A306C, #B3001B);
+      width: fit-content;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      color: transparent; }
+    .department-page .all-departments .depts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly; }
+      .department-page .all-departments .depts .single-department {
+        width: 300px;
+        margin: 0.3em;
+        -webkit-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.46);
+        -moz-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.46);
+        box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.46); }
+        .department-page .all-departments .depts .single-department img {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+          object-position: top; }
+        .department-page .all-departments .depts .single-department h3 {
+          font-family: "Pacifico", cursive;
+          padding: 0.2em; }
+          .department-page .all-departments .depts .single-department h3 a {
+            text-decoration: none;
+            background-image: linear-gradient(to right, #531CB3, #119822);
+            width: fit-content;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            color: transparent; }
+  .department-page .department-details {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    padding-bottom: 6em; }
+    .department-page .department-details .info {
+      width: 100%;
+      position: relative; }
+      .department-page .department-details .info img {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+        object-position: top; }
+      .department-page .department-details .info h1 {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.8);
+        top: 5em;
+        left: 50%;
+        padding: 0.4em;
+        transform: translateX(-50%);
+        color: #531CB3; }
+        @media (max-width: 360px) {
+          .department-page .department-details .info h1 {
+            top: 3em; } }
+      .department-page .department-details .info p {
+        width: 100%;
+        padding: 0.4em;
+        font-family: "Bebas Neue", cursive;
+        color: #101935; }
+      .department-page .department-details .info .demographics {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center; }
+        .department-page .department-details .info .demographics .single-demographic {
+          width: 300px;
+          padding: 0.5em 0.1em;
+          padding-top: 0;
+          background-color: rgba(17, 152, 34, 0.15);
+          margin: 0.4em;
+          border-radius: 0.3em; }
+          .department-page .department-details .info .demographics .single-demographic .demo {
+            display: flex;
+            align-items: center; }
+            .department-page .department-details .info .demographics .single-demographic .demo img {
+              width: 100px;
+              object-fit: cover;
+              height: 200px;
+              margin-right: 1em;
+              border: 2px solid #531CB3; }
+            .department-page .department-details .info .demographics .single-demographic .demo .info h3 {
+              font-family: "Pacifico", cursive; }
+              .department-page .department-details .info .demographics .single-demographic .demo .info h3 a {
+                text-decoration: none;
+                color: #55224c; }
+            .department-page .department-details .info .demographics .single-demographic .demo .info p {
+              color: #7A306C;
+              font-size: 0.8em; }
+          .department-page .department-details .info .demographics .single-demographic .categories {
+            margin: 0.5em;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; }
+            .department-page .department-details .info .demographics .single-demographic .categories .single-category {
+              width: 280px;
+              position: relative;
+              margin: 0.3em 0; }
+              .department-page .department-details .info .demographics .single-demographic .categories .single-category img {
+                width: 280px;
+                height: 120px;
+                object-fit: cover;
+                margin-right: 0.3em; }
+              .department-page .department-details .info .demographics .single-demographic .categories .single-category .info h4 {
+                font-family: "Bowlby One SC", cursive;
+                border-bottom: 1px solid #531CB3;
+                text-align: center; }
+                .department-page .department-details .info .demographics .single-demographic .categories .single-category .info h4 a {
+                  text-decoration: none;
+                  background-image: linear-gradient(to right, #531CB3, #095313);
+                  width: fit-content;
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  -moz-background-clip: text;
+                  color: transparent; }
+
+.category-details {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  padding-bottom: 6em; }
+  .category-details .information {
+    position: relative; }
+    .category-details .information img {
+      width: 100%;
+      height: 20em;
+      object-fit: cover;
+      object-position: top; }
+    .category-details .information h3 {
+      position: absolute;
+      top: 4em;
+      background-color: rgba(255, 255, 255, 0.8);
+      font-family: "Bowlby One SC", cursive;
+      padding: 0.5em;
+      color: #531CB3;
+      font-size: 2em; }
+      @media (max-width: 420px) {
+        .category-details .information h3 {
+          top: 7em; } }
+      @media (max-width: 420px) {
+        .category-details .information h3 {
+          font-size: 1.5em; } }
+    .category-details .information p {
+      font-family: "Bebas Neue", cursive;
+      padding: 0.3em 0.2em;
+      color: #7A306C; }
+    .category-details .information .products {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1.5em 0;
+      justify-content: space-evenly; }
+      .category-details .information .products .single-product {
+        width: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.5em 0;
+        border-bottom: 1px solid rgba(83, 28, 179, 0.5);
+        padding-bottom: 0.6em; }
+        .category-details .information .products .single-product img {
+          height: 90px;
+          width: 90px;
+          object-fit: cover;
+          border-radius: 50%;
+          margin-right: 0.3em;
+          border: 2px solid #7A306C; }
+        .category-details .information .products .single-product h4 {
+          font-family: "Pacifico", cursive;
+          width: 180px; }
+          .category-details .information .products .single-product h4 a {
+            text-decoration: none;
+            text-transform: capitalize;
+            background-image: linear-gradient(to right, #7A306C, #531CB3);
+            width: fit-content;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            color: transparent; }
+            @media (max-width: 320px) {
+              .category-details .information .products .single-product h4 a {
+                font-size: 0.8em; } }
+
+.product-details {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  padding-bottom: 6em; }
+  .product-details .product {
+    width: 100%;
+    transition: all 0.4s; }
+    .product-details .product .image-box {
+      width: 100vw; }
+      .product-details .product .image-box .big-image {
+        width: 100%;
+        height: 75vh;
+        overflow: auto;
+        transition: all 0.4s; }
+        .product-details .product .image-box .big-image img {
+          width: 100%; }
+      .product-details .product .image-box .image-set {
+        width: 100vw;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        overflow: auto; }
+        .product-details .product .image-box .image-set .image img {
+          width: 80px;
+          margin: 0 0.4em; }
+    .product-details .product .info h1 {
+      background-image: linear-gradient(to right, #7A306C, #531CB3);
+      width: fit-content;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      color: transparent;
+      margin: 0.5em; }
+      @media (max-width: 420px) {
+        .product-details .product .info h1 {
+          font-size: 1.7em; } }
+    .product-details .product .info p {
+      font-family: "Bebas Neue", cursive;
+      color: #531CB3;
+      margin: 1em; }
+    .product-details .product .informations {
+      margin: 1em 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; }
+      .product-details .product .informations .information {
+        width: 300px;
+        margin: 0.5em;
+        border: 1px solid rgba(16, 25, 53, 0.6);
+        border-radius: 0.3em;
+        padding: 0.5em; }
+        .product-details .product .informations .information h4 {
+          font-family: "Bowlby One SC", cursive;
+          color: #716412;
+          letter-spacing: 1px; }
+        .product-details .product .informations .information p {
+          font-family: "Bebas Neue", cursive;
+          font-size: 0.7em;
+          color: #7A306C; }
+    .product-details .product .cart-controls {
+      margin: 0.3em auto;
+      width: fit-content;
+      display: flex;
+      align-items: center; }
+      .product-details .product .cart-controls button {
+        font-size: 1.2em;
+        padding: 0.5em 0.6em;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: white;
+        border-radius: 0.3em; }
+        .product-details .product .cart-controls button:hover {
+          transform: translateY(-4px);
+          -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+          -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+          box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+        .product-details .product .cart-controls button:active {
+          transform: translateY(4px);
+          webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+          -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+          box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+      .product-details .product .cart-controls .plus {
+        background-color: #119822; }
+      .product-details .product .cart-controls .minus {
+        background-color: #B3001B; }
+      .product-details .product .cart-controls p {
+        font-size: 1.2em;
+        font-family: "Bebas Neue", cursive;
+        padding: 0 0.5em;
+        color: #531CB3; }
+    .product-details .product .total h4 {
+      font-size: 2em;
+      color: #0c6a18;
+      font-family: "Bowlby One SC", cursive;
+      width: fit-content;
+      margin: 0.4em auto; }
+    .product-details .product .variants .variant h4 {
+      font-family: "Pacifico", cursive;
+      color: #877815;
+      text-align: center;
+      font-size: 1.4em; }
+    .product-details .product .variants .variant .sublets {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      position: relative; }
+      .product-details .product .variants .variant .sublets .single-sublet {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5em;
+        background-color: rgba(17, 152, 34, 0.3);
+        padding: 0.5em;
+        border-radius: 0.3em;
+        transition: all 0.3s;
+        cursor: pointer;
+        transition: all 0.3s; }
+        .product-details .product .variants .variant .sublets .single-sublet:hover {
+          transform: translateY(-4px);
+          -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+          -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+          box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+        .product-details .product .variants .variant .sublets .single-sublet:active {
+          transform: translateY(4px);
+          webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+          -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+          box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+        .product-details .product .variants .variant .sublets .single-sublet h5 {
+          font-family: "Bebas Neue", cursive;
+          font-size: 1.1em;
+          margin-right: 1em;
+          color: #531CB3; }
+        .product-details .product .variants .variant .sublets .single-sublet p {
+          font-family: "Bowlby One SC", cursive; }
+        .product-details .product .variants .variant .sublets .single-sublet .price .market_price {
+          color: rgba(179, 0, 27, 0.7);
+          margin-right: 1em;
+          text-decoration: line-through; }
+        .product-details .product .variants .variant .sublets .single-sublet .price .selling_price {
+          color: #0c6a18; }
+        .product-details .product .variants .variant .sublets .single-sublet .choosen {
+          color: #0c6a18;
+          font-size: 1.5em;
+          font-family: "Bebas Neue", cursive;
+          margin: 0 0.3em; }
+
+.profile {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  padding-bottom: 6em; }
+  .profile .user-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 0.5em 0; }
+    .profile .user-info img {
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      object-fit: cover; }
+    .profile .user-info h1 {
+      background-image: linear-gradient(to right, #7A306C, #531CB3);
+      width: fit-content;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      color: transparent; }
+    .profile .user-info p {
+      font-family: "Pacifico", cursive;
+      color: #101935;
+      font-size: 1.1em; }
+  .profile .address-list h3 {
+    font-family: "Bowlby One SC", cursive;
+    color: #7A306C;
+    text-align: center; }
+  .profile .address-list .list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; }
+    .profile .address-list .list .single-address {
+      width: 300px;
+      padding: 0.4em;
+      border: 1px solid #531CB3;
+      border-radius: 0.3em;
+      margin: 0.5em; }
+      .profile .address-list .list .single-address h4 {
+        font-family: "Bebas Neue", cursive;
+        font-size: 0.9em;
+        color: #7A306C;
+        margin: 0.3em 0; }
+      .profile .address-list .list .single-address .status p {
+        font-family: "Pacifico", cursive;
+        padding: 0.5em;
+        text-align: center;
+        color: white;
+        border-radius: 0.3em; }
+      .profile .address-list .list .single-address .status .true {
+        background-color: #0c6a18; }
+      .profile .address-list .list .single-address .status .false {
+        background-color: #B3001B; }
+  .profile .contacts h3 {
+    font-family: "Bowlby One SC", cursive;
+    color: #531CB3;
+    text-align: center; }
+  .profile .contacts .list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; }
+    .profile .contacts .list .single-contact {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4em;
+      margin: 0.3em;
+      align-items: center;
+      width: 300px;
+      background-color: #073c0d;
+      border-radius: 0.3em; }
+      .profile .contacts .list .single-contact h4 {
+        font-family: "Pacifico", cursive;
+        font-size: 1.1em;
+        color: white;
+        font-weight: 200; }
+      .profile .contacts .list .single-contact p {
+        font-family: "Bebas Neue", cursive;
+        font-size: 1em;
+        color: white; }
+
+.logout-btn {
+  font-size: 1.3em;
+  font-family: "Bowlby One SC", cursive;
+  background-color: #B3001B;
+  padding: 0.4em 0.5em;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  border-radius: 0.3em;
+  margin: 0.5em 0; }
+  .logout-btn:hover {
+    transform: translateY(-4px);
+    -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+    -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+    box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+  .logout-btn:active {
+    transform: translateY(4px);
+    webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+
+.orders {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto; }
+  .orders .title {
+    background-image: linear-gradient(to right, #7A306C, #119822);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin: 0.3em auto;
+    display: flex;
+    align-items: center; }
+  .orders .orders-list {
+    margin-bottom: 6em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
+    .orders .orders-list .single-order {
+      width: 300px;
+      margin: 0.8em 0; }
+      .orders .orders-list .single-order .sum {
+        color: #0c6a18; }
+        .orders .orders-list .single-order .sum a {
+          text-decoration: none;
+          color: #0c6a18; }
+      .orders .orders-list .single-order .timestamp {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0.2em 0;
+        font-family: "Bebas Neue", cursive;
+        background-color: #E0CA3C;
+        padding: 0.4em;
+        color: #101935;
+        font-weight: bold;
+        border-radius: 5px; }
+      .orders .orders-list .single-order .status {
+        width: 300px;
+        margin: 0.3em 0; }
+        .orders .orders-list .single-order .status p {
+          width: 300px;
+          text-align: center;
+          font-family: "Pacifico", cursive;
+          margin: 0.2em 0;
+          border-radius: 5px;
+          color: white;
+          padding: 0.3em 0; }
+        .orders .orders-list .single-order .status .true {
+          background-color: #0c6a18; }
+        .orders .orders-list .single-order .status .false {
+          background-color: #B3001B; }
+      .orders .orders-list .single-order .not-estimated {
+        font-family: "Bebas Neue", cursive;
+        color: #e60023;
+        font-size: 0.9em; }
+      .orders .orders-list .single-order .estimation {
+        font-family: "Bebas Neue", cursive;
+        display: flex;
+        color: #094f12;
+        justify-content: space-evenly;
+        font-weight: bold; }
+
+.return-policy {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  padding-bottom: 6em; }
+  .return-policy h1 {
+    background-image: linear-gradient(to right, #531CB3, #7A306C);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin: 0.4em auto; }
+  .return-policy .policy-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+    .return-policy .policy-list .single-policy {
+      width: 300px;
+      margin: 0.5em;
+      border: 1px solid #531CB3;
+      border-radius: 0.3em;
+      padding: 0.4em; }
+      .return-policy .policy-list .single-policy h4 {
+        font-family: "Pacifico", cursive;
+        color: #531CB3;
+        border-bottom: 1px solid #E0CA3C;
+        margin-bottom: 0.3em; }
+      .return-policy .policy-list .single-policy p {
+        font-family: "Bebas Neue", cursive;
+        font-size: 0.7em;
+        color: #908017; }
+
+.search {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  padding-bottom: 6em; }
+  .search .search-box {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    text-align: center;
+    margin: 0.5em 0; }
+    .search .search-box input {
+      font-family: "Pacifico", cursive;
+      color: #7A306C;
+      border: 1px solid #7A306C;
+      padding: 0.6em 0.4em;
+      width: 70%; }
+    .search .search-box i {
+      background-color: #7A306C;
+      color: white;
+      padding: 0.6em 0.4em;
+      width: 15%;
+      border: 1px solid #7A306C; }
+    .search .search-box .search-btn {
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 1px solid #7A306C;
+      background-color: #7A306C;
+      width: 15%; }
+      .search .search-box .search-btn:hover {
+        transform: translateY(-4px);
+        -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+      .search .search-box .search-btn:active {
+        transform: translateY(4px);
+        webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+  .search .result-list h4 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.2em;
+    color: #0c6a18;
+    text-align: center; }
+  .search .result-list .results {
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center; }
+    .search .result-list .results .single-result {
+      width: 300px;
+      display: flex;
+      padding: 0.4em;
+      border: 1px solid #119822;
+      border-radius: 0.3em;
+      margin: 0.5em; }
+      .search .result-list .results .single-result img {
+        width: 80px;
+        margin-right: 0.6em;
+        object-fit: cover; }
+      .search .result-list .results .single-result .info h3 a {
+        font-family: "Pacifico", cursive;
+        color: #7A306C;
+        text-decoration: none;
+        font-size: 0.9em; }
+      .search .result-list .results .single-result .info p {
+        font-family: "Bebas Neue", cursive;
+        font-size: 0.8em;
+        color: #531CB3; }

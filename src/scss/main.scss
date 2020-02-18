@@ -20,6 +20,7 @@
 @import './components/navbar';
 @import './components/loading_pickinghub';
 @import './components/order_details';
+@import './components/edit_profile';
 
 
 // importting pages
@@ -36,3 +37,12 @@
 @import './pages/search';
 @import './pages/home';
 @import './pages/contact';
+
+
+
+// importing seller styles
+@import './seller/seller';
+@import './seller/profile';
+@import './seller/update_seller';
+@import './seller/products';
+@import './seller/product_form';

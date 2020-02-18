@@ -3,6 +3,22 @@
     width : 100vw;
     overflow: auto;
     padding-bottom: 6em;
+    .no{
+        font-family: $font_para;
+        display: flex;
+        width : 300px;
+        margin : 0.3em auto;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0.3em;
+        border : 1px solid $crimson;
+        padding : 0.3em 0.7em;
+        color : darken($meat_brown , 25%);
+        a{
+            text-decoration: none;
+            color: $ocen_blue;
+        }
+    }
     .user-info{
         display: flex;
         flex-flow: column;
@@ -99,6 +115,86 @@
             }
         }
     }
+    .add-address{
+        
+        .form-group{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            h4{
+                font-family: $abel;
+                color: $ocen_blue;
+            }
+        }
+        
+        h1{
+            @include gradient_text($forest_green,$ocen_blue);
+            margin : 0.5em auto;
+            @media (max-width : 360px){
+                font-size: 1.5em;
+            }
+        }
+        input{
+            width : 300px;
+            font-family: $abel;
+            padding : 0.3em 0.4em;
+            margin : 0.3em;
+            border-radius: 0.3em;
+            border : 1px solid $orange;
+            color : $ocen_blue;
+        }
+        button {
+            font-family: $font_heading;
+            padding : 0.4em 0;
+            width : 300px;
+            border-radius: 0.3em;
+            background-image: linear-gradient(
+                to bottom,
+                $forest_green,
+                darken($forest_green,10%),
+            );
+            border: none;
+            @include btn_interaction;
+            color: white;
+            margin : 0.5em;
+        }
+        
+    }
+    .add-contact{
+        .form-group{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            h3{
+                font-family: $abel;
+                color: $ocen_blue;
+            }
+            input{
+                width : 300px;
+                font-family: $abel;
+                padding : 0.3em 0.4em;
+                margin : 0.3em;
+                border-radius: 0.3em;
+                border : 1px solid $orange;
+                color : $ocen_blue;
+            }
+            button {
+                font-family: $font_heading;
+                padding : 0.4em 0;
+                width : 300px;
+                border-radius: 0.3em;
+                background-image: linear-gradient(
+                    to bottom,
+                    $forest_green,
+                    darken($forest_green,10%),
+                );
+                border: none;
+                @include btn_interaction;
+                color: white;
+                margin : 0.5em;
+            }
+        }
+    }
 }
 
 .logout-btn{
@@ -111,4 +207,17 @@
     border: none;
     border-radius: 0.3em;
     margin : 0.5em 0;
+}
+
+
+.edit-profile-btn{
+    padding : 0.3em 0.6em;
+    background-color: $ocen_blue;
+    color: white;
+    font-size: 1.1em;
+    border-radius: 0.3em;
+    font-family: $font_heading;    
+    text-decoration: none;
+    @include btn_interaction;
+    margin-top: 0.4em;
 }

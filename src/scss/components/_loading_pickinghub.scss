@@ -10,6 +10,7 @@
     h1{
         font-family: $font_cursive;
         color: $ocen_blue;
+        margin: 0 !important;
         @media (max-width : 420px){
             font-size: 1.6em;
         }

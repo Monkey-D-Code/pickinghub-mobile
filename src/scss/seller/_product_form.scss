@@ -1,0 +1,54 @@
+.product-form{
+    .form-group{
+        margin : 0.8em 0;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        h3{
+            font-family: $font_cursive;
+            color: $orange;
+        }
+        input,textarea{
+            width : 300px;
+            padding : 0.3em 0.5em;
+            font-family: $abel;
+            margin : 0.4em 0;
+            border : 1px solid $midnight;
+            border-radius: 0.3em;
+            color: $ocen_blue;
+        }
+        button{
+            width : 300px;
+            background-image: linear-gradient(
+                to bottom,
+                $orange,
+                darken($orange,10%)
+            );
+            border : none;
+            @include btn_interaction;
+            padding : 0.5em 0;
+            border-radius: 0.3em;
+            color: white;
+            margin : 0.4em;
+        }
+        .new-product{
+            margin : 0.3em 0;
+            padding : 0.4em;
+            background-color: rgba($forest_green , 0.5);
+            width : 300px;
+            border-radius: 0.3em;
+            text-align: center;
+            h4{
+                font-family: $font_para;
+                font-size: 0.9em;
+                color: darken($forest_green,10%);
+            }
+            a{
+                text-decoration: none;
+                font-family: $anton;
+                font-size: 0.8em;
+                color: $ocen_blue   ;
+            }
+        }
+    }
+}

@@ -12,6 +12,9 @@ import {
 } from '../redux/website/Website.selectors';
 import {
     selectIsAuth,
+    selectActiveUser,
+    selectActiveSeller,
+
 } from '../redux/user/User.selectors';
 
 // importing actions
@@ -31,6 +34,8 @@ class Navbar extends Component{
             error,
 
             isAuth,
+            user,
+            seller,
 
         } = this.props;
         return(
@@ -57,18 +62,35 @@ class Navbar extends Component{
                                 
                                 
                             </ul>
-                            
                             {
                                 !isAuth
-                                ? <ul>
-                                        <li><NavLink activeClassName='nav-link-active' to='/login'><i className="fa fa-sign-in" aria-hidden="true"></i> Login</NavLink></li>
-                                        <li><NavLink activeClassName='nav-link-active' to='/register'><i className="fa fa-user-plus" aria-hidden="true"></i> Register</NavLink></li>
-                                    </ul>
-                                : <ul>
+                                &&
+                                <ul>
+                                    <li><NavLink activeClassName='nav-link-active' to='/login'><i className="fa fa-sign-in" aria-hidden="true"></i> Login</NavLink></li>
+                                    <li><NavLink activeClassName='nav-link-active' to='/register'><i className="fa fa-user-plus" aria-hidden="true"></i> Register</NavLink></li>
+                                    <li><NavLink activeClassName='nav-link-active' to='/seller'><i className="fa fa-building" aria-hidden="true"></i> Seller</NavLink></li>
+                                </ul>
+                            }
+                            
+                            {
+                                user
+                                && <ul>
                                         <li><NavLink activeClassName='nav-link-active' to='/profile'><i className="fa fa-user" aria-hidden="true"></i> Profile</NavLink></li>
                                         <li><NavLink activeClassName='nav-link-active' to='/orders'><i className="fa fa-truck" aria-hidden="true"></i> Orders</NavLink></li>
                                         <li><NavLink activeClassName='nav-link-active' to='/cart'><i className="fa fa-shopping-cart" aria-hidden="true"></i> Cart</NavLink></li>
                                     </ul>
+                            }
+                            {
+                                seller
+                                &&
+                                <ul>
+                                    <li><NavLink activeClassName='nav-link-active' to='/profile'><i className="fa fa-user" aria-hidden="true"></i> Profile</NavLink></li>
+                                    <li><NavLink activeClassName='nav-link-active' to='/products'><i className="fa fa-product-hunt" aria-hidden="true"></i> Products</NavLink></li>
+                                    <li><NavLink activeClassName='nav-link-active' to='/profile'><i className="fa fa-credit-card-alt" aria-hidden="true"></i> Sales</NavLink></li>
+                                    <li><NavLink activeClassName='nav-link-active' to='/profile'><i className="fa fa-reply-all" aria-hidden="true"></i> Returns</NavLink></li>
+
+                                </ul>
+                        
                             }
                             <ul>
                                 <li><NavLink activeClassName='nav-link-active' to='/department'><i className="fa fa-database" aria-hidden="true"></i> Catalogue</NavLink></li>
@@ -118,6 +140,8 @@ const mapState = state =>({
     brand : selectBrand(state),
     error : selectBrandError(state),
     isAuth : selectIsAuth(state),
+    user : selectActiveUser(state),
+    seller : selectActiveSeller(state),
 });
 
 const mapDispatch = dispatch =>({

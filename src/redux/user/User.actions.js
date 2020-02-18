@@ -51,4 +51,140 @@ export const customerRegister = customerData =>{
 
 export const logout = ()=>({
     type : userTypes.LOGOUT,
+});
+
+
+const sellerStart = ()=>({
+    type : userTypes.SELLER_START,
+});
+const sellerSuccess = seller =>({
+    type : userTypes.SELLER_SUCCESS,
+    payload : seller,
+});
+const sellerError = error =>({
+    type : userTypes.SELLER_ERROR,
+    payload : error,
+});
+
+export const sellerRegister = sellerData =>{
+    return dispatch =>{
+        dispatch(sellerStart());
+        const sellerDataMod = {
+            user : {
+                first_name : sellerData.first_name,
+                last_name : sellerData.last_name,
+                email  :sellerData.email,
+                username : sellerData.username,
+                password : sellerData.password,
+            },
+            cover_image : sellerData.cover_image,
+            contact_number : sellerData.contact_number,
+            address : sellerData.address,
+            company_name : sellerData.company_name,
+            start_date  :sellerData.start_date,
+            about : sellerData.about,
+        }
+        djangoAPI.post('accounts/api/seller-register/',sellerDataMod)
+            .then(res=>dispatch(sellerSuccess(res.data)))
+            .catch(err=>dispatch(sellerError(err)));
+    }
+}
+
+export const  sellerLogin = authData =>{
+    return dispatch =>{
+        dispatch(authTokenStart());
+        djangoAPI.post('accounts/api/auth-token/' , authData)
+            .then(res=>{
+                dispatch(authTokenSuccess(res.data.token));
+                dispatch(sellerStart());
+                djangoAPI.post('accounts/api/seller-login/', {token : res.data.token})
+                    .then(resp =>dispatch(sellerSuccess(resp.data)))
+                    .catch(err=>dispatch(sellerError(err)));
+            })
+            .catch(err=>dispatch(authTokenError(err)));
+    }
+}
+const sellerUpdateStart = ()=>({
+    type : userTypes.SELLER_UPDATE_START,
+});
+const sellerUpdateSuccess = newSeller =>({
+    type : userTypes.SELLER_UPDATE_SUCCESS,
+    payload : newSeller,
 })
+const updateSellerError = err=>({
+    type : userTypes.SELLER_UPDATE_ERROR,
+    payload : err,
+});
+export const updateSeller = sellerData =>{
+    return dispatch =>{
+        dispatch(sellerUpdateStart());
+        const sellerDataMod = {
+            id : sellerData.seller_id,
+            user : {
+                id : sellerData.user_id,
+                first_name : sellerData.first_name,
+                last_name : sellerData.last_name,
+                email  :sellerData.email,
+                
+            },
+            cover_image : sellerData.cover_image,
+            contact_number : sellerData.contact_number,
+            address : sellerData.address,
+            company_name : sellerData.company_name,
+            start_date  :sellerData.start_date,
+            about : sellerData.about,
+        }
+        djangoAPI.post(`accounts/api/seller-update/`,sellerDataMod)
+            .then(res=>dispatch(sellerUpdateSuccess(res.data)))
+            .catch(err=>dispatch(updateSellerError(err)));
+    }
+}
+
+
+const addAddressStart = ()=>({
+    type : userTypes.SELLER_UPDATE_START,
+});
+const addAddressSuccess = newSeller =>({
+    type : userTypes.SELLER_UPDATE_SUCCESS,
+    payload : newSeller,
+})
+const addAddressError = err=>({
+    type : userTypes.SELLER_UPDATE_ERROR,
+    payload : err,
+});
+export const addAddress = (address,customer) =>{
+    return dispatch =>{
+        dispatch(addAddressStart());
+        const addressMod = {
+            customer : customer.id,
+            ...address,
+        }
+        djangoAPI.post(`accounts/api/customer/${customer.id}/address/`,addressMod)
+            .then(res=>dispatch(addAddressSuccess(res.data)))
+            .catch(err=>dispatch(addAddressError(err)));
+    }
+}
+
+const addContactStart = ()=>({
+    type : userTypes.ADD_CONTACT_START,
+});
+const addContactSuccess = newSeller =>({
+    type : userTypes.ADD_CONTACT_SUCCESS,
+    payload : newSeller,
+})
+const addContactError = err=>({
+    type : userTypes.ADD_CONTACT_ERROR,
+    payload : err,
+});
+export const addContact = (contact,customer) =>{
+    return dispatch =>{
+        dispatch(addContactStart());
+        const contactMod = {
+            customer : customer.id,
+            ...contact,
+        }
+        djangoAPI.post(`accounts/api/customer/${customer.id}/contact/`,contactMod)
+            .then(res=>dispatch(addContactSuccess(res.data)))
+            .catch(err=>dispatch(addContactError(err)));
+    }
+}

@@ -14,6 +14,8 @@ import {
 } from '../redux/product/Product.selectors';
 import {
     selectIsAuth,
+    selectActiveUser,
+    selectActiveSeller,
 
 } from '../redux/user/User.selectors';
 import {
@@ -110,6 +112,8 @@ class ProductDetails extends Component {
             chooseImage,
 
             isAuth,
+            user,
+            seller,
 
             quantity,
 
@@ -249,7 +253,7 @@ class ProductDetails extends Component {
                                         &&
                                         activeImage
                                         &&
-                                        isAuth
+                                        user
                                         &&
                                         <div className="cart-controls">
                                             <button className="plus" onClick={this.plus}><i className="fa fa-plus" aria-hidden="true"></i></button>
@@ -269,7 +273,7 @@ class ProductDetails extends Component {
                                         &&
                                         activeImage
                                         &&
-                                        isAuth
+                                        user
                                         &&
                                         <div className="total">
                                             <h4><i className="fa fa-inr" aria-hidden="true"></i> {quantity * activeSublet.selling_price}</h4>
@@ -325,6 +329,8 @@ const mapState = state =>({
     activeSublet : selectSelectedSublet(state),
     activeImage : selectSelectedImage(state),
     isAuth : selectIsAuth(state),
+    user : selectActiveUser(state),
+    seller : selectActiveSeller(state),
     quantity : selectSubletquantity(state),
 })
 

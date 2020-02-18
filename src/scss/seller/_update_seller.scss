@@ -1,0 +1,57 @@
+.update-seller{
+    h1{
+        font-size: 1.5em;
+        @include gradient_text($forest_green,$orange);
+        margin : 0.5em auto;
+    }
+    .form-group{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin : 1em 0;
+        h3{
+            font-family: $font_cursive;
+            background-image: linear-gradient(
+                to bottom,
+                $orange,
+                darken($orange,10%),
+            );
+            width: fit-content;
+            padding : 0.3em 0.4em;
+            border-radius: 0.3em;
+            color: white;
+            font-weight: 150;
+            font-size: 1em;
+        }
+        input,textarea{
+            font-family: $abel;
+            width : 300px;
+            padding : 0.2em 0.3em;
+            margin : 0.4em 0;
+            border: 1px solid $forest_green;
+            border-radius: 0.2em;
+            color: $orange;
+            font-weight: 300;
+        }
+        p{
+            font-family: $anton;
+            font-size: 0.6em;
+            color: $forest_green;
+        }
+        button{
+            width : 300px;
+            background-image: linear-gradient(
+                to bottom,
+                $forest_green,
+                darken($forest_green, 10%),
+            );
+            color: white;
+            font-family: $font_para;
+            font-size: 1.1em;
+            padding : 0.3em 0;
+            border: none;
+            border-radius: 0.2em;
+            @include btn_interaction;
+        }
+    }
+}

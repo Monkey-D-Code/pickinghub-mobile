@@ -18,6 +18,8 @@ import {
 
 import {
   selectIsAuth,
+  selectActiveSeller,
+  selectActiveUser,
 } from './redux/user/User.selectors';
 
 // importing actions
@@ -35,6 +37,10 @@ import Register from './components/auth/register';
 import Profile from './components/auth/profile';
 import Orders from './components/orders';
 
+// seller page
+import Seller from './components/Seller/Seller';
+import Products from './components/Seller/products/Products';
+
 import Terms from './components/generic/terms';
 import Privacy from './components/generic/privacy';
 import Return from './components/generic/return';
@@ -50,19 +56,23 @@ import Navbar from './elements/navbar'
 import Cart from './elements/cart';
 
 import './App.css';
-import Products from './elements/category/products';
+
 
 
 class App extends Component{
+  
   componentDidMount = () =>{
     this.props.getBrand();
   }
+  
   render=()=>{
     const {
       brand_error,
       loading_brand,
 
       isAuth,
+      user,
+      seller,
 
     } = this.props;
     if(loading_brand){
@@ -92,7 +102,7 @@ class App extends Component{
           <Route exact path='/register'>
               {isAuth ?  <Redirect to='/profile' />: <Register />}
           </Route>
-          <Route exact path='/profile'>
+          <Route path='/profile'>
               {isAuth ?  <Profile /> : <Redirect to='/login' />}
           </Route>
           <Route exact path='/cart'>
@@ -100,6 +110,9 @@ class App extends Component{
           </Route>
           <Route path='/orders'>
             {isAuth ? <Orders /> : <Redirect to='/login' />}
+          </Route>
+          <Route path='/seller'>
+            {isAuth ?  <Redirect to='/profile' />: <Seller />}
           </Route>
           <Route exact path ='/terms'>
               <Terms />
@@ -125,7 +138,9 @@ class App extends Component{
           <Route path='/product/:id'>
               <ProductDetails />
           </Route>
-          
+          <Route path='/products'>
+            <Products />
+          </Route>
         </Switch>
         
       </Router>
@@ -137,6 +152,8 @@ const mapState = state =>({
   loading_brand : selectLoadingBrand(state),
   brand_error : selectBrandError(state),
   isAuth : selectIsAuth(state),
+  seller : selectActiveSeller(state),
+  user : selectActiveUser(state),
 })
 
 const mapDispatch = dispatch =>({

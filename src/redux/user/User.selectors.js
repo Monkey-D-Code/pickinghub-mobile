@@ -9,7 +9,7 @@ export const selectActiveUser = createSelector(
 )
 export const selectIsAuth = createSelector(
     [selectUser],
-    user => user.active_user ? true : false,
+    user => user.active_user || user.active_seller ? true : false,
 )
 export const selectUserError = createSelector(
     [selectUser],
@@ -24,4 +24,54 @@ export const selectLoadingUser = createSelector(
 export const selectTokenError = createSelector(
     [selectUser],
     user => user.token_error,
+);
+
+export const selectActiveSeller = createSelector(
+    [selectUser],
+    user => user.active_seller,
+)
+export const selectSellerError = createSelector(
+    [selectUser],
+    user => user.seller_error,
+)
+export const selectLoadingSeller = createSelector(
+    [selectUser],
+    user => user.loading_seller,
+)
+export const selectSellerUpdateError = createSelector(
+    [selectUser],
+    user => user.seller_update_error,
+)
+export const selectConfirmedSeller = createSelector(
+    [selectUser],
+    user => user.active_seller.confirmed || null,
+)
+
+
+// address
+export const selectLatestAddress = createSelector(
+    [selectUser],
+    user => user.latest_address,
+)
+export const selectAddressError = createSelector(
+    [selectUser],
+    user => user.address_error,
+)
+export const selectAddingAddress = createSelector(
+    [selectUser],
+    user => user.adding_address,
+)
+
+// contact
+export const selectLatestContact = createSelector(
+    [selectUser],
+    user => user.latest_contact,
+)
+export const selectContactError = createSelector(
+    [selectUser],
+    user => user.contact_error,
+)
+export const selectAddingContact = createSelector(
+    [selectUser],
+    user => user.adding_contact,
 )

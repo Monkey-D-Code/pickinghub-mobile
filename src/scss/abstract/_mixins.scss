@@ -35,7 +35,7 @@
     }
     &:active{
         transform: translateY(4px);
-        webkit-box-shadow: 4px 2px 6px 0px rgba($maastricth_blue,0.52);
+        -webkit-box-shadow: 4px 2px 6px 0px rgba($maastricth_blue,0.52);
         -moz-box-shadow: 4px 2px 6px 0px rgba($maastricth_blue,0.52);
         box-shadow: 4px 2px 6px 0px rgba($maastricth_blue,0.52);
     }
@@ -46,4 +46,10 @@
     -moz-box-shadow: 4px 2px 13px 0px rgba($maastricth_blue,0.52);
     box-shadow: 4px 2px 13px 0px rgba($maastricth_blue,0.52);
     
+}
+
+@mixin card_shadow {
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(122,48,108,0.47);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(122,48,108,0.47);
+    box-shadow: 4px 4px 5px 0px rgba(122,48,108,0.47);
 }

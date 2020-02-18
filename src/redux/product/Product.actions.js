@@ -31,8 +31,14 @@ export const getProduct = product_id =>{
         djangoAPI.get(`shop/api/product/${product_id}/details`)
             .then(res=>{
                 dispatch(productSuccess(res.data));
-                dispatch(chooseSublet(res.data.variants[0].sublets[0]));
-                dispatch(chooseImage(res.data.variants[0].sublets[0].productimages[0]));
+                if(res.data.variants[0]){
+                    dispatch(chooseSublet(res.data.variants[0].sublets[0]));
+                    if(res.data.variants[0].sublets[0].productimages) {
+                        dispatch(chooseImage(res.data.variants[0].sublets[0].productimages[0]));
+                    }
+                    
+                }
+                
             })
             .catch(err=>dispatch(productError(err)));
     }

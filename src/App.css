@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Abel|Anton|Heebo&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -80,7 +81,7 @@ body {
       box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
     .cart .buy-now:active {
       transform: translateY(4px);
-      webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
       -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
       box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
   .cart .sublets {
@@ -116,7 +117,7 @@ body {
           box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
         .cart .sublets .cart_sublet h3 button:active {
           transform: translateY(4px);
-          webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+          -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
           -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
           box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
       .cart .sublets .cart_sublet .info {
@@ -150,7 +151,7 @@ body {
     box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
   .refresh:active {
     transform: translateY(4px);
-    webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
     -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
     box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
 
@@ -207,7 +208,7 @@ body {
       box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
     .form .form-group .form-btn:active {
       transform: translateY(4px);
-      webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
       -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
       box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
   .form .form-group .settings {
@@ -266,7 +267,7 @@ body {
     .navigation-bar nav ul li a {
       font-family: "Bebas Neue", cursive;
       text-decoration: none;
-      font-size: 1.3em;
+      font-size: 1.1em;
       color: white;
       transition: all 0.4s; }
     .navigation-bar nav ul li:active {
@@ -302,7 +303,7 @@ body {
     box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
   .nav-toggle:active {
     transform: translateY(4px);
-    webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
     -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
     box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
   .nav-toggle i {
@@ -317,7 +318,8 @@ body {
   padding-top: 15em; }
   .loading-pickinghub h1 {
     font-family: "Pacifico", cursive;
-    color: #531CB3; }
+    color: #531CB3;
+    margin: 0 !important; }
     @media (max-width: 420px) {
       .loading-pickinghub h1 {
         font-size: 1.6em; } }
@@ -413,6 +415,80 @@ body {
           align-items: center; }
       .order-details .order-info .orders .single-order .total {
         width: 60px; }
+
+.edit-profile .user-infor {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 1em 0; }
+  .edit-profile .user-infor h1 {
+    background-image: linear-gradient(to right, #101935, #531CB3);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent; }
+    @media (max-width: 420px) {
+      .edit-profile .user-infor h1 {
+        font-size: 1.6em; } }
+  .edit-profile .user-infor h2 {
+    font-family: "Pacifico", cursive;
+    border: 1px solid #531CB3;
+    padding: 0.3em 0.7em;
+    border-radius: 0.3em;
+    color: #1c2b5c; }
+  .edit-profile .user-infor p {
+    font-family: "Bebas Neue", cursive;
+    color: #531CB3; }
+
+.edit-profile-form {
+  width: 100%; }
+  .edit-profile-form form .form-group {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+    .edit-profile-form form .form-group h3 {
+      font-family: "Pacifico", cursive;
+      background-image: linear-gradient(to right, #119822, #7A306C);
+      width: fit-content;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      color: transparent; }
+    .edit-profile-form form .form-group input {
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.1em;
+      padding: 0.3em 0.6em;
+      margin: 0.5em 0;
+      width: 300px;
+      -webkit-box-shadow: 4px 2px 13px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 13px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 13px 0px rgba(16, 25, 53, 0.52);
+      border: none;
+      color: #531CB3; }
+    .edit-profile-form form .form-group button {
+      width: 300px;
+      padding: 0.4em 0;
+      font-family: "Bowlby One SC", cursive;
+      font-size: 1em;
+      background-color: #119822;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      border-radius: 0.3em;
+      margin-top: 0.5em; }
+      .edit-profile-form form .form-group button:hover {
+        transform: translateY(-4px);
+        -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+      .edit-profile-form form .form-group button:active {
+        transform: translateY(4px);
+        -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
 
 .login-page {
   position: relative;
@@ -808,7 +884,7 @@ body {
           box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
         .product-details .product .cart-controls button:active {
           transform: translateY(4px);
-          webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+          -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
           -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
           box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
       .product-details .product .cart-controls .plus {
@@ -856,7 +932,7 @@ body {
           box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
         .product-details .product .variants .variant .sublets .single-sublet:active {
           transform: translateY(4px);
-          webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+          -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
           -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
           box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
         .product-details .product .variants .variant .sublets .single-sublet h5 {
@@ -883,6 +959,20 @@ body {
   width: 100vw;
   overflow: auto;
   padding-bottom: 6em; }
+  .profile .no {
+    font-family: "Bebas Neue", cursive;
+    display: flex;
+    width: 300px;
+    margin: 0.3em auto;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.3em;
+    border: 1px solid #B3001B;
+    padding: 0.3em 0.7em;
+    color: #877815; }
+    .profile .no a {
+      text-decoration: none;
+      color: #531CB3; }
   .profile .user-info {
     display: flex;
     flex-flow: column;
@@ -961,6 +1051,89 @@ body {
         font-family: "Bebas Neue", cursive;
         font-size: 1em;
         color: white; }
+  .profile .add-address .form-group {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+    .profile .add-address .form-group h4 {
+      font-family: "Abel", sans-serif;
+      color: #531CB3; }
+  .profile .add-address h1 {
+    background-image: linear-gradient(to right, #119822, #531CB3);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin: 0.5em auto; }
+    @media (max-width: 360px) {
+      .profile .add-address h1 {
+        font-size: 1.5em; } }
+  .profile .add-address input {
+    width: 300px;
+    font-family: "Abel", sans-serif;
+    padding: 0.3em 0.4em;
+    margin: 0.3em;
+    border-radius: 0.3em;
+    border: 1px solid #F75C03;
+    color: #531CB3; }
+  .profile .add-address button {
+    font-family: "Bowlby One SC", cursive;
+    padding: 0.4em 0;
+    width: 300px;
+    border-radius: 0.3em;
+    background-image: linear-gradient(to bottom, #119822, #0c6a18);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    margin: 0.5em; }
+    .profile .add-address button:hover {
+      transform: translateY(-4px);
+      -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+    .profile .add-address button:active {
+      transform: translateY(4px);
+      -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+  .profile .add-contact .form-group {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+    .profile .add-contact .form-group h3 {
+      font-family: "Abel", sans-serif;
+      color: #531CB3; }
+    .profile .add-contact .form-group input {
+      width: 300px;
+      font-family: "Abel", sans-serif;
+      padding: 0.3em 0.4em;
+      margin: 0.3em;
+      border-radius: 0.3em;
+      border: 1px solid #F75C03;
+      color: #531CB3; }
+    .profile .add-contact .form-group button {
+      font-family: "Bowlby One SC", cursive;
+      padding: 0.4em 0;
+      width: 300px;
+      border-radius: 0.3em;
+      background-image: linear-gradient(to bottom, #119822, #0c6a18);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: white;
+      margin: 0.5em; }
+      .profile .add-contact .form-group button:hover {
+        transform: translateY(-4px);
+        -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+      .profile .add-contact .form-group button:active {
+        transform: translateY(4px);
+        -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
 
 .logout-btn {
   font-size: 1.3em;
@@ -980,7 +1153,29 @@ body {
     box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
   .logout-btn:active {
     transform: translateY(4px);
-    webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+    box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+
+.edit-profile-btn {
+  padding: 0.3em 0.6em;
+  background-color: #531CB3;
+  color: white;
+  font-size: 1.1em;
+  border-radius: 0.3em;
+  font-family: "Bowlby One SC", cursive;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 0.4em; }
+  .edit-profile-btn:hover {
+    transform: translateY(-4px);
+    -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+    -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+    box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+  .edit-profile-btn:active {
+    transform: translateY(4px);
+    -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
     -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
     box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
 
@@ -1118,7 +1313,7 @@ body {
         box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
       .search .search-box .search-btn:active {
         transform: translateY(4px);
-        webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
         -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
         box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
   .search .result-list h4 {
@@ -1234,3 +1429,507 @@ body {
       color: white;
       font-size: 1.3em;
       border-radius: 0.3em; }
+
+.seller {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  position: relative; }
+  .seller .register {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    padding-bottom: 6em; }
+    .seller .register h1 {
+      background-image: linear-gradient(to right, #7A306C, #531CB3);
+      width: fit-content;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      color: transparent;
+      margin: 1em auto; }
+  .seller .login {
+    margin-top: 25vh; }
+    .seller .login h1 {
+      background-image: linear-gradient(to right, #7A306C, #119822);
+      width: fit-content;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      color: transparent;
+      margin: 1em auto; }
+  .seller .form-group {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 0.6em 0; }
+    .seller .form-group h3 {
+      font-family: "Heebo", sans-serif;
+      text-transform: capitalize;
+      color: #531CB3; }
+    .seller .form-group input, .seller .form-group textarea {
+      width: 300px;
+      margin: 0.5em 0;
+      padding: 0.6em 0.5em;
+      font-family: "Abel", sans-serif;
+      border: 1px solid #531CB3;
+      border-radius: 0.3em;
+      color: #7A306C; }
+    .seller .form-group p {
+      font-family: "Heebo", sans-serif;
+      font-size: 0.7em;
+      color: rgba(16, 25, 53, 0.6); }
+    .seller .form-group button {
+      width: 300px;
+      font-family: "Pacifico", cursive;
+      padding: 0.5em 0;
+      margin: 0.5em 0;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 0.3em;
+      background-image: linear-gradient(to right, #531CB3, #101935);
+      color: white;
+      color: white;
+      border: none;
+      outline: none; }
+      .seller .form-group button:hover {
+        transform: translateY(-4px);
+        -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+      .seller .form-group button:active {
+        transform: translateY(4px);
+        -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+  .seller .message {
+    margin: 0 auto;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .seller .message h4 {
+      font-family: "Anton", sans-serif;
+      color: #531CB3;
+      font-size: 0.9em; }
+    .seller .message a {
+      font-family: "Anton", sans-serif;
+      text-decoration: none;
+      color: #7A306C;
+      font-size: 0.9em; }
+
+.seller-profile .seller-info {
+  margin: 1em 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+  .seller-profile .seller-info img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    object-fit: cover; }
+  .seller-profile .seller-info h1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    color: #531CB3; }
+    .seller-profile .seller-info h1 button {
+      margin-left: 0.6em;
+      height: 3.5em;
+      width: 3.5em;
+      border-radius: 50%;
+      background-color: #B3001B;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s; }
+      .seller-profile .seller-info h1 button:hover {
+        transform: translateY(-4px);
+        -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+      .seller-profile .seller-info h1 button:active {
+        transform: translateY(4px);
+        -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+        box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+  .seller-profile .seller-info h2 {
+    font-family: "Abel", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    background-color: #7A306C;
+    color: white;
+    padding: 0.5em 0.7em;
+    border-radius: 0.2em;
+    margin: 0.4em 0; }
+  .seller-profile .seller-info .status p {
+    font-family: "Anton", sans-serif;
+    padding: 0.6em 0.8em;
+    margin: 0.5em 0;
+    color: white;
+    border-radius: 0.3em; }
+  .seller-profile .seller-info .status .true {
+    background-image: linear-gradient(to bottom, #119822, #0c6a18); }
+  .seller-profile .seller-info .status .false {
+    background-image: linear-gradient(to bottom, #B3001B, #8a0015); }
+  .seller-profile .seller-info .contact {
+    border: 1px solid #7A306C;
+    padding: 0.4em 0.6em;
+    border-radius: 0.3em; }
+    .seller-profile .seller-info .contact p {
+      font-family: "Abel", sans-serif;
+      color: #7A306C;
+      font-weight: bold;
+      border-bottom: 1px solid #7A306C;
+      margin: 0.2em 0;
+      padding: 0.2em 0; }
+      .seller-profile .seller-info .contact p:last-child {
+        border-bottom: none; }
+  .seller-profile .seller-info a {
+    text-decoration: none;
+    font-family: "Abel", sans-serif;
+    margin-bottom: 0.3em;
+    color: #531CB3;
+    font-weight: bold; }
+  .seller-profile .seller-info .about p {
+    font-family: "Bebas Neue", cursive;
+    color: #531CB3;
+    font-size: 0.9em; }
+
+.update-seller h1 {
+  font-size: 1.5em;
+  background-image: linear-gradient(to right, #119822, #F75C03);
+  width: fit-content;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+  margin: 0.5em auto; }
+
+.update-seller .form-group {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 1em 0; }
+  .update-seller .form-group h3 {
+    font-family: "Pacifico", cursive;
+    background-image: linear-gradient(to bottom, #F75C03, #c54902);
+    width: fit-content;
+    padding: 0.3em 0.4em;
+    border-radius: 0.3em;
+    color: white;
+    font-weight: 150;
+    font-size: 1em; }
+  .update-seller .form-group input, .update-seller .form-group textarea {
+    font-family: "Abel", sans-serif;
+    width: 300px;
+    padding: 0.2em 0.3em;
+    margin: 0.4em 0;
+    border: 1px solid #119822;
+    border-radius: 0.2em;
+    color: #F75C03;
+    font-weight: 300; }
+  .update-seller .form-group p {
+    font-family: "Anton", sans-serif;
+    font-size: 0.6em;
+    color: #119822; }
+  .update-seller .form-group button {
+    width: 300px;
+    background-image: linear-gradient(to bottom, #119822, #0c6a18);
+    color: white;
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.1em;
+    padding: 0.3em 0;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+    transition: all 0.3s; }
+    .update-seller .form-group button:hover {
+      transform: translateY(-4px);
+      -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+    .update-seller .form-group button:active {
+      transform: translateY(4px);
+      -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+
+.sell-products {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  padding-bottom: 6em; }
+  .sell-products .seller-products h1 {
+    font-family: "Anton", sans-serif;
+    background-image: linear-gradient(to right, #7A306C, #531CB3);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin: 0.6em auto; }
+  .sell-products .seller-products .list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .sell-products .seller-products .list .product-card {
+      width: 300px;
+      margin: 1em;
+      -webkit-box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+      -moz-box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+      box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+      border-radius: 0.3em; }
+      @media (max-width: 420px) {
+        .sell-products .seller-products .list .product-card {
+          width: 140px; } }
+      @media (max-width: 320px) {
+        .sell-products .seller-products .list .product-card {
+          width: 140px;
+          margin: 0.4em; } }
+      .sell-products .seller-products .list .product-card img {
+        width: 300px;
+        max-height: 400px;
+        object-fit: cover;
+        object-position: top; }
+        @media (max-width: 420px) {
+          .sell-products .seller-products .list .product-card img {
+            width: 140px;
+            max-height: 200px; } }
+      .sell-products .seller-products .list .product-card h3 {
+        font-family: "Abel", sans-serif;
+        text-transform: capitalize;
+        font-size: 0.8em;
+        padding: 0.5em;
+        color: #68295c;
+        text-decoration: none; }
+      .sell-products .seller-products .list .product-card a {
+        text-decoration: none; }
+  .sell-products .create-product h1 {
+    font-family: "Anton", sans-serif;
+    background-image: linear-gradient(to right, #7A306C, #531CB3);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin: 0.5em auto; }
+  .sell-products .create-product .choose-department h2 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 1em;
+    background-image: linear-gradient(to bottom, #7A306C, #55224c);
+    color: white;
+    padding: 0.4em 0.5em;
+    width: fit-content;
+    margin: 0.4em auto;
+    letter-spacing: 1px;
+    border-radius: 0.3em;
+    transition: all 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .sell-products .create-product .choose-department .list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .sell-products .create-product .choose-department .list .department-card {
+      width: 300px;
+      margin: 1em;
+      -webkit-box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+      -moz-box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+      box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+      border-radius: 0.2em;
+      overflow: hidden;
+      transition: all 0.4s; }
+      @media (max-width: 420px) {
+        .sell-products .create-product .choose-department .list .department-card {
+          width: 140px;
+          margin: 0.4em; } }
+      .sell-products .create-product .choose-department .list .department-card img {
+        width: 300px;
+        max-height: 400px;
+        object-fit: cover;
+        object-position: top; }
+        @media (max-width: 420px) {
+          .sell-products .create-product .choose-department .list .department-card img {
+            width: 140px;
+            max-height: 200px; } }
+      .sell-products .create-product .choose-department .list .department-card h3 {
+        font-family: "Abel", sans-serif;
+        font-size: 0.8em;
+        padding: 0.2em 0.3em;
+        color: #119822; }
+    .sell-products .create-product .choose-department .list .active {
+      border: 1px solid #119822;
+      box-shadow: none; }
+  .sell-products .create-product .choose-demographic {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+    .sell-products .create-product .choose-demographic h2 {
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      background-image: linear-gradient(to bottom, #7A306C, #55224c);
+      overflow: hidden;
+      border-radius: 0.2em;
+      padding: 0 0 0 0.5em;
+      color: white;
+      font-weight: 200; }
+      .sell-products .create-product .choose-demographic h2 a {
+        font-size: 1.2em; }
+    .sell-products .create-product .choose-demographic .list {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; }
+      .sell-products .create-product .choose-demographic .list .demographic-card {
+        width: 300px;
+        margin: 1em;
+        transition: all 0.3s;
+        border-radius: 0.2em;
+        overflow: hidden;
+        -webkit-box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+        -moz-box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+        box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47); }
+        @media (max-width: 420px) {
+          .sell-products .create-product .choose-demographic .list .demographic-card {
+            width: 140px;
+            margin: 0.4em; } }
+        .sell-products .create-product .choose-demographic .list .demographic-card img {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+          object-position: top; }
+          @media (max-width: 420px) {
+            .sell-products .create-product .choose-demographic .list .demographic-card img {
+              width: 140px; } }
+        .sell-products .create-product .choose-demographic .list .demographic-card h3 {
+          font-family: "Abel", sans-serif;
+          font-size: 0.8em;
+          color: #7A306C;
+          padding: 0.4em; }
+      .sell-products .create-product .choose-demographic .list .active {
+        border: 1px solid #119822;
+        box-shadow: none; }
+  .sell-products .create-product .choose-category {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+    .sell-products .create-product .choose-category h2 {
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      background-image: linear-gradient(to bottom, #7A306C, #55224c);
+      overflow: hidden;
+      border-radius: 0.2em;
+      padding: 0 0 0 0.5em;
+      color: white;
+      font-weight: 200; }
+      .sell-products .create-product .choose-category h2 a {
+        font-size: 1.2em; }
+    .sell-products .create-product .choose-category .list {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; }
+      .sell-products .create-product .choose-category .list .category-card {
+        width: 300px;
+        margin: 1em;
+        transition: all 0.3s;
+        border-radius: 0.2em;
+        overflow: hidden;
+        -webkit-box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+        -moz-box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47);
+        box-shadow: 4px 4px 5px 0px rgba(122, 48, 108, 0.47); }
+        @media (max-width: 420px) {
+          .sell-products .create-product .choose-category .list .category-card {
+            width: 140px;
+            margin: 0.4em; } }
+        .sell-products .create-product .choose-category .list .category-card img {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+          object-position: top; }
+          @media (max-width: 420px) {
+            .sell-products .create-product .choose-category .list .category-card img {
+              width: 140px; } }
+        .sell-products .create-product .choose-category .list .category-card h3 {
+          font-family: "Abel", sans-serif;
+          font-size: 0.8em;
+          color: #7A306C;
+          padding: 0.4em; }
+      .sell-products .create-product .choose-category .list .active {
+        border: 1px solid #119822;
+        box-shadow: none; }
+  .sell-products .next-btn {
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, #119822, #0c6a18);
+    color: white;
+    padding: 0.3em 0.4em;
+    font-family: "Bebas Neue", cursive;
+    border-radius: 0.2em;
+    font-size: 0.8em;
+    margin-left: 0.4em; }
+
+.product-form .form-group {
+  margin: 0.8em 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+  .product-form .form-group h3 {
+    font-family: "Pacifico", cursive;
+    color: #F75C03; }
+  .product-form .form-group input, .product-form .form-group textarea {
+    width: 300px;
+    padding: 0.3em 0.5em;
+    font-family: "Abel", sans-serif;
+    margin: 0.4em 0;
+    border: 1px solid #7A306C;
+    border-radius: 0.3em;
+    color: #531CB3; }
+  .product-form .form-group button {
+    width: 300px;
+    background-image: linear-gradient(to bottom, #F75C03, #c54902);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0.5em 0;
+    border-radius: 0.3em;
+    color: white;
+    margin: 0.4em; }
+    .product-form .form-group button:hover {
+      transform: translateY(-4px);
+      -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+    .product-form .form-group button:active {
+      transform: translateY(4px);
+      -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+  .product-form .form-group .new-product {
+    margin: 0.3em 0;
+    padding: 0.4em;
+    background-color: rgba(17, 152, 34, 0.5);
+    width: 300px;
+    border-radius: 0.3em;
+    text-align: center; }
+    .product-form .form-group .new-product h4 {
+      font-family: "Bebas Neue", cursive;
+      font-size: 0.9em;
+      color: #0c6a18; }
+    .product-form .form-group .new-product a {
+      text-decoration: none;
+      font-family: "Anton", sans-serif;
+      font-size: 0.8em;
+      color: #531CB3; }

@@ -1,0 +1,66 @@
+.edit-profile{
+    .user-infor{
+        width : 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin : 1em 0;
+        h1{
+            @include gradient_text($maastricth_blue,$ocen_blue);
+            @media (max-width : 420px){
+                font-size: 1.6em;
+            }
+        }
+        h2{
+            font-family: $font_cursive;
+            border : 1px solid $ocen_blue;
+            padding : 0.3em 0.7em;
+            border-radius: 0.3em;
+            color: lighten($maastricth_blue,10%);
+
+        }
+        p{
+            font-family: $font_para;
+            color: $ocen_blue;
+        }
+    }
+    
+}
+
+.edit-profile-form{
+    width : 100%;
+    form{
+        .form-group{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            h3{
+                font-family: $font_cursive;
+                @include gradient_text($forest_green,$midnight);
+            }
+            input{
+                font-family: $font_para;
+                font-size: 1.1em;
+                padding : 0.3em 0.6em;
+                margin : 0.5em 0;
+                width : 300px;
+                @include input_shadow;
+                border : none;
+                color: $ocen_blue;
+
+            }
+            button{
+                width: 300px;
+                padding : 0.4em 0;
+                font-family: $font_heading;
+                font-size: 1em;
+                background-color: $forest_green;
+                color: white;
+                @include btn_interaction;
+                border : none;
+                border-radius: 0.3em;
+                margin-top: 0.5em;
+            }
+        }
+    }
+}

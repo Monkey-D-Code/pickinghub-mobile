@@ -11,6 +11,8 @@ import productReducer from './product/Product.reducer';
 import userReducer from './user/User.reducer';
 import cartReducer from './cart/Cart.reducer';
 import orderReducer from './order/Order.reducer';
+import sellerProductsReducer from './seller-products/SellerProducts.reducer';
+import createProductReducer from './create-product/CreateProduct.reducer';
 
 const persistConfig = {
     key : 'pickinghub-mobile',
@@ -29,6 +31,8 @@ const rootReducer = combineReducers({
     user : userReducer,
     cart : cartReducer,
     order : orderReducer,
+    seller_products : sellerProductsReducer,
+    create_product : createProductReducer,
 
 });
 

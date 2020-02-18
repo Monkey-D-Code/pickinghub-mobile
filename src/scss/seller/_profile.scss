@@ -1,0 +1,98 @@
+.seller-profile{
+    .seller-info{
+        margin : 1em 0;
+        width : 100%;
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        img{
+            height: 250px;
+            width : 250px;
+            border-radius: 50%;
+            object-fit: cover;
+           
+        }
+        h1{
+            display: flex;
+            align-items: center;
+            width : 100%;
+            justify-content: center;
+            color : $ocen_blue;
+            button{
+                margin-left: 0.6em;
+                height: 3.5em;
+                width: 3.5em;
+                border-radius: 50%;
+                background-color: $crimson;
+                color: white;
+                border: none;
+                @include btn_interaction;
+            }
+        }
+        h2{
+            font-family: $abel;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            background-color: $midnight;
+            color: white;
+            padding : 0.5em 0.7em;
+            border-radius: 0.2em;
+            margin : 0.4em 0;
+        }
+        .status{
+            p{
+                font-family: $anton;
+                padding: 0.6em 0.8em;
+                margin : 0.5em 0;
+                color: white;
+                border-radius: 0.3em;
+                
+            }
+            .true{
+                background-image: linear-gradient(
+                    to bottom,
+                    $forest_green,
+                    darken($forest_green, 10%)
+                );
+            }
+            .false{
+                background-image: linear-gradient(
+                    to bottom,
+                    $crimson,
+                    darken($crimson, 8%)
+                );
+            }
+        }
+        .contact{
+            border: 1px solid $midnight;
+            padding : 0.4em 0.6em;
+            border-radius: 0.3em;
+            p{
+                font-family: $abel;
+                color: $midnight;
+                font-weight: bold;
+                border-bottom: 1px solid $midnight;
+                margin: 0.2em 0;
+                padding: 0.2em 0;
+                &:last-child{
+                    border-bottom: none;
+                }
+            }
+        }
+        a{
+            text-decoration: none;
+            font-family: $abel;
+            margin-bottom: 0.3em;
+            color: $ocen_blue;
+            font-weight: bold;
+        }
+        .about{
+            p{
+                font-family: $font_para;
+                color: $ocen_blue;
+                font-size: 0.9em;
+            }
+        }
+    }
+}

@@ -142,14 +142,14 @@ export const updateSeller = sellerData =>{
 
 
 const addAddressStart = ()=>({
-    type : userTypes.SELLER_UPDATE_START,
+    type : userTypes.ADD_ADDRESS_START,
 });
 const addAddressSuccess = newSeller =>({
-    type : userTypes.SELLER_UPDATE_SUCCESS,
+    type : userTypes.ADD_ADDRESS_SUCCESS,
     payload : newSeller,
 })
 const addAddressError = err=>({
-    type : userTypes.SELLER_UPDATE_ERROR,
+    type : userTypes.ADD_ADDRESS_ERROR,
     payload : err,
 });
 export const addAddress = (address,customer) =>{

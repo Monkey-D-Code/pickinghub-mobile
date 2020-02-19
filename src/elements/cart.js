@@ -4,6 +4,11 @@ import {connect} from 'react-redux';
 import {withRouter,NavLink} from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 
+
+// importing actions
+import {
+    selectNavigationSwitch,
+} from '../redux/website/Website.selectors';
 // importing actions
 import {
     toggleMenu,
@@ -22,10 +27,12 @@ import {
     selectLatestOrder,
     selectOrderError,
     selectMakingOrder,
+    
 
 } from '../redux/cart/Cart.selectors';
 import {
     selectActiveUser,
+    selectAllowedToShop,
 } from '../redux/user/User.selectors';
 
 
@@ -42,7 +49,7 @@ class Cart extends Component {
         }
     }
     componentDidMount = ()=>{
-        this.props.toggle();
+        if(this.props.switch) this.props.toggle();
     }
     buyNow = ()=>{
         const {cart,user,newOrder} = this.props;
@@ -58,20 +65,49 @@ class Cart extends Component {
     }
     render = ()=>{
         const {from,to} = this.style;
-        const {cart,remove,total,error,loading} = this.props;
+        const {cart,remove,total,error,loading,allowedShop,latest_order} = this.props;
         return(
             <Spring from={from} to={to} >
                 {
                     spring =>(
                         <div className="cart" style={spring}>
-                            <h1>Cart</h1>
+                            <h1>{total === 0 && 'Empty' } Cart</h1>
                             {
-                                total > 0
+                                !allowedShop
                                 &&
-                                <h2 className="cart-total"><i className="fa fa-inr" aria-hidden="true"></i> {total}</h2>
+                                <div className="allowed-to-shop">
+                                    <h4>Add your missing details to place an order</h4>
+                                    <NavLink to='/profile'>Go to Profile &rarr;</NavLink>
+                                </div>
+                            }
+                            {
+                                latest_order
+                                &&
+                                <div className="latest-order">
+                                    <h4>Your Order Placed Successfully</h4>
+                                    <NavLink to={`/orders/${latest_order.id}/details`}>See Order &rarr;</NavLink>
+                                </div>
+                            }
+                            {
+                                error
+                                &&
+                                <div className="error">
+                                    <h4>
+                                        {JSON.stringify(error)}
+                                    </h4>
+                                    
+                                </div>
                             }
                             {
                                 total > 0
+                                ?
+                                <h2 className="cart-total"><i className="fa fa-inr" aria-hidden="true"></i> {total}</h2>
+                                : <div className="empty-cart">
+                                    
+                                 </div>
+                            }
+                            {
+                                total > 0 && allowedShop
                                 &&
                                 <button className="buy-now" onClick={this.buyNow}>
                                     {
@@ -129,6 +165,9 @@ const mapState = state =>({
     error : selectOrderError(state),
     loading : selectMakingOrder(state),
     user : selectActiveUser(state),
+    switch : selectNavigationSwitch(state),
+    allowedShop : selectAllowedToShop(state),
+    latest_order : selectLatestOrder(state),
 })
 
 const mapDispatch = dispatch =>({

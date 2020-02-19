@@ -38,6 +38,10 @@ const userReducer = (state = INITIAL_STATE , action)=>{
                 ...state,
                 latest_address : action.payload,
                 adding_address : false,
+                active_user : {
+                    ...state.active_user,
+                    all_address : [...state.active_user.all_address , action.payload]
+                }
                 
             }
         case userTypes.ADD_ADDRESS_ERROR:
@@ -59,6 +63,10 @@ const userReducer = (state = INITIAL_STATE , action)=>{
                 ...state,
                 latest_contact : action.payload,
                 adding_contact : false,
+                active_user : {
+                    ...state.active_user,
+                    contacts : [...state.active_user.contacts , action.payload]
+                }
                 
             }
         case userTypes.ADD_CONTACT_ERROR:

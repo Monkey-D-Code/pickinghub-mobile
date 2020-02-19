@@ -9,6 +9,9 @@ import {
     selectActiveSeller,
 
 } from '../../redux/user/User.selectors';
+import {
+    selectNavigationSwitch,
+} from '../../redux/website/Website.selectors';
 
 // importing actions
 import {
@@ -29,6 +32,7 @@ import SellerProfile from "../Seller/SellerProfile";
 
 
 class Profile extends Component{
+    
     style = {
         from : {
             opacity : 0,
@@ -40,7 +44,7 @@ class Profile extends Component{
         }
     }
     componentDidMount = ()=>{
-        this.props.toggle();
+        if(this.props.switch) this.props.toggle();
     }
     render = ()=>{
         const {
@@ -80,7 +84,7 @@ class Profile extends Component{
                                         &&
                                         user.all_address.length > 0
                                         ? <div className="address-list">
-                                                <h3>Address <NavLink to={`${match.path}/add-address`}>Add</NavLink></h3>
+                                                <h3>Address <NavLink to={`${match.path}/add-address`}><i className="fa fa-plus" aria-hidden="true"></i></NavLink></h3>
                                                 <div className="list">
                                                 {
                                                     user.all_address.map((address,i)=>(
@@ -110,7 +114,7 @@ class Profile extends Component{
                                         &&
                                         user.contacts.length > 0
                                         ? <div className="contacts">
-                                            <h3>Contacts <NavLink to={`${match.path}/add-contact`}>Add</NavLink></h3>
+                                            <h3>Contacts <NavLink to={`${match.path}/add-contact`}><i className="fa fa-plus" aria-hidden="true"></i></NavLink></h3>
                                             <div className="list">
                                                 {
                                                     user.contacts.map((contact,i)=>(
@@ -158,6 +162,7 @@ class Profile extends Component{
 const mapState = state => ({
     user : selectActiveUser(state),
     seller : selectActiveSeller(state),
+    switch : selectNavigationSwitch(state),
 });
 const mapDispatch = dispatch=>({
     toggle : ()=>dispatch(toggleMenu()),

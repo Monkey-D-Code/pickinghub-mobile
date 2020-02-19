@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {Spring} from 'react-spring/renderprops';
 import Loader from 'react-loader-spinner';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {withRouter,NavLink} from 'react-router-dom';
 // importing selectors
 import {
     selectActiveProduct,
@@ -37,6 +37,7 @@ import {
     removeSublet,
 
 } from '../redux/cart/Cart.actions';
+import cart from '../elements/cart';
 
 
 class ProductDetails extends Component {
@@ -256,9 +257,9 @@ class ProductDetails extends Component {
                                         user
                                         &&
                                         <div className="cart-controls">
-                                            <button className="plus" onClick={this.plus}><i className="fa fa-plus" aria-hidden="true"></i></button>
+                                            <button className="plus" onClick={this.plus}>{quantity ? <i className="fa fa-plus" aria-hidden="true"></i> : 'Add To Cart'}</button>
                                             <p>
-                                                {quantity}
+                                                {quantity > 0 && quantity}
                                             </p>
                                             {
                                                 quantity > 0
@@ -266,6 +267,13 @@ class ProductDetails extends Component {
                                                 <button className="minus" onClick={this.minus}><i className="fa fa-minus" aria-hidden="true"></i></button>
                                             }
                                             
+                                        </div>
+                                    }
+                                    {
+                                        quantity > 0
+                                        &&
+                                        <div className="go-to-cart">
+                                            <NavLink to='/cart'>Go To Cart &rarr;</NavLink>
                                         </div>
                                     }
                                     {

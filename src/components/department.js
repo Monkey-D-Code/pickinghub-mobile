@@ -13,11 +13,14 @@ import {
     toggleMenu,
 } from '../redux/website/website.actions';
 
+import {
+    selectNavigationSwitch,
+} from '../redux/website/Website.selectors';
 
 
 class Department extends Component{
     componentDidMount = ()=>{
-        this.props.toggle();
+        if(this.props.switch) this.props.toggle();
     }
     style = {
         from : {
@@ -51,6 +54,9 @@ class Department extends Component{
         );
     }
 }
+const mapState = state =>({
+    switch : selectNavigationSwitch(state),
+})
 
 const mapDispatch = dispatch =>({
     toggle : ()=>dispatch(toggleMenu())
@@ -58,7 +64,7 @@ const mapDispatch = dispatch =>({
 
 export default withRouter(
     connect(
-        null,
+        mapState,
         mapDispatch,
     
     )(Department)

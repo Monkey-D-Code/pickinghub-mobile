@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {Spring,config} from 'react-spring/renderprops';
-
+import {NavLink} from 'react-router-dom';
 
 // importing selectors
 import {
@@ -41,7 +41,7 @@ class EditProfileForm extends Component{
                         <div className="edit-profile-form" style={spring}>
                             <form>
                                 <div className="form-group">
-                                    <h3>Personal Info</h3>
+                                    <h3>Personal Info <NavLink to='/profile'>&times;</NavLink></h3>
                                     <input 
                                         type="text" 
                                         name="first_name" 

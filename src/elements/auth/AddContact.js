@@ -18,6 +18,7 @@ import {
     addContact,
 
 } from '../../redux/user/User.actions';
+import { NavLink } from 'react-router-dom';
 
 const AddContact = ({latest,error,loading,user,add}) => {
     const spring = useSpring({
@@ -32,8 +33,9 @@ const AddContact = ({latest,error,loading,user,add}) => {
     })
     return (
         <animated.div style={spring} className='add-contact'>
+            <h1>New Contact <NavLink to='/profile'>&times;</NavLink></h1>
             <div className="form-group">
-                <h3>New Contact</h3>
+                <h3>Fill the info</h3>
                 {
                     error
                     &&

@@ -6,6 +6,17 @@ const selectUser = state => state.user;
 export const selectActiveUser = createSelector(
     [selectUser],
     user => user.active_user,
+);
+export const selectAllowedToShop = createSelector(
+    [selectUser],
+    user => {
+        if(user.active_user.all_address && user.active_user.contacts){
+            if(user.active_user.all_address.length > 0 && user.active_user.contacts.length > 0){
+                return true;
+            }
+        }
+        return false;
+    }
 )
 export const selectIsAuth = createSelector(
     [selectUser],

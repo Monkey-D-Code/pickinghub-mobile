@@ -25,6 +25,9 @@ import {
     selectActiveUser,
 
 } from '../redux/user/User.selectors';
+import {
+    selectNavigationSwitch,
+} from '../redux/website/Website.selectors';
 
 // importing elements
 import OrderDetails from '../elements/order_details';
@@ -32,7 +35,7 @@ import OrderDetails from '../elements/order_details';
 class Orders extends Component {
     componentDidMount = ()=>{
         const {fetchOrders , user} = this.props;
-        this.props.toggle();
+        if(this.props.switch) this.props.toggle();
         fetchOrders(user.id);
     }
     style = {
@@ -57,6 +60,7 @@ class Orders extends Component {
             user,
 
             match,
+            
 
         } = this.props;
         if(loading){
@@ -166,6 +170,7 @@ const mapState = state =>({
     user : selectActiveUser(state),
     error : selectOrdersError(state),
     loading : selectLoadingOrders(state),
+    switch : selectNavigationSwitch(state),
 })
 
 const mapDispatch = dispatch =>({

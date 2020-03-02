@@ -23,6 +23,7 @@ import {
 // importing components
 import SpecialDeals from '../home/SpecialDeals';
 import CateloguePromo from '../home/CateloguePromo';
+import Footer from '../../elements/Footer';
 
 class Home extends Component{
     style = {
@@ -89,8 +90,10 @@ class Home extends Component{
                                         />
                                         <p>{brand.about}</p>
                                     </div>
-                                    <SpecialDeals />
+                                    
                                     <CateloguePromo />
+                                    <SpecialDeals />
+                                    <Footer />
                                 </div>
                             }
                         </div>

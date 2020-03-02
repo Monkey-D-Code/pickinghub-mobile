@@ -1,0 +1,58 @@
+footer{
+    @media (max-width : 768px){
+        display: none;
+    }
+    padding : 1em 0;
+    background-color: rgba($ocen_blue,0.4);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    -webkit-box-shadow: 2px -3px 5px 0px rgba(0,0,0,0.18);
+    -moz-box-shadow: 2px -3px 5px 0px rgba(0,0,0,0.18);
+    box-shadow: 2px -3px 5px 0px rgba(0,0,0,0.18);
+    .brand-info{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        img{
+            width : 100px;
+        }
+        h2{
+            margin : 0.5em 0;
+            @include gradient_text($midnight,$ocen_blue);
+            font-family: $font_heading;
+        }
+    }
+    .navigation{
+        ul{
+            margin: 0.5em 0;
+            list-style-type: none;
+            border: 1px solid $ocen_blue;
+            padding: 0.4em;
+            border-radius: 0.3em;
+            li{
+                a{
+                    text-decoration: none;
+                    font-family: $font_para;
+                }
+            }
+        }
+    }
+    .contact{
+        h4{
+            font-family: $abel;
+            color: $midnight;
+            margin: 0.3em 0;
+        }
+    }
+    .copyright{
+        p{
+            font-family: $anton;
+            color: darken($midnight, 10%);
+            a{
+                color: $maastricth_blue;
+            }
+        }
+    }
+}

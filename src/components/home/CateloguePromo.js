@@ -29,7 +29,7 @@ const CateloguePromo = ({departments,error,loading,getDepartments}) => {
     return (
         <animated.div style={spring} className='catelogue-promo'>
             <h2>
-                Our Catelogue
+                Our Catalogue
                 <button 
                     className='refresh' 
                     onClick={()=>getDepartments()}

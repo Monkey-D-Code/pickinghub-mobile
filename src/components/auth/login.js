@@ -18,6 +18,9 @@ import {
     selectUserError,
 
 } from '../../redux/user/User.selectors';
+import {
+    selectNavigationSwitch,
+} from '../../redux/website/Website.selectors';
 
 class Login extends Component{
     state = {
@@ -37,7 +40,7 @@ class Login extends Component{
         }
     }
     componentDidMount = ()=>{
-        this.props.toggle();
+        if(this.props.switch) this.props.toggle();
     }
     passwordToggle = e =>{
         this.setState({
@@ -170,6 +173,7 @@ const mapState = state =>({
     token_error : selectTokenError(state),
     user_error : selectUserError(state),
     loading_user : selectLoadingUser(state),
+    switch : selectNavigationSwitch(state),
 })
 
 const mapDispatch = dispatch =>({

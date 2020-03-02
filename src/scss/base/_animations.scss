@@ -1,0 +1,8 @@
+@keyframes colorSwitch{
+    0%{ color : darken($meat_brown,20%)}
+    20% { color : $orange}
+    40% { color : darken($forest_green , 20%)}
+    60%{ color: $midnight;}
+    80% {color: $ocen_blue;}
+    100% {color: $maastricth_blue;}
+}

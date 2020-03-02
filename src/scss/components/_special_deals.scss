@@ -1,0 +1,113 @@
+.special-deals{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width : 100%;
+    h2{
+        font-family: $font_heading;
+        @include gradient_text($midnight,$ocen_blue);
+        margin : 0.5em 0;
+    }
+
+    .all-deals{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        .single-deal{
+            position: relative;
+            margin : 1em;
+            @include card_shadow;
+            .deal-img{
+                width: 300px;
+                height: 200px;
+                object-fit: cover;
+                object-position: center;
+            }
+            h4{
+                font-family: $font_para;
+                background-image: linear-gradient(
+                    to right,
+                    $midnight,
+                    $ocen_blue,
+                );
+                color: white;
+                margin-top: -5px;
+                padding : 0.4em 0.6em;
+                letter-spacing: 1px;
+            }
+            .info{
+                position: absolute;
+                top: 6px;
+                right: 0;
+                p{
+                    
+                    color: white;
+                    font-family: $heebo;
+                    padding : 0.3em 0.6em;
+                    font-size: 0.8em;
+                }
+                .active-deal{
+                    background-color: darken($forest_green,10%);
+                }
+                .expired-deal{
+                    background-color: darken($crimson,10%);
+                }
+                
+            }
+            .desc{
+                width : 300px;
+                padding : 0.4em;
+                font-family: $abel;
+                font-size: 0.65em;
+                line-height: 13px;
+                p{
+                    font-weight: 600;
+                    color: $forest_green;
+                }
+            }
+            .discount{
+                background-color: white;
+                border-radius: 0.3em;
+                padding: 0.4em 0.6em;
+                position: absolute;
+                top : 120px;
+                left  :50%;
+                transform: translate(-50%,-50%);
+                p{
+                    font-family: $font_heading;
+                    color: darken($forest_green,10%);
+                    animation: colorSwitch 6s ease-in-out infinite alternate;
+                }
+            }
+            .deal-products{
+                width: 100%;
+                .single-deal-product{
+                    
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    
+                    border-radius: 0.3em;
+                    overflow: hidden;
+                    margin : 0.4em 0;
+                    padding : 0.4em 0;
+                    
+                    .product-img{
+                        width : 80px;
+                    }
+                    h5{
+                        width : 150px;
+                        a{
+                            text-decoration: none;
+                            font-family: $abel;
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

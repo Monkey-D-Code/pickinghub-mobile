@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {Spring} from 'react-spring/renderprops';
 import Loader from 'react-loader-spinner';
-
+import {NavLink} from 'react-router-dom';
 // importing actions
 import {
     toggleMenu,
@@ -18,6 +18,9 @@ import {
     selectUserError,
 
 } from '../../redux/user/User.selectors';
+import {
+    selectNavigationSwitch,
+}from '../../redux/website/Website.selectors';
 
 class Register extends Component{
     state = {
@@ -48,7 +51,7 @@ class Register extends Component{
         })
     }
     componentDidMount = ()=>{
-        this.props.toggle();
+        if(this.props.switch ) this.props.toggle();
     }
     submit = ()=>{
         const {
@@ -229,6 +232,10 @@ class Register extends Component{
                                             : 'Register'
                                         }
                                     </button>
+                                    <div className="sub-nav">
+                                        <h4>Already a Member ?</h4>
+                                        <NavLink to='/login'>Login here</NavLink>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -243,6 +250,7 @@ const mapState = state =>({
     token_error : selectTokenError(state),
     user_error : selectUserError(state),
     loading_user : selectLoadingUser(state),
+    switch : selectNavigationSwitch(state),
 })
 
 const mapDispatch = dispatch =>({

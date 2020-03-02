@@ -7,7 +7,10 @@ import {connect} from 'react-redux';
 import {
     toggleMenu,
 } from '../../../redux/website/website.actions';
-
+// importing selectors
+import {
+    selectNavigationSwitch,
+} from '../../../redux/website/Website.selectors';
 
 
 // importing subpages
@@ -16,7 +19,7 @@ import CreateProduct from './CreateProduct';
 import EditProduct from './EditProduct';
 
 
-const Products = ({toggle,match}) => {
+const Products = ({toggle,match,navswitch}) => {
     const spring = useSpring({
         opacity : 1,
         transform : 'translateY(0)',
@@ -26,7 +29,7 @@ const Products = ({toggle,match}) => {
         }
     });
     useEffect(()=>{
-        toggle();
+        if(navswitch)toggle();
     },[])
     return (
         <animated.div style={spring} className='sell-products'>
@@ -45,7 +48,9 @@ const Products = ({toggle,match}) => {
 }
 
 
-const mapState = state =>({})
+const mapState = state =>({
+    navswitch : selectNavigationSwitch(state),
+})
 const mapDispatch = dispatch =>({
     toggle : ()=>dispatch(toggleMenu()),
 })

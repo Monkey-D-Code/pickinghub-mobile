@@ -1,0 +1,5 @@
+export default {
+    DEALS_START : 'DEALS_START',
+    DEALS_SUCCESS : 'DEALS_SUCCESS',
+    DEALS_ERROR : 'DEALS_ERROR',
+}

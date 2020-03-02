@@ -12,7 +12,13 @@ import {
     toggleMenu,
 } from '../../redux/website/website.actions';
 
-const Seller = ({match,toggle}) => {
+// importing selectors
+import {
+     
+    selectNavigationSwitch,
+} from '../../redux/website/Website.selectors';
+
+const Seller = ({match,toggle,navSwitch}) => {
     const spring = useSpring({
         opacity : 1,
         transform  : 'translateY(0)',
@@ -23,7 +29,7 @@ const Seller = ({match,toggle}) => {
         
     });
     useEffect(()=>{
-        toggle();
+        if(navSwitch) toggle();
     },[])
     return (
         <animated.div style={spring} className='seller'>
@@ -37,11 +43,15 @@ const Seller = ({match,toggle}) => {
     )
 }
 
+const mapState = state =>({
+    navSwitch : selectNavigationSwitch(state),
+})
 const mapDispatch = dispatch =>({
     toggle : ()=>dispatch(toggleMenu()),
+    
 })
 
 export default withRouter(connect(
-    null,
+    mapState,
     mapDispatch,
 )(Seller));

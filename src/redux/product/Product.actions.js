@@ -45,6 +45,29 @@ export const getProduct = product_id =>{
 }
 
 
+// suggested products
+const suggestedProductsStart = ()=>({
+    type : productTypes.SUGGESTED_PRODUCTS_START,
+});
+const suggestedProductsSuccess = products =>({
+    type : productTypes.SUGGESTED_PRODUCTS_SUCCESS,
+    payload : products,
+});
+const suggestedProductsError = error =>({
+    type : productTypes.SUGGESTED_PRODUCTS_ERROR,
+    payload : error,
+});
+export const getSuggestedProducts = category_id => {
+    return dispatch => {
+        dispatch(suggestedProductsStart());
+        djangoAPI.get(`shop/api/category/${category_id}/five-products/`)
+            .then(res=>dispatch(suggestedProductsSuccess(res.data)))
+            .catch(err=>dispatch(suggestedProductsError(err)));
+    }
+    
+}
+
+
 export const searchTextChange = text =>({
     type : productTypes.CHANGE_SEARCH_TEXT,
     payload : text,

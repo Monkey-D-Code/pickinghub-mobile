@@ -1,0 +1,38 @@
+.suggested-products{
+    
+    h2{
+        font-family: $font_heading;
+        @include gradient_text($midnight,$ocen_blue);
+        margin : 0.5em auto;
+    }
+    .products-list{
+        width : 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        .one-product{
+            display: flex;
+            
+            align-items: center;
+            justify-content: space-between;
+            margin : 1em;
+            border-bottom: 1px solid rgba($ocen_blue,0.4);
+            img{
+                width : 60px;
+                
+            }
+            h3{
+                width: 220px;
+                font-family: $abel;
+                font-size: 0.9em;
+                padding-left : 10px;
+                a{
+                    text-decoration: none;
+                    color: $ocen_blue;
+                }
+            }
+            width : 300px;
+        }
+    }
+}

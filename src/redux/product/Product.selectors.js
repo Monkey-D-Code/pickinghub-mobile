@@ -45,3 +45,18 @@ export const selectResultsError = createSelector(
     [selectProduct],
     product => product.results_error,
 )
+
+
+// suggested products
+export const selectSuggestedProducts = createSelector(
+    [selectProduct],
+    product => product.suggested_products,
+);
+export const selectProductsError = createSelector(
+    [selectProduct],
+    product => product.products_error,
+);
+export const selectLoadingProducts = createSelector(
+    [selectProduct],
+    product => product.loading_products,
+);

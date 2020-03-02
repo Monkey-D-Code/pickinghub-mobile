@@ -6,11 +6,12 @@
 }
 
 body{
+    
     h1{
         font-family: $font_heading;
     }
     background-image: $pro_squres;
-
+    scroll-behavior: smooth;
     #root{
         position: relative;
     }

@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {Spring} from 'react-spring/renderprops';
 import Loader from 'react-loader-spinner';
 import {connect} from 'react-redux';
-import {withRouter,NavLink} from 'react-router-dom';
+import {withRouter,NavLink, Link} from 'react-router-dom';
 // importing selectors
 import {
     selectActiveProduct,
@@ -39,6 +39,9 @@ import {
 } from '../redux/cart/Cart.actions';
 import cart from '../elements/cart';
 
+
+// importing components
+import SuggestedProducts from '../components/SuggestedProducts';
 
 class ProductDetails extends Component {
     style = {
@@ -120,6 +123,9 @@ class ProductDetails extends Component {
 
             match : {params : {id,}},
             getProduct,
+
+           
+            
 
         } = this.props;
         if(loading){
@@ -224,6 +230,7 @@ class ProductDetails extends Component {
                                                                         <p className="selling_price"><i className="fa fa-inr" aria-hidden="true"></i> {sublet.selling_price.split('.')[0]}</p>
                                                                     </div>
                                                                     {   
+                                                                        
                                                                         activeSublet
                                                                         &&
                                                                         activeSublet.id === sublet.id
@@ -270,6 +277,8 @@ class ProductDetails extends Component {
                                         </div>
                                     }
                                     {
+                                        user
+                                        &&
                                         quantity > 0
                                         &&
                                         <div className="go-to-cart">
@@ -277,11 +286,25 @@ class ProductDetails extends Component {
                                         </div>
                                     }
                                     {
+                                        !isAuth
+                                        &&
+                                        
+                                        <div className="not-loggedin-msg">
+                                            <p>You are not logged in ! Login or Join to place an order.</p>
+                                            <NavLink to='/login'>Login</NavLink>
+                                            <NavLink to='/register'>Register</NavLink>
+                                        </div>
+                                        
+                                        
+                                    }
+                                    {
                                         activeSublet
                                         &&
                                         activeImage
                                         &&
                                         user
+                                        &&
+                                        quantity > 0
                                         &&
                                         <div className="total">
                                             <h4><i className="fa fa-inr" aria-hidden="true"></i> {quantity * activeSublet.selling_price}</h4>
@@ -320,6 +343,7 @@ class ProductDetails extends Component {
                                             </div>
                                         }
                                     </div>
+                                    <SuggestedProducts CategoryId = {product.category.id} />
                                 </div>
                             }
                         </div>
@@ -340,6 +364,7 @@ const mapState = state =>({
     user : selectActiveUser(state),
     seller : selectActiveSeller(state),
     quantity : selectSubletquantity(state),
+    
 })
 
 const mapDispatch = dispatch =>({

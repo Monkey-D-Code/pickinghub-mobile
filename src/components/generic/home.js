@@ -9,11 +9,20 @@ import {Spring} from 'react-spring/renderprops';
 import {
     selectBrand,
     selectBrandError,
-} from '../../redux/website/Website.selectors'; 
+    selectNavigationSwitch,
+
+} from '../../redux/website/Website.selectors';
+
+
 // importing actions
 import {
     toggleMenu,
 } from '../../redux/website/website.actions';
+
+
+// importing components
+import SpecialDeals from '../home/SpecialDeals';
+import CateloguePromo from '../home/CateloguePromo';
 
 class Home extends Component{
     style = {
@@ -27,7 +36,7 @@ class Home extends Component{
         }
     }
     componentDidMount = ()=>{
-        this.props.toggle();
+        if(this.props.navSwitch) this.props.toggle();
     }
     render=()=>{
         const {from ,to} = this.style;
@@ -37,6 +46,18 @@ class Home extends Component{
                 {
                     spring =>(
                         <div className="home-page" style={spring}>
+                            {
+                                error
+                                &&
+                                <div className="error">
+                                    <h4>
+                                        {JSON.stringify(error.message)}
+                                    </h4>
+                                    <h4>
+                                        Please Refresh This Page.
+                                    </h4>
+                                </div>
+                            }
                             {
                                 brand
                                 &&
@@ -68,6 +89,8 @@ class Home extends Component{
                                         />
                                         <p>{brand.about}</p>
                                     </div>
+                                    <SpecialDeals />
+                                    <CateloguePromo />
                                 </div>
                             }
                         </div>
@@ -80,6 +103,7 @@ class Home extends Component{
 const mapState = state=>({
     brand  :selectBrand(state),
     error : selectBrandError(state),
+    navSwitch : selectNavigationSwitch(state),
 
 })
 const mapDispatch = dispatch =>({

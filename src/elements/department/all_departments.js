@@ -17,6 +17,7 @@ import {
 import { NavLink } from 'react-router-dom';
 
 
+
 class DepartmentCard extends Component {
     style = {
         from : {
@@ -84,7 +85,7 @@ class AllDepartments extends Component{
           }
         return (
             <div className="all-departments">
-                <h1>Our Departments</h1>
+                <h1>Our Catelogue</h1>
                 {
                     error
                     &&

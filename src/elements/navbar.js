@@ -105,17 +105,7 @@ class Navbar extends Component{
                         
                     </div>
                 }
-                {
-                    error
-                    &&
-                    <div className="error">
-                        <h4>
-                            {
-                                JSON.stringify(error)
-                            }
-                        </h4>
-                    </div>
-                }
+                
                 <button 
                     type='button' 
                     onClick={toggle} 

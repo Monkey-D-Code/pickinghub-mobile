@@ -22,6 +22,6 @@ export const getBrand = ()=>{
         dispatch(brandStart());
         djangoAPI.get('api/brand/1/details/')
             .then(res=>dispatch(brandSuccess(res.data)))
-            .catch(err=>dispatch(brandError(err.response)));
+            .catch(err=>dispatch(brandError(err)));
     }
 }

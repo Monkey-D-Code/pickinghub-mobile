@@ -13,11 +13,34 @@ const INITIAL_STATE = {
     search_results : null,
     results_error : null,
     loading_results : false,
+
+    suggested_products : null,
+    products_error : null,
+    loading_products : false,
 }
 
 
 const productReducer = (state = INITIAL_STATE , action)=>{
     switch(action.type){
+        case productTypes.SUGGESTED_PRODUCTS_START:
+            return {
+                ...state,
+                suggested_products : null,
+                products_error : null,
+                loading_products : true,
+            }
+        case productTypes.SUGGESTED_PRODUCTS_SUCCESS:
+            return {
+                ...state,
+                loading_products : false,
+                suggested_products : action.payload,
+            }
+        case productTypes.SUGGESTED_PRODUCTS_ERROR:
+            return {
+                ...state,
+                loading_products : false,
+                products_error : action.payload,
+            }
         case productTypes.CHANGE_SEARCH_TEXT:
             return {
                 ...state,

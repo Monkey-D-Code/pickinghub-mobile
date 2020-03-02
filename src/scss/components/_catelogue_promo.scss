@@ -1,0 +1,52 @@
+.catelogue-promo{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width : 100%;
+    h2{
+        font-family: $font_heading;
+        @include gradient_text($midnight,$ocen_blue);
+        margin : 0.5em 0;
+    }
+    .department-list{
+        
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        .one-dept{
+            position: relative;
+            width : 150px;
+            @media (max-width  :420px){
+                width : 140px;
+                margin: 0.4em;
+            }
+            margin: 1em;
+            img{
+                width : 150px;
+                height: 100px;
+                object-fit: cover;
+            }
+            h4{
+                position: absolute;
+                top : 50%;
+                left : 50%;
+                transform: translate(-50%,-50%);
+                font-family: $font_para;
+                padding : 0.4em 0.6em;
+                border-radius: 0.3em;
+                background-image: linear-gradient(
+                    to right,
+                    $midnight,
+                    $ocen_blue
+                );
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}

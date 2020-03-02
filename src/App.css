@@ -1772,17 +1772,30 @@ footer {
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  position: relative;
-  padding-bottom: 6em; }
+  position: relative; }
+  @media (max-width: 768px) {
+    .home-page {
+      padding-bottom: 6em; } }
   .home-page .hero-image {
-    width: 100%; }
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; }
+    @media (max-width: 1024px) {
+      .home-page .hero-image {
+        height: 45vh; } }
   .home-page .brand-info .name {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 5em; }
+    top: 40vh; }
+    @media (max-width: 1024px) {
+      .home-page .brand-info .name {
+        top: 20vh; } }
+    @media (max-width: 420px) {
+      .home-page .brand-info .name {
+        top: 10vh; } }
     .home-page .brand-info .name .logo {
       width: 100px;
       margin-right: 0.7em; }
@@ -1797,6 +1810,16 @@ footer {
       @media (max-width: 320px) {
         .home-page .brand-info .name .heading {
           font-size: 0.9em; } }
+      .home-page .brand-info .name .heading .msg {
+        font-family: "Abel", sans-serif;
+        background-color: #119822;
+        color: white;
+        padding: 0.5em;
+        border-radius: 0.3em; }
+        .home-page .brand-info .name .heading .msg a {
+          text-decoration: none;
+          color: #E0CA3C;
+          font-weight: bold; }
       .home-page .brand-info .name .heading p {
         font-family: "Bebas Neue", cursive;
         font-size: 0.9em; }
@@ -1806,7 +1829,7 @@ footer {
     align-items: center;
     margin: 1em auto; }
     .home-page .about img {
-      width: 150px;
+      width: 40vw;
       min-height: 450px;
       object-fit: cover; }
     .home-page .about p {

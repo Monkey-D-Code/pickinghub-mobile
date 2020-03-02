@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {withRouter, NavLink} from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import {Spring} from 'react-spring/renderprops';
 
@@ -79,8 +79,12 @@ class Home extends Component{
                                                     </p>
                                                     <p className="foundation-date">Since {new Date(brand.foundation_date).toDateString()}</p>
                                                 </div>
+                                                <p className="msg">
+                                                    Looking for something ? <NavLink to='/search'>Search Here</NavLink>
+                                                </p>
                                             </div>
                                         </div>
+                                        
                                         
                                     </div>
                                     <div className="about">

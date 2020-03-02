@@ -13,6 +13,9 @@ import {
     selectResultsError,
 
 } from '../../redux/product/Product.selectors';
+import {
+    selectNavigationSwitch,
+} from '../../redux/website/Website.selectors';
 // importing actions
 import {
     toggleMenu,
@@ -39,7 +42,7 @@ class Search extends Component{
     componentDidMount = ()=>{
         const {text , getResults} = this.props;
         
-        if(!text) this.props.toggle();
+        if(!text && this.props.switch) this.props.toggle();
     }
 
     render=()=>{
@@ -147,12 +150,14 @@ const mapDispatch = dispatch =>({
     toggle : ()=>dispatch(toggleMenu()),
     change : text =>dispatch(searchTextChange(text)),
     getResults : text=>dispatch(searchProducts(text)),
+
 });
 const mapState = state =>({
     text : selectSearchText(state),
     results : selectSerchResults(state),
     error : selectResultsError(state),
     loading : selectLoadingResults(state),
+    switch : selectNavigationSwitch(state),
 })
 export default withRouter(connect(
     mapState,

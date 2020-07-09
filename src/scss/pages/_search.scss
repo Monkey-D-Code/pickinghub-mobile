@@ -61,15 +61,16 @@
                 .info{
                     h3{
                         a{
-                            font-family: $font_cursive;
+                            font-family: $abel;
                             color: $midnight;
                             text-decoration: none;
-                            font-size: 0.9em;
+                            font-size: 1em;
+                            text-transform: capitalize;
                         }
                     }
                     p{
                         font-family: $font_para;
-                        font-size: 0.8em;
+                        font-size: 0.7em;
                         color: $ocen_blue;
                     }
                 }

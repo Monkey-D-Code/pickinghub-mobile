@@ -17,11 +17,39 @@ const INITIAL_STATE = {
     suggested_products : null,
     products_error : null,
     loading_products : false,
+
+    latest_review : null,
+    adding_review : false,
+    review_error : null,
+
+    active_offer : null,
 }
 
 
 const productReducer = (state = INITIAL_STATE , action)=>{
     switch(action.type){
+        case productTypes.SET_ACTIVE_OFFER:
+            return {
+                active_offer : action.payload,
+            }
+
+        case productTypes.ADD_REVIEW_START:
+            return {
+                adding_review : true,
+                latest_review : null,
+                review_error : null,
+            }
+        case productTypes.ADD_REVIEW_SUCCESS:
+            return {
+                latest_review : action.payload,
+                adding_review : false,
+                
+            }
+        case productTypes.ADD_REVIEW_ERROR:
+            return {
+                review_error : action.payload,
+                adding_review : false,
+            }
         case productTypes.SUGGESTED_PRODUCTS_START:
             return {
                 ...state,

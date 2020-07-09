@@ -1,0 +1,45 @@
+.customer-review{
+    width : 100%;
+    padding : 1em ;
+    h1{
+        @include gradient_text($midnight,$ocen_blue);
+        margin : 0.5em auto;
+        font-size: 1.5em;
+    }
+    .list{
+        display: flex;
+        flex-wrap: wrap;
+        
+        align-items: center;
+        .single-review{
+            width : 300px;
+            margin : 0.8em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .customer{
+                img{
+                    height : 100px;
+                    width : 100px;
+                    border-radius: 50%;
+                }
+                h4{
+                    font-family: $anton;
+                    color: $ocen_blue;
+                }
+            }
+            .comment{
+                width : 170px;
+
+                p{
+                    border : 1px solid $ocen_blue;
+                    border-radius: 5px;
+                    padding : 0.5em;
+                    font-family: $abel;
+                    text-transform: capitalize;
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {Spring} from 'react-spring/renderprops';
 import Loader from 'react-loader-spinner';
 import {connect} from 'react-redux';
-import {withRouter,NavLink, Link} from 'react-router-dom';
+import {withRouter,NavLink,Route} from 'react-router-dom';
 // importing selectors
 import {
     selectActiveProduct,
@@ -37,11 +37,13 @@ import {
     removeSublet,
 
 } from '../redux/cart/Cart.actions';
-import cart from '../elements/cart';
 
 
 // importing components
 import SuggestedProducts from '../components/SuggestedProducts';
+import CustomerReview from '../components/CustomerReview';
+import AddCustomerReview from '../elements/AddCustomerReview';
+import DiscountOffers from '../elements/DiscountOffers';
 
 class ProductDetails extends Component {
     style = {
@@ -121,7 +123,7 @@ class ProductDetails extends Component {
 
             quantity,
 
-            match : {params : {id,}},
+            match : {params : {id,},},
             getProduct,
 
            
@@ -158,6 +160,7 @@ class ProductDetails extends Component {
                                         {JSON.stringify(error)}
                                     </h4>
                                     <button className='refresh' onClick={()=>getProduct(id)}><i className="fa fa-refresh" aria-hidden="true"></i></button>
+                                    
                                 </div>
                             }
                             {
@@ -201,6 +204,11 @@ class ProductDetails extends Component {
                                         <h1>
                                             {product.name} <button className='refresh' onClick={()=>getProduct(id)}><i className="fa fa-refresh" aria-hidden="true"></i></button>
                                         </h1>
+                                        {
+                                            user
+                                            &&
+                                            <NavLink className="add-review-link" to={`/product/${product.id}/add-review`}><i className="fa fa-commenting" aria-hidden="true"></i></NavLink>
+                                        }
                                         <p>
                                             {product.description}
                                         </p>
@@ -282,7 +290,7 @@ class ProductDetails extends Component {
                                         quantity > 0
                                         &&
                                         <div className="go-to-cart">
-                                            <NavLink to='/cart'>Go To Cart &rarr;</NavLink>
+                                            <NavLink to='/cart'>Buy Now &rarr;</NavLink>
                                         </div>
                                     }
                                     {
@@ -329,21 +337,19 @@ class ProductDetails extends Component {
                                             </div>
                                         }
                                     </div>
-                                    <div className="discountoffers">
-                                        {
-                                            product.discountoffers.length > 0
-                                            ?
-                                            product.discountoffers.map((offer, i)=>(
-                                                <div className="offer" key={i}>
-
-                                                </div>
-                                            ))
-                                            : <div className="warning">
-                                                <h4>No Offers Available</h4>
-                                            </div>
-                                        }
-                                    </div>
+                                    
                                     <SuggestedProducts CategoryId = {product.category.id} />
+                                    <CustomerReview />
+                                    {
+                                        user
+                                        &&
+                                        <>
+                                            
+                                            <Route path={`/product/${product.id}/add-review`}>
+                                                <AddCustomerReview product_id={product.id} />
+                                            </Route>
+                                        </>
+                                    }
                                 </div>
                             }
                         </div>

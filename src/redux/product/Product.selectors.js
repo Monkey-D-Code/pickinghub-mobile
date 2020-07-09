@@ -60,3 +60,38 @@ export const selectLoadingProducts = createSelector(
     [selectProduct],
     product => product.loading_products,
 );
+
+// reviews
+export const selectCustomerReviews = createSelector(
+    [selectProduct],
+    product => {
+        if(product.active_product){
+            if(product.active_product.reviews){
+                return product.active_product.reviews;
+            }
+        }
+        return false;
+    }
+)
+export const selectReviewError = createSelector(
+    [selectProduct],
+    product => product.review_error,
+);
+export const selectAddingReview = createSelector(
+    [selectProduct],
+    product => product.adding_review,
+)
+
+
+// discount offers
+export const selectDiscountOffers = createSelector(
+    [selectProduct],
+    product => {
+        if(product.active_product) return product.active_product.discount_offers || null;
+        return null;
+    }
+)
+export const selectActiveOffer = createSelector(
+    [selectProduct],
+    product => product.active_offer,
+)

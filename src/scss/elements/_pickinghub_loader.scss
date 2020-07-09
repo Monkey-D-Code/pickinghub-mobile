@@ -1,0 +1,31 @@
+.pickinghub-spinner{
+    position: relative;
+    height: 100vh;
+    width : 100vw;
+    h1{
+        @include gradient_text($midnight,$ocen_blue);
+        font-size: 25px;
+        @media (max-width : 320px){
+            font-size: 23px;
+        }
+    }
+    .content{
+        position: absolute;
+        top : 30vh;
+        
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        position: relative;
+    }
+    img{
+        height : 80px;
+        width : 80px;
+        animation: pooch 0.5s ease-in infinite alternate;
+        position: absolute;
+        top: 73px;
+        @media (max-width : 320px){
+            top: 71px;
+        }
+    }
+}

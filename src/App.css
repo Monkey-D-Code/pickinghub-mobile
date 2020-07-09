@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Abel|Anton|Heebo&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Dosis&display=swap");
 @keyframes colorSwitch {
   0% {
     color: #9d8b19; }
@@ -13,6 +14,12 @@
     color: #531CB3; }
   100% {
     color: #101935; } }
+
+@keyframes pooch {
+  0% {
+    scale: 1; }
+  100% {
+    scale: 1.5; } }
 
 * {
   margin: 0;
@@ -122,7 +129,7 @@ body {
     cursor: pointer;
     transition: all 0.3s;
     background-image: linear-gradient(to right, #7A306C, #101935);
-    font-family: "Pacifico", cursive;
+    font-family: "Dosis", sans-serif;
     color: white;
     height: 80px;
     margin: 1em auto; }
@@ -153,7 +160,7 @@ body {
         object-fit: cover; }
       .cart .sublets .cart_sublet h3 a {
         text-decoration: none;
-        font-family: "Pacifico", cursive;
+        font-family: "Dosis", sans-serif;
         color: #531CB3; }
       .cart .sublets .cart_sublet h3 button {
         background-color: #B3001B;
@@ -252,7 +259,120 @@ footer {
     font-family: "Anton", sans-serif;
     color: #55224c; }
     footer .copyright p a {
-      color: #101935; }
+      color: #101935;
+      text-decoration: none; }
+
+.pickinghub-spinner {
+  position: relative;
+  height: 100vh;
+  width: 100vw; }
+  .pickinghub-spinner h1 {
+    background-image: linear-gradient(to right, #7A306C, #531CB3);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    font-size: 25px; }
+    @media (max-width: 320px) {
+      .pickinghub-spinner h1 {
+        font-size: 23px; } }
+  .pickinghub-spinner .content {
+    position: absolute;
+    top: 30vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative; }
+  .pickinghub-spinner img {
+    height: 80px;
+    width: 80px;
+    animation: pooch 0.5s ease-in infinite alternate;
+    position: absolute;
+    top: 73px; }
+    @media (max-width: 320px) {
+      .pickinghub-spinner img {
+        top: 71px; } }
+
+.single-slide {
+  height: 100vh; }
+  .single-slide .text {
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(122, 48, 108, 0.6), rgba(83, 28, 179, 0.6));
+    padding: 2em; }
+    @media (max-width: 420px) {
+      .single-slide .text {
+        padding: 1em; } }
+    .single-slide .text h4 {
+      font-family: "Bowlby One SC", cursive;
+      color: white;
+      font-size: 3em;
+      font-weight: 200; }
+      @media (max-width: 420px) {
+        .single-slide .text h4 {
+          font-size: 1.5em; } }
+      @media (max-width: 320px) {
+        .single-slide .text h4 {
+          font-size: 1em; } }
+    .single-slide .text p {
+      font-family: "Bebas Neue", cursive;
+      color: white;
+      font-size: 1.5em; }
+      @media (max-width: 420px) {
+        .single-slide .text p {
+          font-size: 0.9em; } }
+
+.customer-review {
+  width: 100%;
+  padding: 1em; }
+  .customer-review h1 {
+    background-image: linear-gradient(to right, #7A306C, #531CB3);
+    width: fit-content;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin: 0.5em auto;
+    font-size: 1.5em; }
+  .customer-review .list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
+    .customer-review .list .single-review {
+      width: 300px;
+      margin: 0.8em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .customer-review .list .single-review .customer img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%; }
+      .customer-review .list .single-review .customer h4 {
+        font-family: "Anton", sans-serif;
+        color: #531CB3; }
+      .customer-review .list .single-review .comment {
+        width: 170px; }
+        .customer-review .list .single-review .comment p {
+          border: 1px solid #531CB3;
+          border-radius: 5px;
+          padding: 0.5em;
+          font-family: "Abel", sans-serif;
+          text-transform: capitalize;
+          font-size: 0.7em; }
+
+.add-customer-review {
+  background-color: rgba(122, 48, 108, 0.6);
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+  .add-customer-review form .form-group h3 {
+    font-family: "Anton", sans-serif; }
 
 .form h1 {
   background-image: linear-gradient(to right, #531CB3, #101935);
@@ -278,7 +398,7 @@ footer {
     font-size: 1.5em; }
   .form .form-group .input {
     padding: 0.2em 0.3em;
-    font-family: "Pacifico", cursive;
+    font-family: "Dosis", sans-serif;
     color: #531CB3;
     font-size: 1.2em;
     margin: 0.5em;
@@ -416,7 +536,7 @@ footer {
   align-items: center;
   padding-top: 15em; }
   .loading-pickinghub h1 {
-    font-family: "Pacifico", cursive;
+    font-family: "Dosis", sans-serif;
     color: #531CB3;
     margin: 0 !important; }
     @media (max-width: 420px) {
@@ -447,7 +567,7 @@ footer {
     margin: 0.5em auto; }
     .order-details .order-info .status p {
       margin: 0.2em 0;
-      font-family: "Pacifico", cursive;
+      font-family: "Dosis", sans-serif;
       color: white;
       text-align: center;
       padding: 0.3em 0;
@@ -492,7 +612,7 @@ footer {
       .order-details .order-info .orders .single-order h4 {
         margin: 0.3em 0; }
         .order-details .order-info .orders .single-order h4 a {
-          font-family: "Pacifico", cursive;
+          font-family: "Dosis", sans-serif;
           font-size: 0.9em;
           line-height: 1.2em;
           color: #7A306C;
@@ -542,7 +662,7 @@ footer {
         .edit-profile .user-infor h1 {
           font-size: 1.6em; } }
     .edit-profile .user-infor h2 {
-      font-family: "Pacifico", cursive;
+      font-family: "Dosis", sans-serif;
       border: 1px solid #531CB3;
       padding: 0.3em 0.7em;
       border-radius: 0.3em;
@@ -558,7 +678,7 @@ footer {
     flex-flow: column;
     align-items: center; }
     .edit-profile-form form .form-group h3 {
-      font-family: "Pacifico", cursive;
+      font-family: "Dosis", sans-serif;
       background-image: linear-gradient(to right, #119822, #7A306C);
       width: fit-content;
       background-clip: text;
@@ -799,7 +919,7 @@ footer {
       font-family: "Bebas Neue", cursive; }
     .login-page .sub-nav a {
       color: #101935;
-      font-family: "Pacifico", cursive;
+      font-family: "Dosis", sans-serif;
       text-decoration: none; }
 
 .register-page {
@@ -828,7 +948,7 @@ footer {
       font-family: "Bebas Neue", cursive; }
     .register-page .sub-nav a {
       color: #101935;
-      font-family: "Pacifico", cursive;
+      font-family: "Dosis", sans-serif;
       text-decoration: none; }
 
 .terms {
@@ -870,7 +990,7 @@ footer {
       border-radius: 5px; }
       .terms .terms-list .single-term h4 {
         text-transform: capitalize;
-        font-family: "Pacifico", cursive;
+        font-family: "Dosis", sans-serif;
         color: #101935;
         font-size: 1.3em;
         margin: 0.3em 0; }
@@ -906,7 +1026,7 @@ footer {
       padding: 0.6em;
       border-radius: 0.4em; }
       .privacy .policy-list .single-policy h4 {
-        font-family: "Pacifico", cursive;
+        font-family: "Dosis", sans-serif;
         color: #531CB3;
         font-size: 1.3em;
         margin: 0.3em 0; }
@@ -947,7 +1067,7 @@ footer {
           object-fit: cover;
           object-position: top; }
         .department-page .all-departments .depts .single-department h3 {
-          font-family: "Pacifico", cursive;
+          font-family: "Dosis", sans-serif;
           padding: 0.2em; }
           .department-page .all-departments .depts .single-department h3 a {
             text-decoration: none;
@@ -1008,7 +1128,7 @@ footer {
               margin-right: 1em;
               border: 2px solid #531CB3; }
             .department-page .department-details .info .demographics .single-demographic .demo .info h3 {
-              font-family: "Pacifico", cursive; }
+              font-family: "Dosis", sans-serif; }
               .department-page .department-details .info .demographics .single-demographic .demo .info h3 a {
                 text-decoration: none;
                 color: #55224c; }
@@ -1093,7 +1213,7 @@ footer {
           margin-right: 0.3em;
           border: 2px solid #7A306C; }
         .category-details .information .products .single-product h4 {
-          font-family: "Pacifico", cursive;
+          font-family: "Dosis", sans-serif;
           width: 180px; }
           .category-details .information .products .single-product h4 a {
             text-decoration: none;
@@ -1276,8 +1396,14 @@ footer {
           -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
           -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
           box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+    .product-details .product .add-review-link {
+      position: fixed;
+      top: 50vh;
+      right: 2em; }
+      .product-details .product .add-review-link i {
+        font-size: 2em; }
     .product-details .product .variants .variant h4 {
-      font-family: "Pacifico", cursive;
+      font-family: "Dosis", sans-serif;
       color: #877815;
       text-align: center;
       font-size: 1.4em; }
@@ -1365,7 +1491,7 @@ footer {
       -moz-background-clip: text;
       color: transparent; }
     .profile .user-info p {
-      font-family: "Pacifico", cursive;
+      font-family: "Dosis", sans-serif;
       color: #101935;
       font-size: 1.1em; }
   .profile .address-list h3 {
@@ -1389,7 +1515,7 @@ footer {
         color: #7A306C;
         margin: 0.3em 0; }
       .profile .address-list .list .single-address .status p {
-        font-family: "Pacifico", cursive;
+        font-family: "Dosis", sans-serif;
         padding: 0.5em;
         text-align: center;
         color: white;
@@ -1417,7 +1543,7 @@ footer {
       background-color: #073c0d;
       border-radius: 0.3em; }
       .profile .contacts .list .single-contact h4 {
-        font-family: "Pacifico", cursive;
+        font-family: "Dosis", sans-serif;
         font-size: 1.1em;
         color: white;
         font-weight: 200; }
@@ -1643,7 +1769,7 @@ footer {
         .orders .orders-list .single-order .status p {
           width: 300px;
           text-align: center;
-          font-family: "Pacifico", cursive;
+          font-family: "Dosis", sans-serif;
           margin: 0.2em 0;
           border-radius: 5px;
           color: white;
@@ -1688,7 +1814,7 @@ footer {
       border-radius: 0.3em;
       padding: 0.4em; }
       .return-policy .policy-list .single-policy h4 {
-        font-family: "Pacifico", cursive;
+        font-family: "Dosis", sans-serif;
         color: #531CB3;
         border-bottom: 1px solid #E0CA3C;
         margin-bottom: 0.3em; }
@@ -1709,7 +1835,7 @@ footer {
     text-align: center;
     margin: 0.5em 0; }
     .search .search-box input {
-      font-family: "Pacifico", cursive;
+      font-family: "Dosis", sans-serif;
       color: #7A306C;
       border: 1px solid #7A306C;
       padding: 0.6em 0.4em;
@@ -1759,13 +1885,14 @@ footer {
         margin-right: 0.6em;
         object-fit: cover; }
       .search .result-list .results .single-result .info h3 a {
-        font-family: "Pacifico", cursive;
+        font-family: "Abel", sans-serif;
         color: #7A306C;
         text-decoration: none;
-        font-size: 0.9em; }
+        font-size: 1em;
+        text-transform: capitalize; }
       .search .result-list .results .single-result .info p {
         font-family: "Bebas Neue", cursive;
-        font-size: 0.8em;
+        font-size: 0.7em;
         color: #531CB3; }
 
 .home-page {
@@ -1789,13 +1916,19 @@ footer {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 40vh; }
+    top: 30vh; }
     @media (max-width: 1024px) {
       .home-page .brand-info .name {
-        top: 20vh; } }
+        top: 15vh; } }
     @media (max-width: 420px) {
       .home-page .brand-info .name {
-        top: 10vh; } }
+        top: 30vh; } }
+    @media (max-width: 375px) {
+      .home-page .brand-info .name {
+        top: 35vh; } }
+    @media (max-width: 320px) {
+      .home-page .brand-info .name {
+        top: 40vh; } }
     .home-page .brand-info .name .logo {
       width: 100px;
       margin-right: 0.7em; }
@@ -1924,7 +2057,7 @@ footer {
       color: rgba(16, 25, 53, 0.6); }
     .seller .form-group button {
       width: 300px;
-      font-family: "Pacifico", cursive;
+      font-family: "Dosis", sans-serif;
       padding: 0.5em 0;
       margin: 0.5em 0;
       cursor: pointer;
@@ -2058,7 +2191,7 @@ footer {
   align-items: center;
   margin: 1em 0; }
   .update-seller .form-group h3 {
-    font-family: "Pacifico", cursive;
+    font-family: "Dosis", sans-serif;
     background-image: linear-gradient(to bottom, #F75C03, #c54902);
     width: fit-content;
     padding: 0.3em 0.4em;
@@ -2330,7 +2463,7 @@ footer {
   flex-flow: column;
   align-items: center; }
   .product-form .form-group h3 {
-    font-family: "Pacifico", cursive;
+    font-family: "Dosis", sans-serif;
     color: #F75C03; }
   .product-form .form-group input, .product-form .form-group textarea {
     width: 300px;

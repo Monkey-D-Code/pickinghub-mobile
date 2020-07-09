@@ -17,6 +17,9 @@ import {
 import { NavLink } from 'react-router-dom';
 
 
+// components
+import PickingHubLoader from '../../components/PickingHubLoader';
+
 
 class DepartmentCard extends Component {
     style = {
@@ -71,16 +74,9 @@ class AllDepartments extends Component{
 
         if(loading){
             return(
-              <div className="loading-pickinghub">
-                <h1>We keep it all !</h1>
-                <Loader 
-                  type = "Oval"
-                  color = "#101935"
-                  height  = {150}
-                  width = {150}
-                  timeout = {20000}
+                <PickingHubLoader
+                    text={'We Keep it all'}
                 />
-              </div>
             )
           }
         return (

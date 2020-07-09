@@ -20,4 +20,13 @@ export const selectBrandError = createSelector(
 export const selectLoadingBrand = createSelector(
     [selectWebsite],
     website => website.loading_brand,
+);
+
+export const selectHeroImages = createSelector(
+    [selectWebsite],
+    website => website.brand.hero_images,
+);
+export const selectNormalImages = createSelector(
+    [selectWebsite],
+    website => website.brand.normal_images,
 )

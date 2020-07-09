@@ -1,0 +1,18 @@
+.add-customer-review{
+    background-color: rgba($midnight , 0.6);
+    position: fixed;
+    z-index : 10;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%,-50%);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    form{
+        .form-group{
+            h3{
+                font-family: $anton;
+            }
+        }
+    }
+}

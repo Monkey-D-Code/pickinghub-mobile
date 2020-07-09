@@ -92,3 +92,30 @@ export const searchProducts = text =>{
             .catch(err=>dispatch(searchResultsError(err)));
     }
 }
+
+// add customer review on product
+const addReviewStart = ()=>({
+    type : productTypes.ADD_REVIEW_START,
+});
+const addReviewSuccess = latest_review =>({
+    type : productTypes.ADD_REVIEW_SUCCESS,
+    payload : latest_review,
+});
+const addReviewError = error =>({
+    type : productTypes.ADD_REVIEW_ERROR,
+    payload : error,
+});
+export const addCustomerReview = data =>{
+    return dispatch =>{
+        dispatch(addReviewStart());
+        djangoAPI.post(`shop/api/review/create/`,data)
+            .then(res => dispatch(addReviewSuccess(res.data)))
+            .catch(err=>dispatch(addReviewError(err)));
+    }
+}
+
+
+export const setOffer = offer =>({
+    type : productTypes.SET_ACTIVE_OFFER,
+    payload : offer,
+})

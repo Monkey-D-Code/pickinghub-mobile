@@ -54,6 +54,7 @@ import ProductDetails from './components/product_details';
 // importing elements
 import Navbar from './elements/navbar'
 import Cart from './elements/cart';
+import PickingHubLoader from './components/PickingHubLoader';
 
 import './App.css';
 
@@ -77,16 +78,9 @@ class App extends Component{
     } = this.props;
     if(loading_brand){
       return(
-        <div className="loading-pickinghub">
-          <h1>Welcome To Pickinghub</h1>
-          <Loader 
-            type = "Oval"
-            color = "#101935"
-            height  = {150}
-            width = {150}
-            timeout = {20000}
-          />
-        </div>
+        <PickingHubLoader
+          text='Welcome To PickingHub'
+        />
       )
     }
     return(

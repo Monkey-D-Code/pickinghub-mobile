@@ -6,3 +6,8 @@
     80% {color: $ocen_blue;}
     100% {color: $maastricth_blue;}
 }
+
+@keyframes pooch{
+    0%{ scale  : 1}
+    100% { scale : 1.5}
+}

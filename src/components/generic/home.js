@@ -21,6 +21,7 @@ import {
 
 
 // importing components
+import HeroImageSlider from '../HeroImageSlider';
 import SpecialDeals from '../home/SpecialDeals';
 import CateloguePromo from '../home/CateloguePromo';
 import Footer from '../../elements/Footer';
@@ -59,11 +60,14 @@ class Home extends Component{
                                     </h4>
                                 </div>
                             }
+                            
                             {
                                 brand
                                 &&
                                 <div className="brand-hero">
-                                    <img className='hero-image' src={brand.random_hero_image} alt=""/>
+                                    <HeroImageSlider />
+                                    {/* <img className='hero-image' src={brand.random_hero_image} alt=""/> */}
+
                                     <div className="brand-info">
                                         <div className="name">
                                             <img 
@@ -87,6 +91,7 @@ class Home extends Component{
                                         
                                         
                                     </div>
+                                    
                                     <div className="about">
                                         <img 
                                             src={brand.random_normal_image} 
@@ -94,9 +99,9 @@ class Home extends Component{
                                         />
                                         <p>{brand.about}</p>
                                     </div>
-                                    
-                                    <CateloguePromo />
                                     <SpecialDeals />
+                                    <CateloguePromo />
+                                    
                                     <Footer />
                                 </div>
                             }

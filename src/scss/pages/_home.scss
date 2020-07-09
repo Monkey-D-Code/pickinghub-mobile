@@ -21,12 +21,18 @@
             align-items: center;
             justify-content: center;
             position: absolute;
-            top : 40vh;
+            top : 30vh;
             @media (max-width:1024px){
-                top : 20vh;
+                top : 15vh;
             }
             @media (max-width:420px){
-                top : 10vh;
+                top : 30vh;
+            }
+            @media (max-width:375px){
+                top : 35vh;
+            }
+            @media (max-width:320px){
+                top : 40vh;
             }
             .logo{
                 width : 100px;

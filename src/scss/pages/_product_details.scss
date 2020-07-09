@@ -1,4 +1,5 @@
 .product-details{
+    
     height: 100vh;
     width : 100vw;
     overflow: auto;
@@ -173,6 +174,15 @@
                 border-radius: 0.3em;
                 text-align: center;
                 @include btn_interaction;
+            }
+        }
+        .add-review-link{
+            position: fixed;
+            top : 50vh;
+            right : 2em;
+            
+            i{
+                font-size: 2em;
             }
         }
         .variants{

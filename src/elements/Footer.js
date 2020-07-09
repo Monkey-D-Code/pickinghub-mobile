@@ -31,12 +31,12 @@ const Footer = ({brand}) => {
                 </ul>
             </div>
             <div className="contact">
-                <h4 className="contact"><i class="fa fa-phone-square" aria-hidden="true"></i> +91 {brand.contact_number}</h4>
+                <h4 className="contact"><i className="fa fa-phone-square" aria-hidden="true"></i> +91 {brand.contact_number}</h4>
                 <h4 className="email"><i className="fa fa-envelope" aria-hidden="true"></i> {brand.email}</h4>
                 <h4 className="address"><i className="fa fa-map-marker" aria-hidden="true"></i> {brand.address}</h4>
             </div>
             <div className="copyright">
-                <p>All Rights Reserved pickinghub.com | Designed &amp; developed by <a href="https://gieitech.pythonanywhere.com/" target="__blank">GIEITech</a></p>
+                <p>&copy;All Rights Reserved pickinghub.com | Designed &amp; developed by <a href="https://gieitech.pythonanywhere.com/" target="__blank">GIEITech</a></p>
             </div>
             
         </footer>

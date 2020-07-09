@@ -21,6 +21,7 @@ import {
 
 // importing elements
 import Demographics from './demographics';
+import PHLoader from '../../components/PickingHubLoader';
 
 class DepartmentDetails extends Component{
     style = {
@@ -54,16 +55,9 @@ class DepartmentDetails extends Component{
         } = this.props;
         if(loading){
             return(
-              <div className="loading-pickinghub">
-                <h1>Shop with benifits</h1>
-                <Loader 
-                  type = "Oval"
-                  color = "#101935"
-                  height  = {150}
-                  width = {150}
-                  timeout = {10000}
+                <PHLoader 
+                    text='Shop with benifits'
                 />
-              </div>
             )
           }
         return (

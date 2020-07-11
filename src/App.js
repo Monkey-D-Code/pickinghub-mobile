@@ -55,6 +55,8 @@ import ProductDetails from './components/product_details';
 import Navbar from './elements/navbar'
 import Cart from './elements/cart';
 import PickingHubLoader from './components/PickingHubLoader';
+import Back from './elements/Back';
+import Refresh from './elements/Refresh';
 
 import './App.css';
 
@@ -86,6 +88,8 @@ class App extends Component{
     return(
       <Router>
         <Navbar />
+        <Back />
+        <Refresh />
         <Switch>
           <Route exact path='/'>
             <Home />

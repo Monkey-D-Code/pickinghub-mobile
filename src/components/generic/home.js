@@ -26,6 +26,8 @@ import SpecialDeals from '../home/SpecialDeals';
 import CateloguePromo from '../home/CateloguePromo';
 import Footer from '../../elements/Footer';
 
+import Refresh from '../../elements/Refresh';
+
 class Home extends Component{
     style = {
         from : {
@@ -52,6 +54,7 @@ class Home extends Component{
                                 error
                                 &&
                                 <div className="error">
+                                    <Refresh/>
                                     <h4>
                                         {JSON.stringify(error.message)}
                                     </h4>

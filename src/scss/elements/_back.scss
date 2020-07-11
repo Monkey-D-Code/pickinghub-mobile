@@ -1,0 +1,41 @@
+.back-button{
+    display: none;
+    @media (max-width : 768px){
+        display: block;
+    }
+    position: fixed;
+    bottom: 1em;
+    left : 1em;
+    z-index: 1999;
+    button{
+        height : 3em;
+        width : 3em;
+        border-radius: 50%;
+        @include btn_interaction;
+        outline: none;
+        border: none;
+        background-color: $crimson;
+        color: white;
+    }
+}
+
+.refresh-page-btn{
+    display: none;
+    @media (max-width : 768px){
+        display: block;
+    }
+    position: fixed;
+    bottom: 1em;
+    left : 4em;
+    z-index: 1999;
+    button{
+        height : 3em;
+        width : 3em;
+        border-radius: 50%;
+        @include btn_interaction;
+        outline: none;
+        border: none;
+        background-color: darken($meat_brown , 20%);
+        color: white;
+    }
+}

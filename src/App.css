@@ -374,6 +374,66 @@ footer {
   .add-customer-review form .form-group h3 {
     font-family: "Anton", sans-serif; }
 
+.back-button {
+  display: none;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  z-index: 1999; }
+  @media (max-width: 768px) {
+    .back-button {
+      display: block; } }
+  .back-button button {
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    outline: none;
+    border: none;
+    background-color: #B3001B;
+    color: white; }
+    .back-button button:hover {
+      transform: translateY(-4px);
+      -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+    .back-button button:active {
+      transform: translateY(4px);
+      -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+
+.refresh-page-btn {
+  display: none;
+  position: fixed;
+  bottom: 1em;
+  left: 4em;
+  z-index: 1999; }
+  @media (max-width: 768px) {
+    .refresh-page-btn {
+      display: block; } }
+  .refresh-page-btn button {
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    outline: none;
+    border: none;
+    background-color: #9d8b19;
+    color: white; }
+    .refresh-page-btn button:hover {
+      transform: translateY(-4px);
+      -webkit-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 36px 0px rgba(16, 25, 53, 0.52); }
+    .refresh-page-btn button:active {
+      transform: translateY(4px);
+      -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
+      box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+
 .form h1 {
   background-image: linear-gradient(to right, #531CB3, #101935);
   width: fit-content;

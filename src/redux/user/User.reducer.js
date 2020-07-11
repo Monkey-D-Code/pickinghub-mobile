@@ -34,16 +34,29 @@ const userReducer = (state = INITIAL_STATE , action)=>{
                 address_error : null,
             }
         case userTypes.ADD_ADDRESS_SUCCESS:
+            if(state.active_user.all_address){
+                return {
+                    ...state,
+                    latest_address : action.payload,
+                    adding_address : false,
+                    active_user : {
+                        ...state.active_user,
+                        all_address : [...state.active_user.all_address , action.payload]
+                    }
+                    
+                }
+            }
             return {
                 ...state,
                 latest_address : action.payload,
                 adding_address : false,
                 active_user : {
                     ...state.active_user,
-                    all_address : [...state.active_user.all_address , action.payload]
+                    all_address : [ action.payload]
                 }
                 
             }
+            
         case userTypes.ADD_ADDRESS_ERROR:
             return {
                 ...state,
@@ -59,16 +72,29 @@ const userReducer = (state = INITIAL_STATE , action)=>{
                 contact_error : null,
             }
         case userTypes.ADD_CONTACT_SUCCESS:
+            if(state.active_user.contacts){
+                return {
+                    ...state,
+                    latest_contact : action.payload,
+                    adding_contact : false,
+                    active_user : {
+                        ...state.active_user,
+                        contacts : [...state.active_user.contacts , action.payload]
+                    }
+                    
+                }
+            }
             return {
                 ...state,
                 latest_contact : action.payload,
                 adding_contact : false,
                 active_user : {
                     ...state.active_user,
-                    contacts : [...state.active_user.contacts , action.payload]
+                    contacts : [action.payload]
                 }
                 
             }
+            
         case userTypes.ADD_CONTACT_ERROR:
             return {
                 ...state,

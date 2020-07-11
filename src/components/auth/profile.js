@@ -7,6 +7,7 @@ import { NavLink,Route ,withRouter} from 'react-router-dom';
 import {
     selectActiveUser,
     selectActiveSeller,
+    selectAllAddress,
 
 } from '../../redux/user/User.selectors';
 import {
@@ -19,6 +20,7 @@ import {
 } from '../../redux/website/website.actions';
 import {
     logout,
+
 } from '../../redux/user/User.actions';
 
 
@@ -51,6 +53,8 @@ class Profile extends Component{
             user,
             logout,
             match,
+            allAddress,
+            
         } = this.props;
         const {from ,to} = this.style;
         return(
@@ -161,6 +165,7 @@ class Profile extends Component{
 
 const mapState = state => ({
     user : selectActiveUser(state),
+    allAddress : selectAllAddress(state),
     seller : selectActiveSeller(state),
     switch : selectNavigationSwitch(state),
 });

@@ -60,6 +60,11 @@ export const selectConfirmedSeller = createSelector(
 
 
 // address
+export const selectAllAddress = createSelector(
+    [selectUser],
+    user => user.all_address || false,
+)
+
 export const selectLatestAddress = createSelector(
     [selectUser],
     user => user.latest_address,

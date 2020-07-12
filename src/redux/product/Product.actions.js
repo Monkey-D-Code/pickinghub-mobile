@@ -109,7 +109,9 @@ export const addCustomerReview = data =>{
     return dispatch =>{
         dispatch(addReviewStart());
         djangoAPI.post(`shop/api/review/create/`,data)
-            .then(res => dispatch(addReviewSuccess(res.data)))
+            .then(res => {
+                dispatch(addReviewSuccess(res.data))
+            })
             .catch(err=>dispatch(addReviewError(err)));
     }
 }

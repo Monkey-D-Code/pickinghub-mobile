@@ -65,6 +65,7 @@ const SpecialDeals = ({deals,error,loading,getDeals}) => {
                 deals
                 &&
                 <div className="all-deals">
+
                     {
                         deals.map((deal,i)=>(
                             <div className="single-deal" key={i}>
@@ -83,7 +84,7 @@ const SpecialDeals = ({deals,error,loading,getDeals}) => {
                                 </div>
                                 <div className="discount">
                                     <p>
-                                        {deal.discount_percentage} % OFF
+                                        Upto {Math.ceil(deal.discount_percentage)} % OFF
                                     </p>
                                 </div>
                                 <div className="info">

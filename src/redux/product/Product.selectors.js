@@ -72,6 +72,7 @@ export const selectCustomerReviews = createSelector(
         }
         return false;
     }
+
 )
 export const selectReviewError = createSelector(
     [selectProduct],
@@ -80,6 +81,10 @@ export const selectReviewError = createSelector(
 export const selectAddingReview = createSelector(
     [selectProduct],
     product => product.adding_review,
+)
+export const selectLatestReview = createSelector(
+    [selectProduct],
+    product => product.latest_review,
 )
 
 

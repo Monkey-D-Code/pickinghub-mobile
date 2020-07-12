@@ -30,23 +30,43 @@ const productReducer = (state = INITIAL_STATE , action)=>{
     switch(action.type){
         case productTypes.SET_ACTIVE_OFFER:
             return {
+                ...state,
                 active_offer : action.payload,
             }
 
         case productTypes.ADD_REVIEW_START:
             return {
+                ...state,
                 adding_review : true,
                 latest_review : null,
                 review_error : null,
             }
         case productTypes.ADD_REVIEW_SUCCESS:
+            if(state.active_product.reviews){
+                return {
+                    ...state,
+                    latest_review : action.payload,
+                    active_product : {
+                        ...state.active_product,
+                        reviews : [...state.active_product.reviews , action.payload]
+                    },
+                    adding_review : false,
+                }
+            }
             return {
+                ...state,
                 latest_review : action.payload,
+                active_product : {
+                    ...state.active_product,
+                    reviews : [action.payload]
+                },
                 adding_review : false,
+
                 
             }
         case productTypes.ADD_REVIEW_ERROR:
             return {
+                ...state,
                 review_error : action.payload,
                 adding_review : false,
             }

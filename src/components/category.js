@@ -54,7 +54,7 @@ class Category extends Component{
                         color = "#101935"
                         height  = {150}
                         width = {150}
-                        timeout = {20000}
+                        timeout = {30000}
                         />
                 </div>
                 

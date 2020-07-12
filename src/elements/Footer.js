@@ -14,6 +14,23 @@ const Footer = ({brand}) => {
             <div className="brand-info">
                 <img src={brand.logo_url} alt=""/>
                 <h2>{brand.full_name}</h2>
+                <div className="social-media">
+                    {
+                        brand.facebook
+                        &&
+                        <a href={ brand.facebook} target="_blank"><i className="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    }
+                    {
+                        brand.twitter
+                        &&
+                        <a href={ brand.twitter} target="_blank"><i className="fa fa-twitter-square" aria-hidden="true"></i></a>
+                    }
+                    {
+                        brand.instagram
+                        &&
+                        <a href={ brand.instagram} target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                    }
+                </div>
             </div>
             <div className="navigation">
                 <ul>

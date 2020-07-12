@@ -7,6 +7,7 @@ import {useSpring,animated} from 'react-spring';
 import {
     selectReviewError,
     selectAddingReview,
+    selectLatestReview,
 
 } from '../redux/product/Product.selectors';
 import {
@@ -19,29 +20,30 @@ import {
 
 } from '../redux/product/Product.actions';
 
-const AddCustomerReview = ({product_id ,error,loading,addReview,user}) => {
+const AddCustomerReview = ({product_id ,error,loading,addReview,user,latest}) => {
     const [reviewData,setData] = useState({
         product : product_id,
         customer : user.id,
-        rating : 0,
+        rating : "",
         comment : "",
     });
     const spring = useSpring({
-        transform : 'translateX(0)',
-        from : {transform : 'translateX(-100vw)'}
+        transform : 'opacity : 1',
+        from : {transform : 'opacity : 0'}
     })
     return (
         <animated.div className='add-customer-review' style={spring}>
+
             {
                 error
                 &&
                 <div className="error">
                     <h4>
-                        {JSON.stringify(error)}
+                        Error adding review !
                     </h4>
                 </div>
             }
-            <form>
+            <div className="review-form">
                 <div className="form-group">
                     <h3>Add a Review <NavLink to={`/product/${product_id}`}>&times;</NavLink></h3>
                     <input 
@@ -56,6 +58,7 @@ const AddCustomerReview = ({product_id ,error,loading,addReview,user}) => {
                                 rating : e.target.value,
                             })
                         }
+                        placeholder="Rate from 1 to 10"
                     />
                     <textarea
                        className="input"
@@ -66,28 +69,43 @@ const AddCustomerReview = ({product_id ,error,loading,addReview,user}) => {
                                comment : e.target.value,
                            })
                        }
+                       placeholder = "Write about this product"
                        rows="5"
                     ></textarea>
-                    <button 
-                        type="button"
-                        disabled={loading}
-                        onClick={()=>addReview(reviewData)}
-                    >
-                        {
-                            loading
-                            ? <Loader 
-                                type = "Oval"
-                                color = "#ffff"
-                                height  = {20}
-                                width = {20}
-                                timeout = {20000}
-                            />
-                            : <><i className="fa fa-plus" aria-hidden="true"></i> Review</>
-                        }
-                        
-                    </button>
+                    {
+                        latest
+                        &&
+                        <h5 className="latest">
+                            Review Added Successfully.
+                        </h5>
+                    }
+                    {
+                        reviewData.rating && reviewData.comment
+                        &&
+                        <button 
+                            type="button"
+                            disabled={loading}
+                            onClick={(e)=>{
+                                e.preventDefault();
+                                addReview(reviewData);
+                            }}
+                        >
+                            {
+                                loading
+                                ? <Loader 
+                                    type = "Oval"
+                                    color = "#ffff"
+                                    height  = {20}
+                                    width = {20}
+                                    timeout = {20000}
+                                />
+                                : <><i className="fa fa-plus" aria-hidden="true"></i> Review</>
+                            }
+                            
+                        </button>
+                    }
                 </div>
-            </form>
+            </div>
         </animated.div>
     )
 }
@@ -95,6 +113,7 @@ const AddCustomerReview = ({product_id ,error,loading,addReview,user}) => {
 export default withRouter(
     connect(
         state =>({
+            latest : selectLatestReview(state),
             error : selectReviewError(state),
             loading : selectAddingReview(state),
             user : selectActiveUser(state),

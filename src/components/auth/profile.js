@@ -78,7 +78,7 @@ class Profile extends Component{
                                                 <h1>{user.user.first_name} {user.user.last_name}</h1>
                                                 <p><i className="fa fa-envelope-o" aria-hidden="true"></i> {user.user.email}</p>
                                                 <p><i className="fa fa-user" aria-hidden="true"></i> {user.user.username}</p>
-                                                <NavLink to={`${match.path}/edit-profile`} className="edit-profile-btn"><i className="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</NavLink>
+                                                {/* <NavLink to={`${match.path}/edit-profile`} className="edit-profile-btn"><i className="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</NavLink> */}
                                                 <button className='logout-btn' onClick={logout}><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
                                         </div>
                                     }

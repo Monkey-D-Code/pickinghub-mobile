@@ -10,20 +10,21 @@
     }
 
     .all-deals{
-        display: flex;
-        align-items: stretch;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+        width : 100%;
 
         .single-deal{
             position: relative;
             margin : 1em;
             @include card_shadow;
             .deal-img{
-                width: 300px;
-                height: 200px;
+                width: 100%;
+                height: 300px;
+                @media (max-width : 420px){
+                    height: 200px;
+                }
                 object-fit: cover;
                 object-position: center;
+                filter: blur(2px);
             }
             h4{
                 font-family: $font_para;
@@ -46,7 +47,7 @@
                     color: white;
                     font-family: $heebo;
                     padding : 0.3em 0.6em;
-                    font-size: 0.8em;
+                    font-size: 0.9em;
                 }
                 .active-deal{
                     background-color: darken($forest_green,10%);
@@ -70,7 +71,7 @@
             .discount{
                 background-color: white;
                 border-radius: 0.3em;
-                padding: 0.4em 0.6em;
+                padding: 0.4em 0.3em;
                 position: absolute;
                 top : 120px;
                 left  :50%;
@@ -82,11 +83,11 @@
                 }
             }
             .deal-products{
-                width: 100%;
-                height: 500px;
                 overflow: auto;
+                display: flex;
+                flex-wrap: wrap;
                 .single-deal-product{
-                    
+                    width : 300px;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;

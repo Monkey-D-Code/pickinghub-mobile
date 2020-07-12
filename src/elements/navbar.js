@@ -54,6 +54,23 @@ class Navbar extends Component{
                             <h1>
                                 {brand.full_name}
                             </h1>
+                            <div className="social-media">
+                                {
+                                    brand.facebook
+                                    &&
+                                    <a href={ brand.facebook} target="_blank"><i className="fa fa-facebook-official" aria-hidden="true"></i></a>
+                                }
+                                {
+                                    brand.twitter
+                                    &&
+                                    <a href={ brand.twitter} target="_blank"><i className="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                }
+                                {
+                                    brand.instagram
+                                    &&
+                                    <a href={ brand.instagram} target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                                }
+                            </div>
                         </div>
                         <nav>
                             <ul>

@@ -19,7 +19,7 @@ const CustomerReview = ({reviews}) => {
                             <div className="single-review" key={i}>
                                 <div className="customer">
                                     <img 
-                                        src={`https://eu.ui-avatars.com/api/?name=${review.customer.user.first_name}+${review.customer.user.last_name}&size=400x400`}
+                                        src={`https://eu.ui-avatars.com/api/?name=${review.rating}&size=400x400`}
                                         alt=""
                                     />
                                     <h4>{review.customer.user.first_name} {review.customer.user.last_name}</h4>

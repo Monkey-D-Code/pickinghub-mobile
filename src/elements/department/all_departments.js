@@ -81,7 +81,7 @@ class AllDepartments extends Component{
           }
         return (
             <div className="all-departments">
-                <h1>Our Catelogue</h1>
+                <h1>Our Catalogue</h1>
                 {
                     error
                     &&

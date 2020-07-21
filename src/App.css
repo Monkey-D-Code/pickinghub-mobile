@@ -1392,6 +1392,7 @@ footer {
       .product-details .product .image-box .big-image {
         width: 40%;
         height: 70vh;
+        position: relative;
         overflow: auto;
         transition: all 0.4s; }
         @media (max-width: 768px) {
@@ -1400,6 +1401,18 @@ footer {
             height: 65vh; } }
         .product-details .product .image-box .big-image img {
           width: 100%; }
+        .product-details .product .image-box .big-image .out-of-stock-img {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.9);
+          padding: 1em 0; }
+          .product-details .product .image-box .big-image .out-of-stock-img h4 {
+            text-align: center;
+            color: white;
+            font-family: "Abel", sans-serif;
+            font-size: 1.5em; }
       .product-details .product .image-box .image-set {
         width: 50vw;
         height: fit-content;
@@ -1489,6 +1502,16 @@ footer {
         font-family: "Bebas Neue", cursive;
         padding: 0 0.5em;
         color: #531CB3; }
+    .product-details .product .out-of-stock {
+      text-align: center;
+      margin: 0.5em auto;
+      width: fit-content;
+      padding: 0.4em 0.5em;
+      font-size: 1.3em;
+      border-radius: 4px;
+      font-family: "Bebas Neue", cursive;
+      background-color: rgba(179, 0, 27, 0.7);
+      color: #800013; }
     .product-details .product .total h4 {
       font-size: 2em;
       color: #0c6a18;
@@ -1595,6 +1618,21 @@ footer {
           color: #0c6a18; }
         .product-details .product .variants .variant .sublets .single-sublet .choosen {
           color: #0c6a18;
+          font-size: 1.5em;
+          font-family: "Bebas Neue", cursive;
+          margin: 0 0.3em; }
+      .product-details .product .variants .variant .sublets .no-stock {
+        background-color: rgba(0, 0, 0, 0.2); }
+        .product-details .product .variants .variant .sublets .no-stock h5 {
+          color: rgba(0, 0, 0, 0.5); }
+        .product-details .product .variants .variant .sublets .no-stock .price .market_price {
+          color: rgba(0, 0, 0, 0.3);
+          margin-right: 1em;
+          text-decoration: line-through; }
+        .product-details .product .variants .variant .sublets .no-stock .price .selling_price {
+          color: rgba(0, 0, 0, 0.5); }
+        .product-details .product .variants .variant .sublets .no-stock .choosen {
+          color: rgba(0, 0, 0, 0.5);
           font-size: 1.5em;
           font-family: "Bebas Neue", cursive;
           margin: 0 0.3em; }
@@ -2106,6 +2144,9 @@ footer {
     width: 90%;
     align-items: center;
     margin: 1em auto; }
+    @media (max-width: 420px) {
+      .home-page .about {
+        display: none; } }
     .home-page .about img {
       width: 40vw;
       min-height: 450px;

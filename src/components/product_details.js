@@ -178,7 +178,19 @@ class ProductDetails extends Component {
                                                     <img 
                                                         src={activeImage.image_url} 
                                                         alt=""
+                                                        className={
+                                                            activeSublet.out_of_stock
+                                                            ? "blur"
+                                                            : ""
+                                                        }
                                                     />
+                                                    {
+                                                        activeSublet.out_of_stock
+                                                        &&
+                                                        <div className="out-of-stock-img">
+                                                            <h4>Out Of Stock</h4>
+                                                        </div>
+                                                    }
                                                 </div>
                                             }
                                             {
@@ -223,7 +235,15 @@ class ProductDetails extends Component {
                                                     <div className="sublets">
                                                         {
                                                             variant.sublets.map((sublet,j)=>(
-                                                                <div className="single-sublet" key={j} onClick={()=>chooseSublet(sublet)}>
+                                                                <div 
+                                                                    key={j} 
+                                                                    onClick={()=>chooseSublet(sublet)}
+                                                                    className={
+                                                                        sublet.out_of_stock
+                                                                        ? "single-sublet no-stock"
+                                                                        : "single-sublet"
+                                                                    }    
+                                                                >
                                                                     {
                                                                         sublet.color_hex
                                                                         &&
@@ -243,6 +263,7 @@ class ProductDetails extends Component {
                                                                         &&
                                                                         activeSublet.id === sublet.id
                                                                         && 
+                                                                        
                                                                         <div className="choosen">
                                                                             {
                                                                                 quantity > 0
@@ -250,6 +271,7 @@ class ProductDetails extends Component {
                                                                                 : <i className="fa fa-cart-plus" aria-hidden="true"></i>
                                                                             }
                                                                         </div>
+                                                                        
                                                                     }
                                                                     
                                                                 </div>
@@ -265,6 +287,14 @@ class ProductDetails extends Component {
                                         }
                                     </div>
                                     {
+                                        activeSublet
+                                        &&
+                                        activeSublet.out_of_stock
+                                        ?
+                                        <h4 className="out-of-stock">
+                                            Out Of Stock
+                                        </h4>
+                                        : 
                                         activeSublet
                                         &&
                                         activeImage
@@ -283,6 +313,7 @@ class ProductDetails extends Component {
                                             }
                                             
                                         </div>
+                                        
                                     }
                                     {
                                         user

@@ -18,6 +18,7 @@
             .big-image {
                 width: 40%;
                 height: 70vh;
+                position: relative;
                 @media (max-width : 768px){
                     width: 100%;
                     height : 65vh;
@@ -28,6 +29,23 @@
                     width: 100%;
                     
                    
+               }
+               .blur{
+                   
+               }
+               .out-of-stock-img{
+                   position: absolute;
+                   top : 50%;
+                   width : 100%;
+                   text-align: center;
+                   background-color: rgba(black , 0.9);
+                   padding : 1em 0;
+                   h4{
+                        text-align: center;
+                        color: white;
+                        font-family: $abel;
+                        font-size : 1.5em;
+                   }
                }
             }
             .image-set{
@@ -125,6 +143,17 @@
                 padding : 0 0.5em;
                 color: $ocen_blue;
             }
+        }
+        .out-of-stock{
+            text-align: center;
+            margin : 0.5em auto;
+            width: fit-content;
+            padding : 0.4em 0.5em;
+            font-size: 1.3em;
+            border-radius: 4px;
+            font-family: $font_para;
+            background-color: rgba($crimson,0.7);
+            color: darken($crimson , 10%);
         }
         .total{
             h4{
@@ -233,6 +262,28 @@
                         
                         .choosen{
                             color: darken($forest_green , 10%);
+                            font-size: 1.5em;
+                            font-family: $font_para;
+                            margin : 0 0.3em;
+                        }
+                    }
+                    .no-stock{
+                        background-color: rgba(black , 0.2);
+                        h5{
+                            color: rgba(black , 0.5);
+                        }
+                        .price{
+                            .market_price{
+                                color: rgba(black , 0.3);
+                                margin-right: 1em;
+                                text-decoration: line-through;
+                            }
+                            .selling_price{
+                                color: rgba(black , 0.5);
+                            }
+                        }
+                        .choosen{
+                            color: rgba(black , 0.5);
                             font-size: 1.5em;
                             font-family: $font_para;
                             margin : 0 0.3em;

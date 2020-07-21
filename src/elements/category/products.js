@@ -20,29 +20,25 @@ class Products extends Component {
         const {from,to} = this.style;
         const {products} = this.props;
         return(
-            <Spring from={from} to={to} >
+            
+            <div className="products" >
                 {
-                    spring=>(
-                        <div className="products" style={spring}>
-                            {
-                                products
-                                &&
-                                products.map((product , i)=>(
-                                    <div className="single-product" key={i}>
-                                        <img 
-                                            src={product.random_product_image} 
-                                            alt={`${product.name}`}
-                                        />
-                                        <h4>
-                                            <NavLink to={`/product/${product.id}`}>{product.name}</NavLink>
-                                        </h4>
-                                    </div>
-                                ))
-                            }
+                    products
+                    &&
+                    products.map((product , i)=>(
+                        <div className="single-product" key={i}>
+                            <img 
+                                src={product.random_product_image} 
+                                alt={`${product.name}`}
+                            />
+                            <h4>
+                                <NavLink to={`/product/${product.id}`}>{product.name}</NavLink>
+                            </h4>
                         </div>
-                    )
+                    ))
                 }
-           </Spring>
+            </div>
+                   
         )
     }
 }

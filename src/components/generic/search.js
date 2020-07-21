@@ -98,7 +98,7 @@ class Search extends Component{
                                 &&
                                 <div className="error">
                                     <h4>
-                                        {JSON.stringify(error)}
+                                        Something went wrong. Refresh
                                     </h4>
                                 </div>
                             }
@@ -107,35 +107,32 @@ class Search extends Component{
                                 &&
                                 <div className="result-list">
                                     <h4>{results.count} Product{results.count > 1 && 's'} found</h4>
-                                    <Spring from={{opacity:0,transform:'translateX(100vw)'}} to={{opacity:1,transform:'translateX(0)'}} config={{delay:500}}>
-                                        {
-                                            spring_2=>(
-                                                <div className="results">
-                                                    {
-                                                        results.results.map((product,i)=>(
-                                                            
-                                                                        <div className="single-result" style={spring_2} key={i}>
-                                                                            <img 
-                                                                                src={product.random_product_image} 
-                                                                                alt=""
-                                                                            />
-                                                                            <div className="info">
-                                                                                <h3>
-                                                                                    <NavLink to={`/product/${product.id}`}>{product.name}</NavLink>
-                                                                                </h3>
-                                                                                <p>{product.description.replace(/^(.{50}[^\s]*).*/, "$1")} ...</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    )
-                                                                
+                                    
+                                        <div className="results">
+                                            {
+                                                results.results.map((product,i)=>(
+                                                    
+                                                                <div className="single-result" key={i}>
+                                                                    <img 
+                                                                        src={product.random_product_image} 
+                                                                        alt=""
+                                                                    />
+                                                                    <div className="info">
+                                                                        <h3>
+                                                                            <NavLink to={`/product/${product.id}`}>{product.name}</NavLink>
+                                                                        </h3>
+                                                                        <p>{product.description.replace(/^(.{50}[^\s]*).*/, "$1")} ...</p>
+                                                                    </div>
+                                                                </div>
+                                                            )
                                                         
-                                                        )
-                                                    }
-                                                </div>
-            
+                                                
                                                 )
-                                        }
-                                     </Spring>
+                                            }
+                                        </div>
+            
+                                                
+                                        
                                 </div>
                             }
                         </div>

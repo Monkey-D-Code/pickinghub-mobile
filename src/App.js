@@ -36,6 +36,7 @@ import Login from './components/auth/login';
 import Register from './components/auth/register';
 import Profile from './components/auth/profile';
 import Orders from './components/orders';
+import ResetPassword from './components/auth/reset_password';
 
 // seller page
 import Seller from './components/Seller/Seller';
@@ -99,6 +100,9 @@ class App extends Component{
           </Route>
           <Route exact path='/register'>
               {isAuth ?  <Redirect to='/profile' />: <Register />}
+          </Route>
+          <Route exact path='/forgot-password'>
+              {isAuth ?  <Redirect to='/profile' />: <ResetPassword />}
           </Route>
           <Route path='/profile'>
               {isAuth ?  <Profile /> : <Redirect to='/login' />}

@@ -45,7 +45,7 @@ const SpecialDeals = ({deals,error,loading,getDeals}) => {
                                 color = "#ffff"
                                 height  = {15}
                                 width = {15}
-                                timeout = {20000}
+                                timeout = {40000}
                                 className="loader"
                         />
                         : <><i className="fa fa-refresh" aria-hidden="true"></i></>

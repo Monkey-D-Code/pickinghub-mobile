@@ -39,7 +39,7 @@ class Department extends Component{
         return (
             <Spring from={from} to={to}>
                 {
-                    spring =>(
+                    spring => (
                         <div className="department-page" style={spring}>
                             <Route exact path={`${match.path}`}>
                                 <AllDepartments />

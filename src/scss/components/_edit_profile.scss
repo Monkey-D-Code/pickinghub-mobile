@@ -74,6 +74,12 @@
                 border-radius: 0.3em;
                 margin-top: 0.5em;
             }
+            .success-msg{
+                h4{
+                    color: green;
+                    font-family: $abel;
+                }
+            }
         }
     }
 }

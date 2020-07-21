@@ -20,12 +20,61 @@ const INITIAL_STATE = {
     latest_contact : null,
     adding_contact : false,
     contact_error : null,
+
+    resetting_password      : false,
+    reset_password_error    : null,
+    reset_password_success  : null,
+
+    changing_password       : false,
+    change_password_success : null,
+    change_password_error   : null,
     
 }
 
 const userReducer = (state = INITIAL_STATE , action)=>{
 
     switch(action.type){
+        case userTypes.CHANGE_PASSWORD_START:
+            return {
+                ...state,
+                changing_password       : true,
+                change_password_success : null,
+                change_password_error   : null,
+            }
+        case userTypes.CHANGE_PASSWORD_SUCCESS:
+            return {
+                ...state,
+                changing_password       :   false,
+                change_password_success :   action.payload,
+            }
+        case userTypes.CHANGE_PASSWORD_ERROR:
+            return {
+                ...state,
+                changing_password : false,
+                change_password_error : action.payload,
+            }
+
+        case userTypes.RESET_PASSWORD_START:
+            return {
+                ...state,
+                resetting_password      : true,
+                reset_password_error    : null,
+                reset_password_success  : null,
+            }
+        case userTypes.RESET_PASSWORD_SUCCESS:
+            return {
+                ...state,
+                resetting_password      : false,
+                reset_password_success  : action.payload,
+            }
+
+        case userTypes.RESET_PASSWORD_ERROR:
+            return {
+                ...state,
+                resetting_password      : false,
+                reset_password_error    : action.payload,
+            }
+
         case userTypes.ADD_ADDRESS_START:
             return {
                 ...state,
@@ -173,6 +222,7 @@ const userReducer = (state = INITIAL_STATE , action)=>{
         case userTypes.CUSTOMER_START:
             return {
                 ...state,
+                user_error : null,
                 loading_user : true,
             }
         case userTypes.CUSTOMER_SUCCESS:

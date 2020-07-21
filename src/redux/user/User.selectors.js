@@ -91,3 +91,33 @@ export const selectAddingContact = createSelector(
     [selectUser],
     user => user.adding_contact,
 )
+
+
+// reset password
+export const selectResetPasswordSuccess = createSelector(
+    [selectUser],
+    user => user.reset_password_success,
+)
+export const selectResettingPassword = createSelector(
+    [selectUser],
+    user => user.resetting_password,
+)
+export const selectResetPasswordError = createSelector(
+    [selectUser],
+    user => user.reset_password_error,
+)
+
+// change password
+export const selectChangingPassword = createSelector(
+    [selectUser],
+    user => user.changing_password,
+)
+export const selectChangePasswordSuccess = createSelector(
+    [selectUser],
+    user => user.change_password_success,
+)
+export const selectChangePasswordError = createSelector(
+    [selectUser],
+    user => user.change_password_error,
+)
+

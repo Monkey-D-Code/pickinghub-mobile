@@ -2,11 +2,21 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {Spring,config} from 'react-spring/renderprops';
 import {NavLink} from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 // importing selectors
 import {
     selectActiveUser,
+    selectChangingPassword,
+    selectChangePasswordSuccess,
+    selectChangePasswordError,
+
 } from '../../redux/user/User.selectors';
+
+// importing actions
+import {
+    changePassword,
+} from '../../redux/user/User.actions';
 
 
 class EditProfileForm extends Component{
@@ -21,19 +31,56 @@ class EditProfileForm extends Component{
         }
     }
     state = {
-        first_name : '',
-        last_name : '',
-        middle_name: '',
+        old_password            : '',
+        new_password            : '',
+        confirm_new_password    : '',
+        errors      : [],
+        click       :   0,
         
     }
     inputChange =  e =>{
         this.setState({
+            errors : [],
             [e.target.name] : e.target.value,
         })
     }
+    submit = () => {
+        const {old_password,new_password,confirm_new_password,errors} = this.state;
+        const {user,change} = this.props;
+        this.setState({
+            click : 1,
+        })
+        let temp_errors = [];
+
+        if(old_password === "") temp_errors.push('Enter your old password');
+        if(new_password === "") temp_errors.push("Enter new password"); 
+        if(confirm_new_password === "") temp_errors.push("Confirm your password");
+        
+        if(confirm_new_password !== new_password) temp_errors.push("New Passwords don't match");
+
+        
+
+        if(temp_errors.length > 0){
+            this.setState({
+                errors : temp_errors,
+            })
+            
+        }else{
+            const data  =   {
+                username        : user.user.username,
+                old_password    : old_password,
+                new_password    : new_password,
+            }
+            change(data);
+        }
+
+    }
     render=()=>{
         const {from,to} = this.style;
-        const {first_name,last_name,middle_name} = this.state;
+        const {old_password,new_password,confirm_new_password,errors,click} = this.state;
+
+        const { success , loading , error}  = this.props;
+
         return(
             <Spring from={from} to={to} config={config.stiff} delay={500}>
                 {
@@ -41,29 +88,78 @@ class EditProfileForm extends Component{
                         <div className="edit-profile-form" style={spring}>
                             <form>
                                 <div className="form-group">
-                                    <h3>Personal Info <NavLink to='/profile'>&times;</NavLink></h3>
+                                    {   
+                                        click ===1
+                                        &&
+                                        error
+                                        &&
+                                        error.response
+                                        &&
+                                        <div className="error">
+                                            <h4>{error.response.data.message || error.message}</h4>
+                                        </div>
+                                    }
+                                    {
+                                        click ===   1
+                                        &&
+                                        success
+                                        &&
+                                        <div className="success-msg">
+                                            <h4>{success.message}</h4>
+                                        </div>
+                                    }
+                                    <h3>New Password <NavLink to='/profile'>&times;</NavLink></h3>
                                     <input 
-                                        type="text" 
-                                        name="first_name" 
-                                        placeholder="Your first name"
-                                        value={first_name}
+                                        type="password" 
+                                        name="old_password" 
+                                        placeholder="Old Password"
+                                        value={old_password}
                                         onChange={this.inputChange}
                                     />
                                     <input 
-                                        type="text" 
-                                        name="middle_name" 
-                                        placeholder="Your middle name"
-                                        value={middle_name}
+                                        type="password" 
+                                        name="new_password" 
+                                        placeholder="New Password"
+                                        value={new_password}
                                         onChange={this.inputChange}
                                     />
                                     <input 
-                                        type="text" 
-                                        name="last_name" 
-                                        placeholder="Your last name"
-                                        value={last_name}
+                                        type="password" 
+                                        name="confirm_new_password" 
+                                        placeholder="Confirm New Password"
+                                        value={confirm_new_password}
                                         onChange={this.inputChange}
                                     />
-                                    <button type="button"><i className="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+                                    {
+                                        errors.length > 0
+                                        &&
+                                        <div className="error">
+                                            {
+                                                errors.map(
+                                                    (err,i)=>
+                                                        <div key={i}>
+                                                            {err}
+                                                        </div>
+                                                )
+                                            }
+                                        </div>
+                                    }
+                                    <button 
+                                        type="button"
+                                        onClick={this.submit}    
+                                    >
+                                        {
+                                            loading
+                                            ? <Loader 
+                                                type = "Oval"
+                                                color = "#ffff"
+                                                height  = {20}
+                                                width = {20}
+                                                timeout = {30000}
+                                            />
+                                            : <><i className="fa fa-floppy-o" aria-hidden="true"></i> Save</>
+                                        }
+                                    </button>
                                 </div>
                                 
                             </form>
@@ -74,6 +170,18 @@ class EditProfileForm extends Component{
         );
     }
 }
+
+const ConnectedEditProfileForm = connect(
+    state =>({
+        user        :   selectActiveUser(state),
+        loading     :   selectChangingPassword(state),
+        success     :   selectChangePasswordSuccess(state),
+        error       :   selectChangePasswordError(state),
+    }),
+    dispatch => ({
+        change : data => dispatch(changePassword(data)),
+    })
+)(EditProfileForm);
 
 class EditProfile extends Component{
     style = {
@@ -100,9 +208,9 @@ class EditProfile extends Component{
                                 <div className="user-infor">
                                     <h1>{user.user.first_name} {user.user.last_name}</h1>
                                     <h2>{user.user.username}</h2>
-                                    <p>Change Details</p>
+                                    <p>Change Password</p>
                                 </div>
-                                <EditProfileForm />
+                                <ConnectedEditProfileForm />
                             </div>
                         : <div className="error" style={spring}>
                                 <h4>User Not Found</h4>

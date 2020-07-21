@@ -188,3 +188,51 @@ export const addContact = (contact,customer) =>{
             .catch(err=>dispatch(addContactError(err)));
     }
 }
+
+// reset password
+const resetPasswordStart = ()=>({
+    type : userTypes.RESET_PASSWORD_START,
+});
+const resetPasswordSuccess = success => ({
+    type : userTypes.RESET_PASSWORD_SUCCESS,
+    payload : success,
+});
+const resetPasswordError = error =>({
+    type    : userTypes.RESET_PASSWORD_ERROR,
+    payload : error,
+});
+
+export const resetPassword = email =>{
+    return dispatch =>{
+        dispatch(resetPasswordStart());
+        djangoAPI.post('accounts/api/customer/forgot-password/',{email : email})
+            .then(res => dispatch(resetPasswordSuccess(res.data)))
+            .catch((err) => {
+                dispatch(resetPasswordError(err))
+                console.log(err.response)
+            });
+
+    }
+}
+
+
+// change password
+const changePasswordStart = ()=>({
+    type : userTypes.CHANGE_PASSWORD_START,
+});
+const changePasswordSuccess = success =>({
+    type : userTypes.CHANGE_PASSWORD_SUCCESS,
+    payload : success,
+});
+const changePasswordError   =   error =>({
+    type : userTypes.CHANGE_PASSWORD_ERROR,
+    payload : error,
+})
+export const changePassword = data =>{
+    return dispatch => {
+        dispatch(changePasswordStart());
+        djangoAPI.post('accounts/api/customer/change-password/',data)
+            .then(res => dispatch(changePasswordSuccess(res.data)))
+            .catch(err => dispatch(changePasswordError(err)));
+    }
+}

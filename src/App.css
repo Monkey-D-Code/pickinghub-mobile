@@ -823,6 +823,9 @@ footer {
         -webkit-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
         -moz-box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52);
         box-shadow: 4px 2px 6px 0px rgba(16, 25, 53, 0.52); }
+    .edit-profile-form form .form-group .success-msg h4 {
+      color: green;
+      font-family: "Abel", sans-serif; }
 
 .suggested-products h2 {
   font-family: "Bowlby One SC", cursive;
@@ -1052,6 +1055,46 @@ footer {
       color: #101935;
       font-family: "Dosis", sans-serif;
       text-decoration: none; }
+
+.reset-password {
+  position: relative;
+  width: 100vw;
+  height: 100vh; }
+  .reset-password .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .reset-password .form .password-reset-success {
+      width: 300px;
+      background-color: rgba(17, 152, 34, 0.5);
+      padding: 0.5em; }
+      .reset-password .form .password-reset-success h4 {
+        font-family: "Abel", sans-serif;
+        color: green; }
+        .reset-password .form .password-reset-success h4 a {
+          text-decoration: none;
+          color: green;
+          font-family: "Anton", sans-serif;
+          letter-spacing: 1px; }
+    .reset-password .form h1 {
+      font-size: 2em; }
+      @media (max-width: 420px) {
+        .reset-password .form h1 {
+          font-size: 1.5em; } }
+    .reset-password .form .sub-nav {
+      margin: 0.3em 0;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .reset-password .form .sub-nav h4 {
+        color: #531CB3;
+        font-family: "Bebas Neue", cursive; }
+      .reset-password .form .sub-nav a {
+        color: #101935;
+        font-family: "Dosis", sans-serif;
+        text-decoration: none; }
 
 .terms {
   height: 100vh;

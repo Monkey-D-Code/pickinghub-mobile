@@ -114,6 +114,10 @@ class Login extends Component{
                                 }
                                 <div className="form-group">
                                     <h3>Provide Authentication</h3>
+                                    {/* <div className="sub-nav">
+                                        <h4>Forgot Password ?</h4>
+                                        <NavLink to='/forgot-password'>Reset here</NavLink>
+                                    </div> */}
                                     <input 
                                         type="text" 
                                         className="input"
@@ -159,6 +163,7 @@ class Login extends Component{
                                         <h4>New To Pickinghub ?</h4>
                                         <NavLink to='/register'>Register here</NavLink>
                                     </div>
+                                    
                                 </div>
                                 
                             </form>
